@@ -304,6 +304,8 @@ Topics in Deep Learning
 - **Health Risk Assessments**: Highlight genetic predispositions to diseases.
 - **Trait Reports**: Explore genetics' influence on physical and personal characteristics.
 - **Carrier Status Reports**: Identify genes for inheritable conditions.
+- Experiencing challenges from blending consumer tech, biotech, and healthcare within one company.
+- Considering separating the company's consumer and therapeutics divisions to address declining stock prices and the risk of Nasdaq delisting 
 
 ---
 
