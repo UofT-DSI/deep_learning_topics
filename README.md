@@ -1,109 +1,98 @@
 # Course name
 
 ## Content
-
-1. [Description](https://github.com/rachaellam/dsi-workshop#description)
-2. [Learning Outcomes](https://github.com/rachaellam/dsi-workshop#learning-outcomes)
-3. [Logistics](https://github.com/rachaellam/dsi-workshop#logistics)
-4. [Marking Scheme](https://github.com/rachaellam/dsi-workshop#marking-scheme)
-5. [Policies](https://github.com/rachaellam/dsi-workshop#policies)
-6. [Folder Structure](https://github.com/rachaellam/dsi-workshop#folder-structure)
-7. [Acknowledgements and Contributions](https://github.com/rachaellam/dsi-workshop#acknowledgements-and-contributions)
+1. [Description](https://github.com/UofT-DSI/deep_learning_topics/#description)
+2.  [Learning Outcomes](https://github.com/UofT-DSI/deep_learning_topics/#learning-outcomes)
+3.  [Logistics](https://github.com/UofT-DSI/deep_learning_topics/#logistics)
+4.  [Schedule](https://github.com/UofT-DSI/deep_learning_topics/#schedule)
+5.  [Prerequisites](https://github.com/UofT-DSI/deep_learning_topics/#prerequisites)
+6.  [Expectations](https://github.com/UofT-DSI/deep_learning_topics/#expectations)
+7.  [Policies](https://github.com/UofT-DSI/deep_learning_topics/#policies)
+8.  [Folder Structure](https://github.com/UofT-DSI/deep_learning_topics/#folder-structure)
+9.  [Acknowledgements](https://github.com/UofT-DSI/deep_learning_topics/#acknowledgements)
 
 ## Description
-
-This course will begin by...
-
-The next portion of the course will...
-
-Finally, students will...
+In this course, participants will apply machine learning techniques to software applications using the Python language. Successful participants will apply each step of the machine learning workflow in relevant industry applications, as well as be exposed to cutting-edge techniques and the underlying theory.  Technical topics include: Machine Learning in Practice, Data Preparation and Feature Engineering, Supervised and Unsupervised Learning, Model Evaluation, and Ensemble Learning.  Participants will also work on other skills, such as networking and building a community of influence, mastering the interview process, including behavioral and technical interviews.
 
 ## Learning outcomes
-
 By the end of the course, students will be able to:
 
-1. Learning outcome 1.
-2. Learning outcome 2.
-3. Learning outcome 3.
-4. Learning outcome 4.
+1. Learning outcome 1: Propose and present a business pitch for a machine learning project in a real-world business setting through a business case study with an industry partner or at their current organization.
+2. Learning outcome 2: Design, formulate, and construct a full comprehensive lifecycle project in machine learning via a course project by managing a timeline.
+3. Learning outcome 3: Apply, deploy, and implement each step of the machine learning lifecycle in Python programming language, and debug errors and iterate on improvements.
 
 ## Logistics
 
 ### Course Contacts
-* Instructor: [**Name**] [Pronouns] [degree]. hyperlinked email
-  * Email etiquette
-  * Other comments 
-* TA: [**Name**] [pronouns] [degree]. hyperlinkedEmail
+* Instructor: [**Erik Drysdale**] [Pronouns] [degree]. Emails to the instructor can be sent to erikinwest@gmail.com.
+* TA: [**Name**] [pronouns] [degree]. Emails to the teaching assistant can be sent to [email].
+* Email etiquette:
+* * Other comments:
 
 ### Delivery instructions
+The course runs synchronously over Zoom. The course consists of ten classes over three weeks. Classes are 6:00 PM - 8:30 PM EDT on weekdays. Being mindful of online fatigue, there will be one or two breaks during each class where students are encouraged to stretch, grab a drink and snacks, or ask any additional questions. 
 
-The workshop will be held over three weeks, three days a week. Two of the three days will be 2-hours long and the last day will be 3-hours. Being mindful of online fatigue, there will be one break during each class where students are encouraged to stretch, grab a drink and snacks, or ask any additional questions.
+Tutorial sessions with a TA will also be offered over Zoom. These will take place from 5:30 PM - 6:00 PM EDT and 8:30 PM - 9:00 PM on weekdays. 
 
-### Technology Requirements
-1. Camera is optional although highly encouraged. We understand that not everyone may have the space at home to have the camera on.
+## Schedule
+The schedule is tentative and may be modified as needed. Learners will be notified of schedule changes.
+* **Day 1 (Tuesday, February 20, 6:00 PM - 8:30 PM):** Overview: the practice of healthcare, medicine, and life sciences
+* **Day 2 (Wednesday, February 21, 6:00 PM - 8:30 PM):** Implementing AI in healthcare #1
+* **Day 3 (Thursday, February 22, 6:00 PM - 8:30 PM):** Implementing AI in healthcare #2
+* **Day 4 (Monday, February 26, 6:00 PM - 8:30 PM):** Survival modeling
+* **Day 5 (Tuesday, February 27, 6:00 PM - 8:30 PM):** Protein folding, drug discovery, and medical imaging, and ‘Omics
+* **Day 6 (Wednesday, February 28, 6:00 PM - 8:30 PM):** Commercial applications
+* **Day 7 (Thursday, February 29, 6:00 PM - 8:30 PM):** “White box” model explainability 
+* **Day 8 (Tuesday, March 5, 6:00 PM - 8:30 PM):** "Black box” model explainability 
+* **Day 9 (Wednesday, March 6, 6:00 PM - 8:30 PM):** “Prediction intervals”
+* **Day 9 (Thursday, March 7, 6:00 PM - 8:30 PM):** Business thinking and organization structure
 
+## Prerequisites
+Learners are expected to have completed the DSI foundational courses (i.e., Unix Shell/Git and GitHub, Python, R, Building Research Software/SQL, Estimation/Machine Learning/Testing, Production) as well as the Deep Learning Foundations course.
 
-### Lesson Schedule
-| Lesson | Topic                                                                                        | Assignments      | Resources  |
-|--------|----------------------------------------------------------------------------------------------|------------------|------------|
-| 1      | Unix Shell I <br>(introducing the Shell, introductory commands, files and directories)       | [Assignment 1]() | [Slides]() |
-| 2      | Unix Shell II<br>(input/output and pipes/filters)                                            | [Assignment 1]() | [Slides]() |
-| 3      | Unix Shell III<br>(shell scripts, shell functions, parameters, flow control)                 | [Assignment 1]() | [Slides]() |
-| 4      | Version Control and GitHub I<br>(introducing version control and GitHub, basic Git commands) | [Assignment 2]() | [Slides]() |
-| 5      | Version Control and GitHub II<br>(remote repositories; branching)                            | [Assignment 2]() | [Slides]() |
-| 6      | Version Control and GitHub III <br>(collaborating, dealing with conflicts)                   | [Assignment 2]() | [Slides]() |
-| 7      | Problem solve, reproducibility, ethics, inequity                                             | [Assignment 1]() <br> [Assignment 2]() | [Slides]() |
-| 8      | Professional Skills - Industry Case Study                                                    | [Assignment 2]() | [Slides]() |
-| 9      | Data Science Foundations - Review and Practice                                               |                  | [Slides]() |
-
-## Marking Scheme
-| Assessment       | Weight | Description | Due Date |
-|------------------|--------|-------------|----------|
-| [Assignment 1]() |        |             |          |
-| [Assignment 2]() |        |             |          |
-|                  |        |             |          |
-
+## Expectations
+Learners should be active participants and are encouraged to ask questions throughout.
+ 
+### Technology requirements
+* Learners must have a computer and an internet connection to participate in online activities.
+ 
 ## Policies
-The course is a live-coding class. Students are expected to follow along with the coding, creating files and folders to navigate and manipulate. Students should be active participants while coding and are encouraged to ask questions throughout. Although slides will be available for students to reference, they should be referenced before or after class, as during class will be dedicated to coding with the instructor.
-
-**How to submit assignments, late policy, academic integrity.**
-
+* **Accessibility:** We want to provide an accessible learning environment for all. If there is something we can do to make this course more accessible to you, please let us know.
+* **Course communications:** Communications take place over email, please include "DSI-Topics in Deep Learning" or similar in the subject line, e.g. "DSI-Topics in Deep Learning: homework question"
+* **Camera:** Keeping your camera on is optional.
+* **Microphone:** Please keep microphones muted unless you need to speak. Please indicate your name before speaking as some Zoom configurations make it hard to tell who is talking!
+* **Assessment:** There will be homework which **is not** graded, but highly recommended, and there will be two assignments which **are** graded.
+ 
 ## Folder Structure
-Below are the folders contained in this repo with a description of what they contain and information on how to use them.
+* **lessons:** Course slides as pdf files
+* **slide-resources:** Course slides as md files
+* **homework:** Optional homework to practice concepts covered in class
+* **assignments:** Graded assignments
+* README: This file!
+* LICENSE: Copyright information for these materials
+* .gitignore: Files to exclude from this folder, specified by the instructor
 
-### 1 *assignments*:
-This folder contains the assignments for the workshop. Students are expected to complete them one week after the content has been delivered.
+### Slides
+* [Overview: the practice of healthcare, medicine, and life sciences](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/01-overview_ai_healthcare.pdf#/)
+* [Implementing AI in healthcare #1](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/02-implementing_ai_healthcare_1.pdf#/)
+* [Implementing AI in healthcare #2](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/03-implementing_ai_healthcare_2.pdf#/)
+* [Survival modeling]()
+* [Protein folding, drug discovery, and medical imaging, and ‘Omics]()
+* [Commercial applications]()
+* [“White box” model explainability]()
+* ["Black box” model explainability]()
+* [Prediction intervals]()
+* [Business thinking and organization structure](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/10-business_thinking_organization.pdf#/)
 
-### 2. *homework*:
-This folder contains homework for students to practice Unix and Git/GitHub workshops. Please complete the Unix Shell homework in the first week, and the Git/GitHub homework in the second.
+### Assignments
 
-There are pdf copies of the homework and markdown files, which can be edited. The homework can change based on the amount of content that was completed each day.
+* **Class attendance**: To ensure everyone actively participates in class activities, attendance is mandatory and will be monitored. If you are unable to attend class, it is your responsibility to make up the work that was covered.
+* [Assignment 1](https://github.com/UofT-DSI/deep_learning_topics/blob/main.assignments/assignment_1.md#/)
 
-Homework is just a suggestion but will help students throughout the workshop, as content is cumulative and will only get more difficult. Unfortunately, there is not enough time to review previous content each class so while this homework is **not** graded, it is highly recommended.
 
-### 3. *lessons*:
-This folder contains the pdf and html version of the slides. Either the pdf slides or the html slides can be used when teaching. If slides are edited to contain any gifs, the instructor will need to use the html slides so that the gifs are active.
-
-pdf slides should be referenced before class to prepare or after class to review. During class will be live-coding, therefore, there is no need to follow them during class. They contain all information that was discussed in class and are a great resource in the future if students need to reassess their knowledge.
-
-### 4. *post-course*:
-This folder contains the exit surveys for students to complete. It holds both the md and docx versions of the survey.
-
-### 5. *slides-resources*:
-This folder contains all editable slides. To edit, download the entire folder, including the *pics* folder as this folder contains the pictures which are relationally referenced in the markdown files.
-
-To change a photo, edit the markdown where photos are referenced.
-
-Example: 
-
-Change `![w:1150 center](pics/github.png)` to `![bg](pics/github.png)`
-
-To add a photo, add photo to the *pics* folder and reference it within the markdown file.
-
-Example:
-
-Added photo labelled "git_commit.png" will be referenced in markdown file as `![w:1000 left](pics/git_commit.png)`
-
+| Format | Details | Submission Instructions |
+| :----: | :----- | :---------------------- |
+| Assignment 1 | Due on **date** | Submit assignment via |
+ 
 ## Acknowledgements
-
-- Rohan Alexander managed the development of this course. XX created the first version of the course. YY updated and taught the course in 202X....
+Course materials were developed by Julia Gallucci, Kaylie Lau, and Santiago Arciniegas under the supervision of Rohan Alexander.
