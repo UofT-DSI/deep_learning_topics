@@ -415,4 +415,4 @@ Several aspects of the health care involve prediction, including diagnosis, trea
 [HP]: images/AI_High_Perf.png
 [HR]: images/Heartrate.png
 [SW]: images/Smartwatch_HR.png
-[OC]: images/oncology.JPG
+[OC]: images/oncology.jpg
