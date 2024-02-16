@@ -407,12 +407,12 @@ Several aspects of the health care involve prediction, including diagnosis, trea
 
 (13) Muoio, D. (2021, June 22). Epic's widely used sepsis prediction model falls short among Michigan Medicine patients. Retrieved from (<https://www.fiercehealthcare.com/tech/epic-s-widely-used-sepsis-prediction-model-falls-short-among-michigan-medicine-patients>)
 
-[Health care]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/Health_care.png
-[Machine_learning]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/Sup_UnSup_ML.jpg
-[terms]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/AI_ML_DL.png
-[INT]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/INTERNIST-1.png
-[EMR]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/EMR.png
-[HP]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/AI_High_Perf.png
-[HR]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/Heartrate.png
-[SW]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/Smartwatch_HR.png
-[OC]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/oncology.JPG
+[Health care]: images/Health_care.png
+[Machine_learning]: images/Sup_UnSup_ML.jpg
+[terms]: images/AI_ML_DL.png
+[INT]: images/INTERNIST-1.png
+[EMR]: images/EMR.png
+[HP]: images/AI_High_Perf.png
+[HR]: images/Heartrate.png
+[SW]: images/Smartwatch_HR.png
+[OC]: images/oncology.JPG
