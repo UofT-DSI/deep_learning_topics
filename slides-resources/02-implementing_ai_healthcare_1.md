@@ -232,9 +232,9 @@ Ideas adapted from:
 > 
 > Verma, A. A., Murray, J., Greiner, R., Cohen, J. P., Shojania, K. G., Ghassemi, M., Straus, S. E., Pou-Prom, C., & Mamdani, M. (2021). Implementing machine learning in medicine. CMAJ. 
 
-[roadmap_1]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/roadmap_1.png
-[roadmap_2]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/roadmap_2.png
-[roadmap_3]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/roadmap_3.png
-[roadmap_4-5]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/roadmap_4-5.png
-[roadmap_6-7]: ../DSI%20Foundation%20Skills%20TA/topics_in_DL/roadmap_6-7.png
+[roadmap_1]: images/roadmap_1.png
+[roadmap_2]: images/roadmap_2.png
+[roadmap_3]: images/roadmap_3.png
+[roadmap_4-5]: images/roadmap_4-5.png
+[roadmap_6-7]: images/roadmap_6-7.png
 
