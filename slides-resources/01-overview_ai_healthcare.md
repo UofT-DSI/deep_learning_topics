@@ -10,6 +10,7 @@ style: |
       margin: 0 auto;
     }
 
+math: mathjax
 ---
 <style>
      p {
@@ -131,13 +132,10 @@ Topics in Deep Learning
 
 ---
 
-TODO
-- TA: Jenny Du
-  - Undergrad in...
-
----
-
 - Yourselves!
+  - Name and backgorund
+  - What are you doing currently (work/school)
+  - In your last interaction with the healthcare system, do you think AI/ML was involved?
 - This course will be very interactive
   - Any concerns?
 

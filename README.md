@@ -73,9 +73,9 @@ Learners should be active participants and are encouraged to ask questions throu
 * .gitignore: Files to exclude from this folder, specified by the instructor
 
 ### Slides
-* [Overview: the practice of healthcare, medicine, and life sciences](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/01-overview_ai_healthcare.pdf#/)
-* [Implementing AI in healthcare #1](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/02-implementing_ai_healthcare_1.pdf#/)
-* [Implementing AI in healthcare #2](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/03-implementing_ai_healthcare_2.pdf#/)
+* [Overview: the practice of healthcare, medicine, and life sciences](lessons/01-overview_ai_healthcare.pdf)
+* [Implementing AI in healthcare #1](lessons/02-implementing_ai_healthcare_1.pdf)
+* [Implementing AI in healthcare #2](lessons/03-implementing_ai_healthcare_2.pdf)
 * [Survival modeling]()
 * [Protein folding, drug discovery, and medical imaging, and ‘Omics]()
 * [Commercial applications]()

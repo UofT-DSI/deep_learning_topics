@@ -27,11 +27,21 @@ paginate: true
     }
 </style>
 
-# **Implementing AI in Healthcare #2**
+# **Lecture 3: Implementing AI in Healthcare (part 2)**
 ```console
 Data Sciences Institute
 Topics in Deep Learning
+Instructor: Erik Drysdale
+TA: Jenny Du
 ```
+
+---
+##### **Lecture Outline**
+
+  - Bias
+  - Adressing risk
+  - Generalization
+  - Case studies
 
 ---
 
