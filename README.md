@@ -1,4 +1,4 @@
-# Course name
+# Topics in Deep Learning: Healthcare
 
 ## Content
 1. [Description](https://github.com/UofT-DSI/deep_learning_topics/#description)
@@ -12,7 +12,7 @@
 9.  [Acknowledgements](https://github.com/UofT-DSI/deep_learning_topics/#acknowledgements)
 
 ## Description
-In this course, participants will apply machine learning techniques to software applications using the Python language. Successful participants will apply each step of the machine learning workflow in relevant industry applications, as well as be exposed to cutting-edge techniques and the underlying theory.  Technical topics include: Machine Learning in Practice, Data Preparation and Feature Engineering, Supervised and Unsupervised Learning, Model Evaluation, and Ensemble Learning.  Participants will also work on other skills, such as networking and building a community of influence, mastering the interview process, including behavioral and technical interviews.
+In this course, participants will learn how to apply machine learning techniques to software applications using the Python language to . Successful participants will apply each step of the machine learning workflow in relevant industry applications, as well as be exposed to cutting-edge techniques and the underlying theory.  Technical topics include: Machine Learning in Practice, Data Preparation and Feature Engineering, Supervised and Unsupervised Learning, Model Evaluation, and Ensemble Learning.  Participants will also work on other skills, such as networking and building a community of influence, mastering the interview process, including behavioral and technical interviews.
 
 ## Learning outcomes
 By the end of the course, students will be able to:
@@ -24,8 +24,8 @@ By the end of the course, students will be able to:
 ## Logistics
 
 ### Course Contacts
-* Instructor: [**Erik Drysdale**] [Pronouns] [degree]. Emails to the instructor can be sent to erikinwest@gmail.com.
-* TA: [**Name**] [pronouns] [degree]. Emails to the teaching assistant can be sent to [email].
+* Instructor: **Erik Drysdale** (MSc, MA, BA). Emails to the instructor can be sent to erikinwest@gmail.com
+* TA: Jenny Du (BSc). Emails to the teaching assistant can be sent to junni.du@mail.utoronto.ca
 * Email etiquette:
 * * Other comments:
 

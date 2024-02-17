@@ -54,15 +54,27 @@ style: |
   }
 </style>
 
-# **Overview: the practice of healthcare, medicine, and life sciences**
+# **Topics in Deep Learning: Healthcare**
 ```console
-Data Sciences Institute
+Instructor: Erik Drysdale
+TA: Jenny Du
+```
+
+
+---
+
+# **Lecture 1: The practice of healthcare, medicine, and life sciences**
+```console
 Topics in Deep Learning
 ```
 
 ---
 
-##### **Outline**
+##### **Lecture 1 Outline**
+
+- Course outline
+
+- Intros
 
 - Terminology
 
@@ -77,6 +89,58 @@ Topics in Deep Learning
 - Examples of successful applications in healthcare
 
 - Examples of failed applications in healthcare
+
+---
+
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Course outline`
+
+---
+
+- The practice of healthcare, medicine, and life sciences (**today**)
+- Implementing AI in healthcare #1 (week 1)
+- Implementing AI in healthcare #2 (week 1)
+- Survival modeling (week 2)
+- Protein folding, drug discovery, and medical imaging, and ‘Omics (week 2)
+- Commercial applications (week 2)
+- "White box" model explainability (week 2)
+- "Black box" model explainability (week 3)
+- Prediction intervals and quantifying uncertainty (week 3)
+- Business thinking and organization structure (week 3)
+
+---
+
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Intros`
+
+---
+
+- Instructor: Erik Drysdale (that's me!)
+  - Started career in economics
+  - Transitioned to healthcare data science
+  - Have seen first hard how hard it is to implement models in HC
+  - Bringing 9 years of professional experience to this course
+
+<br>
+<figure>
+  <img src="images/institutions.png" width="100%" style="display: block; margin-left: auto; margin-right: auto;">
+  <figcaption style="text-align: center; font-size: 20px;">Institutions where I've worked</figcaption>
+</figure>
+
+---
+
+TODO
+- TA: Jenny Du
+  - Undergrad in...
+
+---
+
+- Yourselves!
+- This course will be very interactive
+  - Any concerns?
+
 
 ---
 
@@ -123,32 +187,38 @@ Topics in Deep Learning
 Several aspects of the health care involve prediction, including diagnosis, treatment, administration, and operations. Potential application for AI:
 
 - **Improved diagnosis and treatment** → early detection more accurately
-- **Personalized medine** → tailored treatment to individual patients, based on specific medical profiles
+- **Personalized medicine** → tailored treatment to individual patients, based on specific medical profiles
 - **Increase efficiciency** → automate routine tasks, free up health care professionals to focus on more complex tasks
+
+<!-- Question: Can anything think of an application of personalized medicine IRL? -->
 
 ---
 
-##### **Some specific domain uses $^{1}$**
+##### **Some specific domain applications$^{1}$**
 
-1. **Clinical operations** → enhance the efficiency and effectiveness of clinical processes within healthcare organizations (this includes things liek workflow, freeing up staff time and improving resource utilization)
+1. **Clinical operations** → enhance the efficiency and effectiveness of clinical processes within healthcare organizations (this includes things like workflow, freeing up staff time and improving resource utilization)
     - *Examples:* Optimization in areas like emergency departments and operating rooms, capacity management, and supply chain.
 
 2. **Clinical analytics** → analysis of clinical data to support decision-making and improve patient care.
-    - *Examples:* Providing clinical decision support, treatment recommendations and care pathway designs
+    - *Examples:* Providing clinical decision support (CDSS), treatment recommendations and care pathway designs
+
+<!-- Question: How could making a "prediction" help "optimize" an ED? -->
 
 ---
 
-##### **Some specific domain uses $^{1}$**
+##### **Some specific domain applications$^{1}$**
 
 3. **Quality & Saftey** → ensure the highest quality of care and patient safety.
     - *Examples:* Prediction of adverse events, deterioration of patients condition and readmissions
 
-4. **Corporate Functions** improving efficiency and steamlining administrative processes within healthcare.
+4. **Corporate Functions** → improving efficiency and steamlining administrative processes within healthcare.
     - *Examples:* automating various administrative tasks
+
+<!-- Question: Besides preventing death or injury, why would predicting patient detioriation be helpful? -->
 
 ---
 
-##### **Current healthcare costs $^{2}$**
+##### **Current healthcare costs$^{1,2}$**
 
 - Healthcare costs globally are on the rise and clinical experts are both limited and expensive.
 - Widespread adoption of AI within the next five years, has the potential to yield substantial savings in healthcare spending estimated annual savings of ~ **$200 to $360 billion**.
@@ -166,6 +236,15 @@ Several aspects of the health care involve prediction, including diagnosis, trea
 
 3. *Employ the developed AI* to automate or enhance the specified task or process.
 
+
+---
+
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #1`
+#### Suppose we wanted to reduce the rate of unplanned hospital re-admission (24H), what model would you build to do this, how would the model be acted on, and how would evaluate if it worked after deployment?
+
+
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
@@ -182,28 +261,32 @@ Several aspects of the health care involve prediction, including diagnosis, trea
   - *Algorithm Success:* Proposed a good therapy in 69% of cases.
   - *Comparison:* Comparable or better than the best infectious disease experts at the time.
 
+<!-- Question: Was the MYCIN system ever used in clinical practice?-->
+
 ---
 
 ##### **1980s**
 
-- **INTERNIST-1** developed at University of Pennsylvania. $^{4}$
+- **INTERNIST-1** developed at University of Pennsylvania.$^{4}$
 - **Goal:** Automated diagnosis for general internal medicine.
 - Utilized a probabilistic model to diagnose a patient's health based on thousands of symptom variables.
 
 ![INT][INT]
----
+
+<!-- Question: Was the INTERNIST system ever used in clinical practice? -->
+
 
 ---
 
 ##### **1990s**
 
-- **Neural networks** gained popularity in clinical medicine. $^{5}$
+- **Neural networks** gained popularity in clinical medicine **research**.$^{5}$
   - These networks were simpler than contemporary deep neural networks.
   - Utilized only a few features to make predictions.
   - Predictions were based on data collected through chart review.
 
 - **Paving the Way for Modern Healthcare**
-  - Despite their simplicity, these early applications paved the way for the ongoing integration of AI in modern healthcare.
+  - Despite their simplicity, and lack of adoption, these early applications paved the way for the hope that AI would one day be integrated into modern healthcare.
 
 ---
 <!--_color: white -->
@@ -227,7 +310,7 @@ Several aspects of the health care involve prediction, including diagnosis, trea
 
 - The abundance of data presents a significant opportunity for ML applications in healthcare.
 - Enables more comprehensive and data-driven approaches in diagnosis, treatment, and research.
-- Some examples of high-performance AI in medicine (Aidoc, iCAD, IDx etc.) $^{7}$
+- Some examples of high-performance AI in medicine (Aidoc, iCAD, IDx etc.)$^{7}$
 
 ---
 
@@ -316,6 +399,13 @@ Several aspects of the health care involve prediction, including diagnosis, trea
 - Innovations in privacy-preserving technologies to navigate regulatory challenges, fostering data de-identification and secure data sharing.
 
 ---
+
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #2`
+#### What are other challenges you think might limit the adoption of AI/ML tools in healthcare? What would it take to solve them?
+
+---
   
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
@@ -348,6 +438,7 @@ Several aspects of the health care involve prediction, including diagnosis, trea
 - etc.
   
 > Examples adapted from Topol, E. J. (2019) $^{11}$
+
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
@@ -374,6 +465,17 @@ Several aspects of the health care involve prediction, including diagnosis, trea
   - Lack of external validation for proprietary models and a call for transparency and validation before widespread clinical use.
 
 ---
+
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #3`
+#### How would AI be used for "*Embryo selection for IVF*" and what problems (ethical, practical, etc) would this present?
+
+
+---
+
+
+
 
 ##### **References**
 

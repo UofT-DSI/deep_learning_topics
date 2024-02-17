@@ -34,7 +34,7 @@ markdown_files=$(ls $folder_md | grep ".md$")
 for markdown_file in $markdown_files; do
     echo "markdown file: "$markdown_file
     file_out="${markdown_file%.md}.pdf"
-    marp $folder_md/$markdown_file --output $folder_pdf/$file_out --html --allow-local-files --pdf
+    marp $folder_md/$markdown_file --output $folder_pdf/$file_out --html --allow-local-files --pdf --pdf-notes
 done
 
 
