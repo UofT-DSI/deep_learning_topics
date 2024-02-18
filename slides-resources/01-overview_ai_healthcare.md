@@ -215,14 +215,22 @@ Several aspects of the health care involve prediction, including diagnosis, trea
 <!-- Question: Besides preventing death or injury, why would predicting patient detioriation be helpful? -->
 
 ---
-
 ##### **Current healthcare costs$^{1,2}$**
 
-- Healthcare costs globally are on the rise and clinical experts are both limited and expensive.
-- Widespread adoption of AI within the next five years, has the potential to yield substantial savings in healthcare spending estimated annual savings of ~ **$200 to $360 billion**.
+- Healthcare costs globally are on the rise & clinical expertice is $$$.
+- In the United States adoption of AI could save their healthcare system ~**$200 to $360 billion** (cost 2023: $4.7 trillion, 18% GDP).
+  - Administration, medical knowledge, clinical operations, diagnostics
+  - Three "big players": hospitals, payers, physicians/nurses
 
 ![HC][Health care]
+
 ---
+
+<figure>
+  <img src="images/mckinsey_study.png" width="800" style="display: block; margin-left: auto; margin-right: auto;">
+  <figcaption style="text-align: center; font-size: 20px; ">Source: The Potential Impact of Artificial Intelligence on Healthcare Spending.</figcaption>
+</figure>
+
 
 ---
 
@@ -240,7 +248,7 @@ Several aspects of the health care involve prediction, including diagnosis, trea
 <!--_color: white -->
 <!--_backgroundColor: green -->
 ## `Breakout #1`
-#### Suppose we wanted to reduce the rate of unplanned hospital re-admission (24H), what model would you build to do this, how would the model be acted on, and how would evaluate if it worked after deployment?
+#### Why would implementing AI/ML in healthcare be harder than in other fields?
 
 
 ---

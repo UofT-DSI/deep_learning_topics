@@ -127,6 +127,14 @@ TA: Jenny Du
 - Incorporating their feedback and providing necessary training and support enhances AI/ML effectiveness in practice.
 
 ---
+
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #1`
+#### Suppose we wanted to reduce the rate of unplanned hospital re-admission (24H), what model would you build to do this, how would the model be acted on, and how would evaluate if it worked after deployment?
+
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Developing a useful solution`
