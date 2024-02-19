@@ -54,16 +54,16 @@ style: |
   }
 </style>
 
-# **Implementing AI in Healthcare #1**
+# **Lecture #2: Implementing AI in Healthcare (part 1)**
 ```console
 Data Sciences Institute
 Topics in Deep Learning
+Instructor: Erik Drysdale
+TA: Jenny Du
 ```
 
 ---
-
-##### **Outline**
-
+##### **Lecture Outline**
 
   - Choosing the right problem
   - Developing a useful solution
@@ -72,35 +72,42 @@ Topics in Deep Learning
   - Deploying the AI/ML 
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Choosing the right problem`
 
 ---
-
 ![Roadmap_1][roadmap_1]
+
+
 ---
----
-#### **Unclear problem definitions**
-- The human body is thought of as a **"black box"** -  the root causes and mechanisms of illnesses are often not known.
-  
-- In situations where there is no clear consensus among professionals on diagnosis, how do we determine what constitutes an explainable algorithm for clinical use, especially when the underlying pathophysiology of the condition is not fully understood?
-- Progress in AI/ML for healthcare has been hindered by unclear problem definitions.
+#### **Unclear problem formulations**
+- The human body can be thought of as a "*black box*" -  the root causes and mechanisms of illnesses are often not known.
+- How does a prediction from a ML model actually help us solve a healthcare problem?
+- How do we predict a "label" when there is no clear consensus among professionals on diagnosis or when there is significant inter- and intra-operator variability?
+- **What problem are we trying to solve, and how does AI/ML help us solve it?**
+
 ---
 #### **Understanding the problem**
--  Understanding the specific problem being addressed is crucial.
-  
+-  Understanding the specific problem being addressed is crucial.  
 - Researchers often focus on readily available datasets without questioning the clinical relevance of the problems they address.
 - A high-performing model doesn't guarantee clinical utility if the model simply confirms existing knowledge without new insights.
+
 ---
 #### **Contextualization**
-- AI/ML tools in healthcare must align with existing workflows and practices.
-  
-- Understanding current detection methods for diseases is crucial.
-- For example, 
-  - If an institution effectively detects a specific disease, AI could help in streamlining the process.
-  - If there are systematic diagnostic gaps, AI could focus on addressing these challenges.
+- AI/ML tools in healthcare must align with existing ways of working.
+  - Understanding the current workflow is therefore crucial.
+- For example, before developing an AI-based sepsis model you need to know:
+  - How is Sepsis defined in the hospital? Does this vary between institutions
+  - How is Sepsis currently detected? Which staff often spot it first? What point along the patient journey does this happen?
+  - What actions are currently taken after a diagnosis?
+
+<!-- Question: Why is it important to know when patients are often diagnosed with Sepsis for developing a ML system? (recall: Sepsis is an overreaction of the immune system to an infection which causes massive inflammation, and possibly organ failure and death)  -->
+
+---
+#### **Remember the contextualization Mad Lib**
+
+![madlib](images/madlib.png)
 
 ---
 #### **Stakeholder engagement for  problem definition**
@@ -109,21 +116,34 @@ Topics in Deep Learning
   
 - Prioritizing clinically relevant and stakeholder-supported problems helps helps ensure diverse perspective and leads to impactful AI/ML solutions.
 - **Rigorous problem definition** aligns solutions with stakeholder needs.
+
+<!-- Question: Who do you think the stakeholders would be for an AI-based sepsis model? -->
+
 ---
 #### **Stakeholder engagement: frontline health professionals**
 - Recognizing the expertise of frontline healthcare professionals is crucial.
-  
 - AI/ML tools should **augment clinical judgment, not replace it.**
 - Involving clinicians in the development process is essential.
 - Incorporating their feedback and providing necessary training and support enhances AI/ML effectiveness in practice.
+
+---
+
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #1`
+#### Suppose we wanted to reduce the rate of unplanned hospital re-admission (24H), what model would you build to do this, how would the model be acted on, and how would evaluate if it worked after deployment?
+
+
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Developing a useful solution`
+
+---
+![Roadmap_2][roadmap_2]
+
 ---
 
-![Roadmap_2][roadmap_2]
----
 ---
 #### **Solution design**
 - AI/ML models and tools are developed based on the insights gained during the exploration phase. 
@@ -138,36 +158,38 @@ Topics in Deep Learning
   - Subtle biases in data can reduce model reliability and must be addressed during development.
   - Identifying and correcting biases upfront is crucial for model correctness.
 
+
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Considering ethical implications`
+
+---
+![Roadmap_3][roadmap_3]
+
 ---
 
-![Roadmap_3][roadmap_3]
----
 ---
 #### **Health equity and disparities**
 - Health care data used for ML algorithms may be influenced by social inequalities (e.g., race, sex and other factors)
-
 - Ethical questions may arise regarding the use of certain predictors, e.g., smoking status or HIV status
 - Collaboration between ethicists, social scientists, regulatory scholars, AI/ML experts, and stakeholders is essential to address bias and ethical concerns.
 
 ---
 #### **Ethical considerations**
 - Ethical considerations must be prioritized to ensure the privacy, safety, and fair treatment of patients and affected parties when deploying AI/ML tools in clinical practice.
-
 - AI/ML algorithms focused on fairness can help mitigate biases and promote equitable healthcare delivery.
----
 
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Rigorous evaluation and reporting`
 
 ---
-
 ![Roadmap_4-5][roadmap_4-5]
+
 ---
+
 ---
 #### **Proper model evaluation**
 - Focus on **clinically relevant evaluation metrics** over commonly used ones.
@@ -175,30 +197,24 @@ Topics in Deep Learning
 - Report results and share code and documentation for transparency.
 
 --- 
-
 #### **Recall the Sepsis Model**
-
 - **Epic Sepsis Model Issues → Lack of reproducibility:**
   - Peer-reviewed data questioned the effectiveness of Epic's sepsis prediction algorithm.
   - University of Michigan Medical School study with over 27,000 patients found its performance "substantially worse" than reported.
-
 - **Study Concerns:**
   - Lack of *external validation* for proprietary models and a call for transparency and validation before widespread clinical use.
 
 ---
-
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Deploying the AI/ML`
 
 ---
-
 ![Roadmap_6-7][roadmap_6-7]
----
+
 ---
 
-
+---
 #### **Implementation and evaluation**
 - ML models should undergo rigorous evaluation in real-world clinical settings to assess their performance, impact, and potential biases. 
 
@@ -217,7 +233,6 @@ Topics in Deep Learning
 - **Thorough data evaluation** is necessary to address biases and ensure alignment with existing workflows.
 - **Continuous monitoring and feedback** in real-world settings are essential for successful AI/ML deployment.
   
-
 ---
 Figure adapted from:
 > Wiens, J., Saria, S., Sendak, M., Ghassemi, M., Liu, V. X., Doshi-Velez, F., Jung, K., Heller, K., Kale, D., Saeed, M., Ossorio, P. N., Thadaney-Israni, S., & Goldenberg, A. (2022). Do No Harm: A Roadmap for Responsible Machine Learning in Healthcare. Nature Medicine

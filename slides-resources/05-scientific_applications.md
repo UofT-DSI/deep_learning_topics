@@ -10,6 +10,7 @@ style: |
       margin: 0 auto;
     }
 
+math: mathjax
 ---
 <style>
     p {
