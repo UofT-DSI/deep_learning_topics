@@ -11,8 +11,11 @@
 8.  [Folder Structure](https://github.com/UofT-DSI/deep_learning_topics/#folder-structure)
 9.  [Acknowledgements](https://github.com/UofT-DSI/deep_learning_topics/#acknowledgements)
 
+## Background
+In Machine Learning Software Foundations Certificate, participants will learn how to apply machine learning techniques to software applications using the Python language. Successful participants will apply each step of the machine learning workflow in relevant industry applications, as well as be exposed to cutting-edge techniques and the underlying theory.  Technical topics include: Machine Learning in Practice, Data Preparation and Feature Engineering, Supervised and Unsupervised Learning, Model Evaluation, and Ensemble Learning.  Participants will also work on other skills, such as networking and building a community of influence, mastering the interview process, including behavioral and technical interviews.
+
 ## Description
-In this course, participants will learn how to apply machine learning techniques to software applications using the Python language to . Successful participants will apply each step of the machine learning workflow in relevant industry applications, as well as be exposed to cutting-edge techniques and the underlying theory.  Technical topics include: Machine Learning in Practice, Data Preparation and Feature Engineering, Supervised and Unsupervised Learning, Model Evaluation, and Ensemble Learning.  Participants will also work on other skills, such as networking and building a community of influence, mastering the interview process, including behavioral and technical interviews.
+In this course, Topics in Deep Learning: Healthcare, participants will familiarize themselves with the key concepts and challenges of applying AI/ML technologies in the healthcare (HC) space. Particular emphasis will be placed on understanding why it is challenging to **translate** *in-silico* tools to clinical and biomedical practice. By the end of this course, participants will understand the organizational and institutional requirements for successful AI/ML adoption in HC, the current "cutting edge" applications, and specific technical and statistical tools that are needed in the HC practice area.
 
 ## Learning outcomes
 By the end of the course, students will be able to:

@@ -61,6 +61,24 @@ Instructor: Erik Drysdale
 TA: Jenny Du
 ```
 
+---
+
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Course outline`
+
+---
+
+- The practice of healthcare, medicine, and life sciences (**today**)
+- Implementing AI in healthcare #1 (week 1)
+- Implementing AI in healthcare #2 (week 1)
+- Survival modeling (week 2)
+- Protein folding, drug discovery, and medical imaging, and ‘Omics (week 2)
+- Commercial applications (week 2)
+- "White box" model explainability (week 2)
+- "Black box" model explainability (week 3)
+- Prediction intervals and quantifying uncertainty (week 3)
+- Business thinking and organization structure (week 3)
 
 ---
 
@@ -91,24 +109,6 @@ Topics in Deep Learning
 
 - Examples of failed applications in healthcare
 
----
-
-<!--_color: white -->
-<!--_backgroundColor: #f4a534 -->
-## `Course outline`
-
----
-
-- The practice of healthcare, medicine, and life sciences (**today**)
-- Implementing AI in healthcare #1 (week 1)
-- Implementing AI in healthcare #2 (week 1)
-- Survival modeling (week 2)
-- Protein folding, drug discovery, and medical imaging, and ‘Omics (week 2)
-- Commercial applications (week 2)
-- "White box" model explainability (week 2)
-- "Black box" model explainability (week 3)
-- Prediction intervals and quantifying uncertainty (week 3)
-- Business thinking and organization structure (week 3)
 
 ---
 
@@ -128,6 +128,18 @@ Topics in Deep Learning
 <figure>
   <img src="images/institutions.png" width="100%" style="display: block; margin-left: auto; margin-right: auto;">
   <figcaption style="text-align: center; font-size: 20px;">Institutions where I've worked</figcaption>
+</figure>
+
+---
+
+- TA: Jenny Du
+  - Master of Science in Applied Computing Program at UofT (current)
+  - BA in CS and Bioinformatics
+  - Research focus: Applications of ML & DS to health and biology
+
+<figure>
+  <img src="images/jenny.png" style="width: 250px; display: block; margin-left: auto; margin-right: auto;">
+  <figcaption style="text-align: center; font-size: 20px;">Jenny with trusty coffee</figcaption>
 </figure>
 
 ---
@@ -267,7 +279,7 @@ Several aspects of the health care involve prediction, including diagnosis, trea
   - *Algorithm Success:* Proposed a good therapy in 69% of cases.
   - *Comparison:* Comparable or better than the best infectious disease experts at the time.
 
-<!-- Question: Was the MYCIN system ever used in clinical practice?-->
+<!-- Question: Was the MYCIN system ever used in clinical practice? (p.s. check out the videos of Dr Shortliffe demo'ing this system)-->
 
 ---
 
@@ -332,7 +344,11 @@ Several aspects of the health care involve prediction, including diagnosis, trea
 
 - **Lagging Behind Other Industries:**
   - AI adoption in healthcare lags behind its adoption in other industries (e.g., finance, information, technical services).$^{8}$
-  - Various factors contribute to the slower pace, including regulatory challenges, data privacy concerns, and the complexity of healthcare systems.
+  - Various factors contribute to the slower pace, including:
+    - Regulatory barriers
+    - Challenges in data collection
+    - Algorithmic limitations
+    - Misalignment of incentives
 
 ---
 

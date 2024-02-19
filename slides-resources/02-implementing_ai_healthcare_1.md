@@ -77,8 +77,14 @@ TA: Jenny Du
 ## `Choosing the right problem`
 
 ---
-![Roadmap_1][roadmap_1]
+#### **Beware, beware ....**
+- "**The reality is that most failures of AI projects are failures in strategy and in execution.**"
+  - *Source: [Why AI investments fail to deliver](https://www.infoworld.com/article/3639028/why-ai-investments-fail-to-deliver.html)*
+- "**Validation of the performance of an algorithm in terms of its accuracy is not equivalent to demonstrating clinical efficacy. This is ... the ‘AI chasm’—that is, an algorithm with an AUC of 0.99 is not worth very much if it is not proven to improve clinical outcomes.**"
+  - *Source: [High Performance Medicine](https://www.nature.com/articles/s41591-018-0300-7)*
 
+---
+![Roadmap_1][roadmap_1]
 
 ---
 #### **Unclear problem formulations**
