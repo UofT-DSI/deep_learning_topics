@@ -29,8 +29,7 @@ By the end of the course, students will be able to:
 ### Course Contacts
 * Instructor: **Erik Drysdale** (MSc, MA, BA). Emails to the instructor can be sent to erikinwest@gmail.com
 * TA: Jenny Du (BSc). Emails to the teaching assistant can be sent to junni.du@mail.utoronto.ca
-* Email etiquette:
-* * Other comments:
+* Email etiquette: Remember to put [DSI] in email subject line
 
 ### Delivery instructions
 The course runs synchronously over Zoom. The course consists of ten classes over three weeks. Classes are 6:00 PM - 8:30 PM EDT on weekdays. Being mindful of online fatigue, there will be one or two breaks during each class where students are encouraged to stretch, grab a drink and snacks, or ask any additional questions. 

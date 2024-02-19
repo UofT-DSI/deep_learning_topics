@@ -6,7 +6,7 @@ Answers should be about 1 paragraph long. Please don't use ChatGPT or any other 
 
 ### Q1
 
-Research and discuss a recent example of a case study that highlights challenges in healthcare AI. Make sure to use at lease 3 primary and/or secondary resources.
+Research and discuss a recent example of a case study that highlights challenges in healthcare AI. Make sure to use at least 3 primary and/or secondary resources.
 
 ### Q2
 
@@ -14,7 +14,7 @@ In following the Hippocratic Oath's dictum of *First do no harm*, how would this
 
 ### Q3
 
-Air Canada was [recently found](https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html) financially liable for its chatbot. Do you think that will legal decision will impact a hospital's ability to roll out a patient-facing chatbot? Explain why or why not, and the sorts of models that are now more or less likley to be developed.
+Air Canada was [recently found](https://www.canlii.org/en/bc/bccrt/doc/2024/2024bccrt149/2024bccrt149.html) financially liable for its chatbot. Do you think that this legal decision will impact a hospital's ability to roll out a patient-facing chatbot? Explain why or why not, and the sorts of models that are now more or less likely to be developed.
 
 ### Q4
 
@@ -26,7 +26,7 @@ Would you expect ML systems which predict relatively rare conditions, or try to 
 
 ### Q6
 
-Why do you some experts in ML healthcare prefer to use the word "integrated" rather than "deployed" for a new ML model in a healthcare setting? Similarly, why "augmented intelligence" rather than "artificial intelligence"?
+Why do some experts in ML healthcare prefer to use the word "integrated" rather than "deployed" for a new ML model in a healthcare setting? Similarly, why "augmented intelligence" rather than "artificial intelligence"?
 
 <br>
 
