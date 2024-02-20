@@ -11,18 +11,15 @@
 8.  [Folder Structure](https://github.com/UofT-DSI/deep_learning_topics/#folder-structure)
 9.  [Acknowledgements](https://github.com/UofT-DSI/deep_learning_topics/#acknowledgements)
 
-## Background
-In Machine Learning Software Foundations Certificate, participants will learn how to apply machine learning techniques to software applications using the Python language. Successful participants will apply each step of the machine learning workflow in relevant industry applications, as well as be exposed to cutting-edge techniques and the underlying theory.  Technical topics include: Machine Learning in Practice, Data Preparation and Feature Engineering, Supervised and Unsupervised Learning, Model Evaluation, and Ensemble Learning.  Participants will also work on other skills, such as networking and building a community of influence, mastering the interview process, including behavioral and technical interviews.
-
 ## Description
 In this course, Topics in Deep Learning: Healthcare, participants will familiarize themselves with the key concepts and challenges of applying AI/ML technologies in the healthcare (HC) space. Particular emphasis will be placed on understanding why it is challenging to **translate** *in-silico* tools to clinical and biomedical practice. By the end of this course, participants will understand the organizational and institutional requirements for successful AI/ML adoption in HC, the current "cutting edge" applications, and specific technical and statistical tools that are needed in the HC practice area.
 
 ## Learning outcomes
 By the end of the course, students will be able to:
 
-1. Learning outcome 1: Propose and present a business pitch for a machine learning project in a real-world business setting through a business case study with an industry partner or at their current organization.
-2. Learning outcome 2: Design, formulate, and construct a full comprehensive lifecycle project in machine learning via a course project by managing a timeline.
-3. Learning outcome 3: Apply, deploy, and implement each step of the machine learning lifecycle in Python programming language, and debug errors and iterate on improvements.
+1. Learning outcome 1: Be able to articulate and problem solve the key challenges of ML/AI adoption in healthcare
+2. Learning outcome 2: Understand and identify areas of value creation in the healthcare domain using ML/AI in a commercial and business context
+3. Learning outcome 3: Use Python-based tools for healthcare focused ML/AI problems like survival analysis, uncertainty quantification, and model explainability
 
 ## Logistics
 
@@ -89,7 +86,7 @@ Learners should be active participants and are encouraged to ask questions throu
 ### Assignments
 
 * **Class attendance**: To ensure everyone actively participates in class activities, attendance is mandatory and will be monitored. If you are unable to attend class, it is your responsibility to make up the work that was covered.
-* [Assignment 1](https://github.com/UofT-DSI/deep_learning_topics/blob/main.assignments/assignment_1.md#/)
+* [Assignment 1](assignments/assignment_1.md)
 
 
 | Format | Details | Submission Instructions |
