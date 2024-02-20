@@ -218,7 +218,7 @@ Several aspects of the health care involve prediction, including diagnosis, trea
 
 ##### **Some specific domain applications$^{1}$**
 
-3. **Quality & Saftey** → ensure the highest quality of care and patient safety.
+3. **Quality & Safety** → ensure the highest quality of care and patient safety.
     - *Examples:* Prediction of adverse events, deterioration of patients condition and readmissions
 
 4. **Corporate Functions** → improving efficiency and steamlining administrative processes within healthcare.
