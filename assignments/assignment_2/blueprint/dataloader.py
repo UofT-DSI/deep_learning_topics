@@ -11,6 +11,5 @@ class CustomDataset(Sequence):
     def __getitem__(self, idx): 
         # this function returns an item from the dataset given its index
         # implement any additional preprocessing steps in this function
-        # such as downsampling
         raise NotImplementedError
         return X, y
