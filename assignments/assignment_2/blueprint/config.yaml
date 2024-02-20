@@ -1,5 +1,5 @@
 dataloader:
-  fname: 'C:\Users\Santiago Arciniegas\Desktop\DSI\deep_learning_topics\assignments\assignment_2\data\preproc_data.npz'
+  fname: '/path/to/preproc_data.npz'
 
 train:
   batch_size: 3528
