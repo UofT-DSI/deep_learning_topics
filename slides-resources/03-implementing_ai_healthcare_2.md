@@ -38,10 +38,11 @@ TA: Jenny Du
 ---
 ##### **Lecture Outline**
 
-  - Bias
+  - Bias (ethical)
+  - Bias (statistical)
   - Adressing risk
-  - Generalization
-  - Case studies
+  - Generalization challenges
+  - MLOps
 
 ---
 
@@ -50,15 +51,27 @@ TA: Jenny Du
 - This presentation will delve into key pitfalls: bias, risk, and generalization, associated with AI in healthcare.
   
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Bias`
+## `Bias (ethical)`
 
 ---
 
 - Bias in AI refers to the systematic and unfair discrimination or favoritism in the outcomes produced by artificial intelligence systems, algorithms, or models.
 - In healthcare it may lead to unequal access to healthcare, inaccurate diagnoses, or disparities in treatment recommendations based on various factors.
+
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Bias (statistical)`
+
+---
+
+##### **Test set structure**
+
+- It's very important to create a test set that (most) closely resembles prospective deployment
+
+<img src="images/bias_data_split.png" style="width: 500px">
 
 ---
 
@@ -99,6 +112,9 @@ Labeling bias can impact the accuracy of the ground truth labels used for traini
 - Reinforcement bias emerges from the interactions between AI systems and users.
 It results from AI systems learning from user feedback and behavior.
 If users exhibit biased behavior, the AI may reinforce these biases in its responses.
+
+[Source](http://proceedings.mlr.press/v126/adam20a/adam20a.pdf)
+![](images/animated_bias.gif)
 
 ---
 
@@ -215,11 +231,22 @@ If users exhibit biased behavior, the AI may reinforce these biases in its respo
 ## `Generalization`
 
 ---
-
 - Generalization in AI refers to the ability of an AI system or model to perform well on new, unseen data after having been trained on a specific set of data.
 
----
 
+---
+##### **Confounding**
+
+Source: NPAO 2021 - Nursing and Artificial Intelligence 
+
+---
+##### **Model drift**
+- After a model goes live the performance of the model will often suffer
+
+![](images/bias_drift.png)
+
+
+---
 ##### **Overfitting vs. Underfitting**
 - Good generalization requires balance between overfitting and underfitting.
 - Overfitting: Model learns the training data too well & performs poorly on new data. 
@@ -251,7 +278,6 @@ If users exhibit biased behavior, the AI may reinforce these biases in its respo
 - Generalization ensures AI models are better equipped to remain relevant and accurate as medical knowledge and practices evolve.
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Addressing Generalization`
@@ -279,53 +305,30 @@ If users exhibit biased behavior, the AI may reinforce these biases in its respo
 - Need to find the right level of complexity.
 
 ---
-
 ##### **Transfer Learning**
 - Involves taking a model that has been trained on one task and adapting it to a different but related task. 
 - Can help in situations where there is not enough data for training a model from scratch, leveraging the generalization capabilities learned from the original task.
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Case Studies`
+## `MLOps`
 
 ---
+##### **Common deployment considerations**
 
-##### **Google's Diabetic Retinopathy**
-- Deployment of a deep learning system for diabetic retinopathy screening in Thai clinics.
-- Key findings reveal the challenges of integrating AI into clinical workflows, such as issues with system gradability, internet connectivity, and the necessity of obtaining patient consent.
+- How often to re-train, and with what data? Consider this an empirical question.
 
-<figure>
-  <img src="images/GoogleDiabeticRetinopathy.png" width="550" alt="Google Diabetic Retinopathy" style="display: block; margin-left: auto; margin-right: auto;">
-  <figcaption style="text-align: center;">Nurse operates the takes images of patient’s retina (https://doi.org/10.1145/3313831.3376718).</figcaption>
-</figure>
+<div class="row" style="text-align: center;">
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/mlops_retrain_freq.png" style="width: 220px">
+  <br>
+  <span>Frequency</span>
+ </div>
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/mlops_training_window.png" style="width: 200px">
+  <br>
+  <span>Training window</span>
+ </div>
 
----
 
-##### **Electronic Health Record (EHR) Data**
-- Challenges and barriers to achieving economies of scale in analyzing EHR data.
-- Challenges in scaling EHR data analytics due to non-standardized systems.
-- Importance of policy reforms and technology adoption for improved healthcare analysis and outcomes.
-
----
-##### **Alert Fatigue**
-- Healthcare professionals receive an overwhelming number of alerts, which often leads to crucial warnings being ignored.
-- Current approach to alerts does not consider human factors or user-centered design.
-- Solutions could include leveraging big data and enhancing device communication to minimize unnecessary alerts, focusing on a more advanced system for better patient safety.
-
----
-
-##### **UPenn's Sepsis Model**
-
-- Developed and evaluated a machine learning algorithm aimed at predicting severe sepsis and septic shock within a tertiary teaching hospital system.
-- Algorithm, based on a random-forest classifier and electronic health record data, showed a sensitivity of 26% and specificity of 98%.
-
----
-
-- Implementation led to a modest increase in lactate testing and IV fluid administration but no significant change in mortality or ICU transfer rates, though it did reduce the time-to-ICU transfer.
-
-<figure>
-  <img src="images/UPennSepsisModel.png" width="550" alt="UPenn Sepsis Model" style="display: block; margin-left: auto; margin-right: auto;">
-  <figcaption style="text-align: center;">Clinician perceived impact on patient care (https://doi.org/10.1097/ccm.0000000000003803).</figcaption>
-</figure>

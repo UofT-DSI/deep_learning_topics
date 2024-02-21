@@ -65,16 +65,33 @@ TA: Jenny Du
 ---
 ##### **Lecture Outline**
 
+  - The key difficulty (recap)
+  - The roadmap
   - Choosing the right problem
   - Developing a useful solution
   - Considering ethical implications
-  - Rigorous evaluation and reporting
+  - Rigorous evaluation (silent trial)
   - Deploying the AI/ML 
 
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Choosing the right problem`
+## `Recap: technology adoption in HC is hard`
+
+---
+
+#### **We've got publications figured out**
+
+![pubs](images/publication_vs_adoption.png)
+
+[Source](https://www.youtube.com/watch?v=3jDeZ8SNODg): MLHC 2021 (Anna Goldenberg)
+
+---
+
+#### **Talk is cheap**
+
+<img src="images/cbc_story.png" style="width: 500px">
+<img src="images/adoption_share.png">
 
 ---
 #### **Beware, beware ....**
@@ -84,20 +101,66 @@ TA: Jenny Du
   - *Source: [High Performance Medicine](https://www.nature.com/articles/s41591-018-0300-7)*
 
 ---
+#### **Where many fear to tread**
+
+![failures](images/failure_cases.png)
+
+---
+#### **A lot of upside**
+
+![upside](images/gains_from_trade.png)
+
+---
+#### **History's bumpy road of technological adoption**
+
+<div class="row" style="text-align: center;">
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/Justinian1.jpg" style="width: 220px">
+  <br>
+  <span>Justinian I</span>
+ </div>
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/EmperorHongxi.jpg" style="width: 200px">
+  <br>
+  <span>Emperor Hongxi</span>
+ </div>
+ <div style="display: inline-block;">
+  <img src="images/sultan.jpg" style="width: 150px">
+  <br>
+  <span>Sultan Bayezid II</span>
+ </div>
+</div> 
+
+<!--Question: What do all of these gentleman have in common? -->
+
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Roadmap`
+
+---
+![roadmap](images/do_no_harm.png)
+
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Choosing the right problem`
+
+---
 ![Roadmap_1][roadmap_1]
 
 ---
 #### **Unclear problem formulations**
-- The human body can be thought of as a "*black box*" -  the root causes and mechanisms of illnesses are often not known.
 - How does a prediction from a ML model actually help us solve a healthcare problem?
-- How do we predict a "label" when there is no clear consensus among professionals on diagnosis or when there is significant inter- and intra-operator variability?
-- **What problem are we trying to solve, and how does AI/ML help us solve it?**
+- How do we predict a "label" when there is no clear consensus among professionals?
+- Who will help us navigate these problems?
+
 
 ---
-#### **Understanding the problem**
--  Understanding the specific problem being addressed is crucial.  
-- Researchers often focus on readily available datasets without questioning the clinical relevance of the problems they address.
-- A high-performing model doesn't guarantee clinical utility if the model simply confirms existing knowledge without new insights.
+#### **Putting together the crew**
+
+<img src="images/team_structure.jpg" style="width: 600px">
+Source: Verma et. al (2021)
 
 ---
 #### **Contextualization**
@@ -149,12 +212,26 @@ TA: Jenny Du
 ![Roadmap_2][roadmap_2]
 
 ---
-
----
 #### **Solution design**
 - AI/ML models and tools are developed based on the insights gained during the exploration phase. 
-  
 - Emphasis is placed on designing solutions that are effective, interpretable, and usable by end-users.
+
+![](images/verma_framework.png)
+Source: Verma et. al (2021)
+
+---
+#### **Ground truth**
+- We take "labels" for granted in ML, we should't
+
+<img src="images/label_sepsis.png" style="width: 400px">
+[Source](https://dihi.org/wp-content/uploads/2020/02/Sepsis-Watch-One-Pager.pdf): SepsisWatch
+
+
+---
+#### **Data quality control**
+
+...
+
 
 ---
 #### **Data evaluation**
@@ -172,8 +249,6 @@ TA: Jenny Du
 
 ---
 ![Roadmap_3][roadmap_3]
-
----
 
 ---
 #### **Health equity and disparities**
@@ -194,7 +269,6 @@ TA: Jenny Du
 ---
 ![Roadmap_4-5][roadmap_4-5]
 
----
 
 ---
 #### **Proper model evaluation**
@@ -213,16 +287,71 @@ TA: Jenny Du
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Deploying the AI/ML`
+## `Prospective evaluation`
 
 ---
 ![Roadmap_6-7][roadmap_6-7]
 
 ---
+#### **Silent trial**
+
+- ML models should have a real-time prospective evaluation to assess performance, failure points, ans biases  
+
+[Source](https://proceedings.mlr.press/v174/tonekaboni22a/tonekaboni22a.pdf) ![](images/silent_trial_gantt.png)
+
+---
+#### **Silent trial**
+
+- A prospective trial let's us make one of two (statistical) claims rigorously:
+  - This algorithm has at least [X] [accuracy measure]
+  - This algorithm has at most [Y] [loss measure]
+- How do we do this?
+  - "Calibrate" model to have E[X] > X_hypothesis
+  - ... or E[Y] < Y_hypothesis
+
+--- 
+#### **Silent trial**
+
+- In the case of a binary classifier, you need to pick an operating threshold to target a performance measure (e.g. sensitivity)
+- But the operating performance=f(threshold) is  a random variable
+
+<img src="images/roc_rv.png" style="width: 500px">
+
+---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #X`
+#### Suppose we wanted to run a silent trial to demonstrate a model has 80% sensitivity, how would we "calibrate" the model so that the trial would likely be successful?
+
+---
+#### **Silent trial (calibration)**
+
+- You can increase the likelihood of success by picking a "conservative" operating threshold
+  - Bootstrap or order statistic theory (see [Tong et. al (2018)](https://www.science.org/doi/10.1126/sciadv.aao1659))
+
+
+<div class="row" style="text-align: center;">
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/bootstrap_dist.png" style="width: 220px">
+  <br>
+  <span>Empirical bootstrap</span>
+ </div>
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/umbrella_lb.png" style="width: 200px">
+  <br>
+  <span>Rank order approach</span>
+ </div>
+
+--- 
+#### **Statistical calibration (putting it together)**
+
+![](images/silent_trial_pipeline.png)
+
+
 
 ---
 #### **Implementation and evaluation**
-- ML models should undergo rigorous evaluation in real-world clinical settings to assess their performance, impact, and potential biases. 
+
 
 - **Continuous monitoring and feedback** mechanisms allow for iterative improvements to the tool over time. 
 - Ongoing evaluation helps identify and address any unintended consequences or disparities in healthcare deliver
@@ -238,7 +367,61 @@ TA: Jenny Du
 - **Engaging stakeholders** early and into all stages of development ensures identification of clinically relevant problems.
 - **Thorough data evaluation** is necessary to address biases and ensure alignment with existing workflows.
 - **Continuous monitoring and feedback** in real-world settings are essential for successful AI/ML deployment.
-  
+
+---
+
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Case Studies`
+
+---
+
+##### **Google's Diabetic Retinopathy**
+- Deployment of a deep learning system for diabetic retinopathy screening in Thai clinics.
+- Key findings reveal the challenges of integrating AI into clinical workflows, such as issues with system gradability, internet connectivity, and the necessity of obtaining patient consent.
+
+<figure>
+  <img src="images/GoogleDiabeticRetinopathy.png" width="550" alt="Google Diabetic Retinopathy" style="display: block; margin-left: auto; margin-right: auto;">
+  <figcaption style="text-align: center;">Nurse operates the takes images of patient’s retina (https://doi.org/10.1145/3313831.3376718).</figcaption>
+</figure>
+
+---
+
+##### **Electronic Health Record (EHR) Data**
+- Challenges and barriers to achieving economies of scale in analyzing EHR data.
+- Challenges in scaling EHR data analytics due to non-standardized systems.
+- Importance of policy reforms and technology adoption for improved healthcare analysis and outcomes.
+
+---
+##### **Alert Fatigue**
+- Healthcare professionals receive an overwhelming number of alerts, which often leads to crucial warnings being ignored.
+- Current approach to alerts does not consider human factors or user-centered design.
+- Solutions could include leveraging big data and enhancing device communication to minimize unnecessary alerts, focusing on a more advanced system for better patient safety.
+
+---
+
+##### **UPenn's Sepsis Model**
+
+- Developed and evaluated a machine learning algorithm aimed at predicting severe sepsis and septic shock within a tertiary teaching hospital system.
+- Algorithm, based on a random-forest classifier and electronic health record data, showed a sensitivity of 26% and specificity of 98%.
+
+---
+
+- Implementation led to a modest increase in lactate testing and IV fluid administration but no significant change in mortality or ICU transfer rates, though it did reduce the time-to-ICU transfer.
+
+<figure>
+  <img src="images/UPennSepsisModel.png" width="550" alt="UPenn Sepsis Model" style="display: block; margin-left: auto; margin-right: auto;">
+  <figcaption style="text-align: center;">Clinician perceived impact on patient care (https://doi.org/10.1097/ccm.0000000000003803).</figcaption>
+</figure>
+
+---
+
+##### **Think about how model fits within organization**
+![ml_ops1](images/AI_for_leaders.png)
+
+Source: Great Learning (AI Project Life Cycle and Setting up AI Team)
+
+
 ---
 Figure adapted from:
 > Wiens, J., Saria, S., Sendak, M., Ghassemi, M., Liu, V. X., Doshi-Velez, F., Jung, K., Heller, K., Kale, D., Saeed, M., Ossorio, P. N., Thadaney-Israni, S., & Goldenberg, A. (2022). Do No Harm: A Roadmap for Responsible Machine Learning in Healthcare. Nature Medicine

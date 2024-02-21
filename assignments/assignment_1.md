@@ -1,4 +1,4 @@
-# Assignment #1
+# Assignment #1 (due Wed Feb 28th)
 
 ## Short answer questions
 

@@ -8,6 +8,8 @@
 # Hard code the folder locations
 folder_md="slides-resources"
 folder_pdf="lessons"
+num_lectures=3
+counter=0
 
 # Make the lessons folder if it does not exist already
 if [ ! -d "$folder_pdf" ]; then
@@ -32,8 +34,15 @@ markdown_files=$(ls $folder_md | grep ".md$")
 
 # Loop over each file
 for markdown_file in $markdown_files; do
+    # Update the counter
+    ((counter++))
+    if [ $counter -gt $num_lectures ]; then
+        echo "Counter exceeds the limit of $num_lectures. Exiting loop."
+        break
+    fi
     echo "markdown file: "$markdown_file
     file_out="${markdown_file%.md}.pdf"
+    echo "counter="$counter
     marp $folder_md/$markdown_file --output $folder_pdf/$file_out --html --allow-local-files --pdf --pdf-notes
 done
 
