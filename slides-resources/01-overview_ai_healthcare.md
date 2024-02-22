@@ -145,7 +145,7 @@ Topics in Deep Learning
 ---
 
 - Yourselves!
-  - Name and backgorund
+  - Name and background
   - What are you doing currently (work/school)
   - In your last interaction with the healthcare system, do you think AI/ML was involved?
 - This course will be very interactive
