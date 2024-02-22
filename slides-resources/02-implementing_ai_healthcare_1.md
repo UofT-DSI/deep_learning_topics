@@ -151,16 +151,17 @@ TA: Jenny Du
 
 
 ---
-#### **What ML scientists want to do**
+#### **What we think ML scientists do**
 
 ![](images/imagined_time.png)
 
 
 ---
-#### **What ML scientists actually do**
+#### **What ML scientists actually need to do**
 
 ![](images/actual_time.png)
 
+<!-- Question: Why is it important to "immitate prospective deployment"? Could you think of an example of this not occuring properly? -->
 
 ---
 <!--_color: white -->
@@ -215,12 +216,15 @@ Source: Verma et. al (2021)
 - Current approach to alerts does not consider human factors or user-centered design.
 - Solutions include having a human vet which alerts (SepsisWatch), or calibrating a high precision classifier.
 
+<!-- Question: What are some other ways to minimize alert fatigue? -->
 
 ---
 #### **I would do [intervention]**
 
 <img src="images/intervention_structure.png" style="width: 800px">
 Source: Verma et. al (2021)
+
+<!-- Question: If an intervention is designed to prevent an event from occuring which you trained your model on (i.e. trying to prevent the label), what future problems might this cause? -->
 
 ---
 #### **Stakeholder engagement for  problem definition**
@@ -290,6 +294,8 @@ Source: Verma et. al (2021)
 ![](images/data_quality.png)
 [Source](https://proceedings.mlr.press/v182/sendak22a/sendak22a.pdf): Sendak et. al (2022)
 
+<!-- Question: Could outlier removal improve model performance? How would you empirically test this? -->
+
 
 ---
 <!--_color: white -->
@@ -321,6 +327,8 @@ Source: Verma et. al (2021)
 - Use qualitative approaches to uncover concerns missed by quantitative measures.
 - Report results and share code and documentation for transparency.
 
+<!-- Question: What's an example of a machine learning metric that might not be clinically useful? What's an example of a clinically useful metric? -->
+
 --- 
 #### **Recall the Sepsis Model**
 - **Epic Sepsis Model Issues → Lack of reproducibility:**
@@ -337,15 +345,19 @@ Source: Verma et. al (2021)
 ---
 ![Roadmap_6-7][roadmap_6-7]
 
----
-#### **Silent trial**
+<!-- Question: Has anyone heard of a silent trial? Why is prospective deployment necessary? -->
 
-- ML models should have a real-time prospective evaluation to assess performance, failure points, ans biases  
+---
+#### **Silent trial (overview)**
+
+- ML models **need** a real-time prospective evaluation to assess performance, failure points, and biases (w/ no human in-the-loop)
 
 [Source](https://proceedings.mlr.press/v174/tonekaboni22a/tonekaboni22a.pdf) ![](images/silent_trial_gantt.png)
 
+<!-- Question: Why don't we want a human in the loop for a silent trial? -->
+
 ---
-#### **Silent trial**
+#### **Silent trial (statistics)**
 
 - A prospective trial let's us make one of two (statistical) claims rigorously:
   - This algorithm has at least [X] [accuracy measure]
@@ -355,7 +367,7 @@ Source: Verma et. al (2021)
   - ... or E[Y] < Y_hypothesis
 
 --- 
-#### **Silent trial**
+#### **Silent trial (statistics)**
 
 - In the case of a binary classifier, you need to pick an operating threshold to target a performance measure (e.g. sensitivity)
 - But the operating performance=f(threshold) is  a random variable
@@ -366,7 +378,7 @@ Source: Verma et. al (2021)
 <!--_color: white -->
 <!--_backgroundColor: green -->
 ## `Breakout #2`
-#### Suppose we wanted to run a silent trial to demonstrate a model has 80% sensitivity, how would we "calibrate" the model so that the trial would likely be successful?
+#### Suppose we wanted to run a silent trial to demonstrate a model has at least 80% sensitivity, how would we "calibrate" the model so that the trial would likely be successful?
 
 ---
 #### **Silent trial (calibration)**
@@ -387,11 +399,14 @@ Source: Verma et. al (2021)
   <span>Rank order approach</span>
  </div>
 
+<!-- Quesiton: Does anyone know what a bootstrap or order statistic is? -->
+
 --- 
 #### **Statistical calibration (putting it together)**
 
 ![](images/silent_trial_pipeline.png)
 
+<!-- Question: What is meant by "power" -->
 
 ---
 <!--_color: white -->
@@ -415,6 +430,8 @@ Source: Verma et. al (2021)
   <span>Training window</span>
  </div>
 
+ <!-- Question: What are some other parameters that might need to be tuned like this empricially from an MLOps perspective? -->
+
 ---
 ##### **Common deployment considerations**
 
@@ -424,11 +441,11 @@ Source: Verma et. al (2021)
 <img src="images/DIHI_infra.png" style="width: 800px;">
 
 
----
+<!-- ---
 ##### **Think about how model fits within organization**
 ![ml_ops1](images/AI_for_leaders.png)
 
-Source: Great Learning (AI Project Life Cycle and Setting up AI Team)
+Source: Great Learning (AI Project Life Cycle and Setting up AI Team) -->
 
 ---
 #### **Implementation and evaluation**
@@ -442,7 +459,7 @@ Source: Great Learning (AI Project Life Cycle and Setting up AI Team)
 ## `Summary`
 
 ---
-#### **Considerations for successful translation of AI/ML  into clinical care** 
+#### **Considerations for successful translation of AI/ML  into healthcare** 
 - **Clear problem definition** is crucial for effective AI/ML deployment in healthcare.
 - **Engaging stakeholders** early and into all stages of development ensures identification of clinically relevant problems.
 - **Thorough data evaluation** is necessary to address biases and ensure alignment with existing workflows.
@@ -454,14 +471,23 @@ Source: Great Learning (AI Project Life Cycle and Setting up AI Team)
 ## `Case Studies`
 
 ---
+##### **Successes with colonoscopy**
+
+![](images/colonoscopy.jpg)
+
+[Source](https://www.sciencedirect.com/science/article/pii/S0016508522005194): Shauket et. al (2022)
+
+---
 ##### **Google's Diabetic Retinopathy**
-- Deployment of a deep learning system for diabetic retinopathy screening in Thai clinics.
+- Deployment of a deep learning system for diabetic retinopathy screening in Thai clinics ([source](https://dl.acm.org/doi/abs/10.1145/3313831.3376718)).
 - Key findings reveal the challenges of integrating AI into clinical workflows, such as issues with system gradability, internet connectivity, and the necessity of obtaining patient consent.
 
 <figure>
   <img src="images/GoogleDiabeticRetinopathy.png" style="display: block; margin-left: auto; margin-right: auto; width: 550px">
   <figcaption style="text-align: center;">Nurse operates the takes images of patient’s retina </figcaption>
 </figure>
+
+<!-- Notes: 20% of images rejected by model (too low quality), this automatically triggered a visit to a specialist in Bangkok, nurses started telling patients don't do this b/c you might have to Bangkok if it rejects your scan, they tried uploading two halves of the images, internet was very slow -->
 
 
 ---
@@ -477,6 +503,8 @@ Source: Great Learning (AI Project Life Cycle and Setting up AI Team)
   <img src="images/UPennSepsisModel.png" style="display: block; margin-left: auto; margin-right: auto; width: 550px">
   <figcaption style="text-align: center;">Clinician perceived impact on patient care (https://doi.org/10.1097/ccm.0000000000003803).</figcaption>
 </figure>
+
+<!-- Question: Why would a model that maintains expected statistical accuracy not be able to influence clinical care? -->
 
 ---
 ##### **UMichigan case management (similar story)**
