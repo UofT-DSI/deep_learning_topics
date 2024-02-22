@@ -71,7 +71,8 @@ TA: Jenny Du
   - Developing a useful solution
   - Considering ethical implications
   - Rigorous evaluation (silent trial)
-  - Deploying the AI/ML 
+  - Real-world examples
+  - Deploying AI/ML (MLOps)
 
 ---
 <!--_color: white -->
@@ -99,6 +100,13 @@ TA: Jenny Du
   - *Source: [Why AI investments fail to deliver](https://www.infoworld.com/article/3639028/why-ai-investments-fail-to-deliver.html)*
 - "**Validation of the performance of an algorithm in terms of its accuracy is not equivalent to demonstrating clinical efficacy. This is ... the ‘AI chasm’—that is, an algorithm with an AUC of 0.99 is not worth very much if it is not proven to improve clinical outcomes.**"
   - *Source: [High Performance Medicine](https://www.nature.com/articles/s41591-018-0300-7)*
+
+
+---
+##### **Electronic Health Record (EHR) Data**
+- Challenges and barriers to achieving economies of scale in analyzing EHR data.
+- Challenges in scaling EHR data analytics due to non-standardized systems.
+- Importance of policy reforms and technology adoption for improved healthcare analysis and outcomes.
 
 ---
 #### **Where many fear to tread**
@@ -141,6 +149,19 @@ TA: Jenny Du
 ---
 ![roadmap](images/do_no_harm.png)
 
+
+---
+#### **What ML scientists want to do**
+
+![](images/imagined_time.png)
+
+
+---
+#### **What ML scientists actually do**
+
+![](images/actual_time.png)
+
+
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
@@ -159,7 +180,7 @@ TA: Jenny Du
 ---
 #### **Putting together the crew**
 
-<img src="images/team_structure.jpg" style="width: 600px">
+<img src="images/team_structure.png" style="width: 600px">
 Source: Verma et. al (2021)
 
 ---
@@ -174,9 +195,32 @@ Source: Verma et. al (2021)
 <!-- Question: Why is it important to know when patients are often diagnosed with Sepsis for developing a ML system? (recall: Sepsis is an overreaction of the immune system to an infection which causes massive inflammation, and possibly organ failure and death)  -->
 
 ---
-#### **Remember the contextualization Mad Lib**
+#### **The contextualization Mad Lib**
 
-![madlib](images/madlib.png)
+- As a [<span style="color:red">decision maker</span>],
+- If I knew [<span style="color:red">information</span>],
+- I would do [<span style="color:red">intervention</span>],
+- To improve [<span style="color:red">measurable outcome</span>]
+
+---
+#### **If I knew [information]**
+
+- A "middleman" can be used to parse informaiton (SepsisWatch)
+
+![](images/sepsis_watch.png)
+
+---
+##### **Alert Fatigue**
+- Healthcare professionals receive an overwhelming number of alerts, which often leads to crucial warnings being ignored.
+- Current approach to alerts does not consider human factors or user-centered design.
+- Solutions include having a human vet which alerts (SepsisWatch), or calibrating a high precision classifier.
+
+
+---
+#### **I would do [intervention]**
+
+<img src="images/intervention_structure.png" style="width: 800px">
+Source: Verma et. al (2021)
 
 ---
 #### **Stakeholder engagement for  problem definition**
@@ -222,15 +266,9 @@ Source: Verma et. al (2021)
 ---
 #### **Ground truth**
 - We take "labels" for granted in ML, we should't
+  - Example of [sepsis](https://dihi.org/wp-content/uploads/2020/02/Sepsis-Watch-One-Pager.pdf) label shows complexity and opportunity for variability
 
 <img src="images/label_sepsis.png" style="width: 400px">
-[Source](https://dihi.org/wp-content/uploads/2020/02/Sepsis-Watch-One-Pager.pdf): SepsisWatch
-
-
----
-#### **Data quality control**
-
-...
 
 
 ---
@@ -240,6 +278,17 @@ Source: Verma et. al (2021)
   - Ensure training data represent the environment where the model will be used.
   - Subtle biases in data can reduce model reliability and must be addressed during development.
   - Identifying and correcting biases upfront is crucial for model correctness.
+
+
+---
+#### **Data quality control**
+
+- Conformance (fields aligns with expected format)
+- Completeness (not missing)
+- Plausability (believability, reasonability)
+
+![](images/data_quality.png)
+[Source](https://proceedings.mlr.press/v182/sendak22a/sendak22a.pdf): Sendak et. al (2022)
 
 
 ---
@@ -255,10 +304,6 @@ Source: Verma et. al (2021)
 - Health care data used for ML algorithms may be influenced by social inequalities (e.g., race, sex and other factors)
 - Ethical questions may arise regarding the use of certain predictors, e.g., smoking status or HIV status
 - Collaboration between ethicists, social scientists, regulatory scholars, AI/ML experts, and stakeholders is essential to address bias and ethical concerns.
-
----
-#### **Ethical considerations**
-- Ethical considerations must be prioritized to ensure the privacy, safety, and fair treatment of patients and affected parties when deploying AI/ML tools in clinical practice.
 - AI/ML algorithms focused on fairness can help mitigate biases and promote equitable healthcare delivery.
 
 ---
@@ -272,7 +317,7 @@ Source: Verma et. al (2021)
 
 ---
 #### **Proper model evaluation**
-- Focus on **clinically relevant evaluation metrics** over commonly used ones.
+- Focus on **clinically relevant evaluation metrics**.
 - Use qualitative approaches to uncover concerns missed by quantitative measures.
 - Report results and share code and documentation for transparency.
 
@@ -320,7 +365,7 @@ Source: Verma et. al (2021)
 ---
 <!--_color: white -->
 <!--_backgroundColor: green -->
-## `Breakout #X`
+## `Breakout #2`
 #### Suppose we wanted to run a silent trial to demonstrate a model has 80% sensitivity, how would we "calibrate" the model so that the trial would likely be successful?
 
 ---
@@ -332,12 +377,12 @@ Source: Verma et. al (2021)
 
 <div class="row" style="text-align: center;">
  <div style="display: inline-block; margin-right: 20px;">
-  <img src="images/bootstrap_dist.png" style="width: 220px">
+  <img src="images/bootstrap_dist.png" style="width: 350px">
   <br>
   <span>Empirical bootstrap</span>
  </div>
  <div style="display: inline-block; margin-right: 20px;">
-  <img src="images/umbrella_lb.png" style="width: 200px">
+  <img src="images/umbrella_lb.png" style="width: 400px">
   <br>
   <span>Rank order approach</span>
  </div>
@@ -348,10 +393,45 @@ Source: Verma et. al (2021)
 ![](images/silent_trial_pipeline.png)
 
 
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `MLOps`
+
+---
+##### **Common deployment considerations**
+
+- How often to re-train, and with what data? Consider this an empirical question.
+
+<div class="row" style="text-align: center;">
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/mlops_retrain_freq.png" style="width: 420px">
+  <br>
+  <span>Frequency</span>
+ </div>
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/mlops_training_window.png" style="width: 420px">
+  <br>
+  <span>Training window</span>
+ </div>
+
+---
+##### **Common deployment considerations**
+
+- Example from [DIHI](https://rethinkingclinicaltrials.org/news/grand-rounds-january-26-2024-advancing-the-safe-effective-and-equitable-use-of-ai-in-healthcare-mark-sendak-md-mpp-suresh-balu-md-mba/): Advancing the Safe, Effective and Equitable Use of AI in Healthcare
+
+<br>
+<img src="images/DIHI_infra.png" style="width: 800px;">
+
+
+---
+##### **Think about how model fits within organization**
+![ml_ops1](images/AI_for_leaders.png)
+
+Source: Great Learning (AI Project Life Cycle and Setting up AI Team)
 
 ---
 #### **Implementation and evaluation**
-
 
 - **Continuous monitoring and feedback** mechanisms allow for iterative improvements to the tool over time. 
 - Ongoing evaluation helps identify and address any unintended consequences or disparities in healthcare deliver
@@ -369,57 +449,39 @@ Source: Verma et. al (2021)
 - **Continuous monitoring and feedback** in real-world settings are essential for successful AI/ML deployment.
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Case Studies`
 
 ---
-
 ##### **Google's Diabetic Retinopathy**
 - Deployment of a deep learning system for diabetic retinopathy screening in Thai clinics.
 - Key findings reveal the challenges of integrating AI into clinical workflows, such as issues with system gradability, internet connectivity, and the necessity of obtaining patient consent.
 
 <figure>
-  <img src="images/GoogleDiabeticRetinopathy.png" width="550" alt="Google Diabetic Retinopathy" style="display: block; margin-left: auto; margin-right: auto;">
-  <figcaption style="text-align: center;">Nurse operates the takes images of patient’s retina (https://doi.org/10.1145/3313831.3376718).</figcaption>
+  <img src="images/GoogleDiabeticRetinopathy.png" style="display: block; margin-left: auto; margin-right: auto; width: 550px">
+  <figcaption style="text-align: center;">Nurse operates the takes images of patient’s retina </figcaption>
 </figure>
 
----
-
-##### **Electronic Health Record (EHR) Data**
-- Challenges and barriers to achieving economies of scale in analyzing EHR data.
-- Challenges in scaling EHR data analytics due to non-standardized systems.
-- Importance of policy reforms and technology adoption for improved healthcare analysis and outcomes.
 
 ---
-##### **Alert Fatigue**
-- Healthcare professionals receive an overwhelming number of alerts, which often leads to crucial warnings being ignored.
-- Current approach to alerts does not consider human factors or user-centered design.
-- Solutions could include leveraging big data and enhancing device communication to minimize unnecessary alerts, focusing on a more advanced system for better patient safety.
-
----
-
 ##### **UPenn's Sepsis Model**
 
 - Developed and evaluated a machine learning algorithm aimed at predicting severe sepsis and septic shock within a tertiary teaching hospital system.
 - Algorithm, based on a random-forest classifier and electronic health record data, showed a sensitivity of 26% and specificity of 98%.
 
 ---
-
 - Implementation led to a modest increase in lactate testing and IV fluid administration but no significant change in mortality or ICU transfer rates, though it did reduce the time-to-ICU transfer.
 
 <figure>
-  <img src="images/UPennSepsisModel.png" width="550" alt="UPenn Sepsis Model" style="display: block; margin-left: auto; margin-right: auto;">
+  <img src="images/UPennSepsisModel.png" style="display: block; margin-left: auto; margin-right: auto; width: 550px">
   <figcaption style="text-align: center;">Clinician perceived impact on patient care (https://doi.org/10.1097/ccm.0000000000003803).</figcaption>
 </figure>
 
 ---
+##### **UMichigan case management (similar story)**
 
-##### **Think about how model fits within organization**
-![ml_ops1](images/AI_for_leaders.png)
-
-Source: Great Learning (AI Project Life Cycle and Setting up AI Team)
+![](images/umichigan.png)
 
 
 ---

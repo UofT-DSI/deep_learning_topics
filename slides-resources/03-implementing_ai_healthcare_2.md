@@ -56,17 +56,22 @@ TA: Jenny Du
 ## `Bias (ethical)`
 
 ---
-
 - Bias in AI refers to the systematic and unfair discrimination or favoritism in the outcomes produced by artificial intelligence systems, algorithms, or models.
 - In healthcare it may lead to unequal access to healthcare, inaccurate diagnoses, or disparities in treatment recommendations based on various factors.
+
+---
+##### **Bias is inherant in medical practice**
+
+![](images/bias_language.png)
 
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Bias (statistical)`
 
----
+<!-- Question: What is the definition of "bias" from a statisticians perspective? -->
 
+---
 ##### **Test set structure**
 
 - It's very important to create a test set that (most) closely resembles prospective deployment
@@ -88,9 +93,11 @@ TA: Jenny Du
 ---
 
 ##### **Labeling Bias**
-Labeling bias occurs during the annotation or labeling of data points.
-It stems from human annotators' biases or subjective judgments when assigning labels or categories to data.
-Labeling bias can impact the accuracy of the ground truth labels used for training.
+- Labeling bias can occur during the annotation or labeling of data points.
+    - It stems from human annotators' biases or subjective judgments when assigning labels or categories to data.
+- Labeling bias can impact the accuracy of the ground truth labels used for training.
+
+TODO: DOES IMAGEMENT GENERALIZE TO IMAGENET?
 
 ---
 
@@ -102,16 +109,17 @@ Labeling bias can impact the accuracy of the ground truth labels used for traini
 ---
 
 ##### **Algorithmic Bias**
--A lgorithmic bias relates to inherent biases in the design or structure of the AI algorithms themselves.
-- It can result from the way features are selected, weighted, or processed during decision-making.
-- Algorithmic bias can influence how the AI model interprets and processes data.
+- Algorithmic bias relates to inherent biases in the design or structure of the AI algorithms themselves.
+- It can result from the way features are selected, weighted, or processed during decision-making ([example](https://arxiv.org/pdf/1602.04938.pdf): Ribeiro et. al (2016))
+
+![](images/husky_wolf.png)
 
 ---
 
 ##### **Reinforcement Bias**
 - Reinforcement bias emerges from the interactions between AI systems and users.
-It results from AI systems learning from user feedback and behavior.
-If users exhibit biased behavior, the AI may reinforce these biases in its responses.
+- It results from AI systems learning from user feedback and behavior.
+- If users exhibit biased behavior, the AI may reinforce these biases in its responses.
 
 [Source](http://proceedings.mlr.press/v126/adam20a/adam20a.pdf)
 ![](images/animated_bias.gif)
@@ -235,23 +243,47 @@ If users exhibit biased behavior, the AI may reinforce these biases in its respo
 
 
 ---
-##### **Confounding**
+##### **ML models are "too sensitive"**
 
-Source: NPAO 2021 - Nursing and Artificial Intelligence 
+- All deep learning systems can be rendered useless by adverserial attacks
+
+<img src="images/adverserial_attack.png" style="width: 350px">
+
+[Source](https://arxiv.org/pdf/1412.6572.pdf): Goodfellow et. al (2015)
+
+<!-- Question: Why are DNNs especially prone to adverserial attacks? -->
+
+---
+##### **ML models are "too sensitive"**
+
+- Hence, they can easily be fooled by "artifacts"
+    - Example of CNN picking up on hospital-specific X-ray practices (source: [Zech et. al (2018)](https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1002683&type=printable))
+
+<img src="images/bias_artefacts.png" style="width: 400px">
+
 
 ---
 ##### **Model drift**
+
 - After a model goes live the performance of the model will often suffer
+    - Unconditional label distribution changes
+    - Unconditional feature distribution changes
+    - Conditional relationship b/w label and features changes
 
 ![](images/bias_drift.png)
 
+[Source](http://proceedings.mlr.press/v106/nestor19a/nestor19a.pdf): Nestor et. al (2019)
+
+<!-- Question: Which of these three factors are the most important? Which is the easiest to test for?  -->
 
 ---
 ##### **Overfitting vs. Underfitting**
 - Good generalization requires balance between overfitting and underfitting.
 - Overfitting: Model learns the training data too well & performs poorly on new data. 
 - Underfitting: Model is too simple to capture the underlying structure of the data & performs poorly on training and new data.
-- 
+
+<!-- Question: How do you know if your model is overfitting vs underfitting? -->
+
 ---
 
 <!--_color: white -->
@@ -308,27 +340,3 @@ Source: NPAO 2021 - Nursing and Artificial Intelligence
 ##### **Transfer Learning**
 - Involves taking a model that has been trained on one task and adapting it to a different but related task. 
 - Can help in situations where there is not enough data for training a model from scratch, leveraging the generalization capabilities learned from the original task.
-
----
-<!--_color: white -->
-<!--_backgroundColor: #f4a534 -->
-## `MLOps`
-
----
-##### **Common deployment considerations**
-
-- How often to re-train, and with what data? Consider this an empirical question.
-
-<div class="row" style="text-align: center;">
- <div style="display: inline-block; margin-right: 20px;">
-  <img src="images/mlops_retrain_freq.png" style="width: 220px">
-  <br>
-  <span>Frequency</span>
- </div>
- <div style="display: inline-block; margin-right: 20px;">
-  <img src="images/mlops_training_window.png" style="width: 200px">
-  <br>
-  <span>Training window</span>
- </div>
-
-
