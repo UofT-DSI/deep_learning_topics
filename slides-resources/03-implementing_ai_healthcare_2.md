@@ -40,7 +40,7 @@ TA: Jenny Du
 
   - Bias (ethical)
   - Bias (statistical)
-  - Adressing risk
+  - Addressing Risk
   - Generalization challenges
   - MLOps
 
@@ -207,13 +207,13 @@ TODO: DOES IMAGEMENT GENERALIZE TO IMAGENET?
 
 ##### **Robust Data Security Measures**
 - Implement strong data protection practices like encryption, access controls, and regular security audits.
-- Ensure compliance with regulations like General Data Protection Regulation (GDPR) and Health Insurance Portability and Accountability Act (HIPAA) to safeguard sensitive health data.
+- Ensure compliance with regulations such as the General Data Protection Regulation (GDPR) and the Health Insurance Portability and Accountability Act (HIPAA) to safeguard sensitive health data.
 
 ---
 
 ##### **Transparent and Explainable AI**
 - Develop AI systems that are understandable and transparent, allowing healthcare professionals to grasp how AI decisions are made.
-- Can help in understanding AI model's decision-making process, providing justification for the decisions made, and identifying biases.
+- This can help in understanding the AI model's decision-making process, providing justification for decisions made, and identifying biases.
 
 ---
 
@@ -239,6 +239,9 @@ TODO: DOES IMAGEMENT GENERALIZE TO IMAGENET?
 ## `Generalization`
 
 ---
+
+##### **Understanding Generalization in AI**
+
 - Generalization in AI refers to the ability of an AI system or model to perform well on new, unseen data after having been trained on a specific set of data.
 
 
@@ -317,7 +320,7 @@ TODO: DOES IMAGEMENT GENERALIZE TO IMAGENET?
 ---
 
 ##### **Training Data Diversity**
-- Model trained on a very diverse dataset is more likely to generalize well because it has been exposed to a wide variety of examples.
+- A model trained on a very diverse dataset is more likely to generalize well because it has been exposed to a wide variety of examples.
 
 ---
 
@@ -333,7 +336,7 @@ TODO: DOES IMAGEMENT GENERALIZE TO IMAGENET?
 ---
 
 ##### **Model Complexity**
-- Simpler models usually underfit but more complex models usually overfit.
+- Simpler models usually underfit, but more complex models often overfit.
 - Need to find the right level of complexity.
 
 ---

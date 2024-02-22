@@ -57,7 +57,7 @@ Topics in Deep Learning
 
 ##### **Triple Aim Framework**
 - Developed by Dr. Donald Berwick and colleagues at the Institute for Healthcare Improvement (IHI) in 2007.
-- Set of three interconnected goals aimed at improving healthcare systems and overall health/well-being of populations.
+- A set of three interconnected goals aimed at improving healthcare systems and the overall health and well-being of populations.
 
 ---
 
@@ -65,7 +65,7 @@ Topics in Deep Learning
 
 1. **Improving Population Health**: Enhance the health of a defined population.
 2. **Enhancing Patient Experience of Care**: Improve the experience of care for individual patients.
-3. **Reduce Per Capita Cost of Healthcare**: Reduce the overall cost of healthcare while maintaining or improving quality.
+3. **Reducing the Per Capita Cost of Healthcare**: Reduce the overall cost of healthcare while maintaining or improving quality.
 
 <figure>
   <img src="images/TripleAim.png" width="300" alt="Triple Aim" style="display: block; margin-left: auto; margin-right: auto;">
@@ -299,7 +299,7 @@ Topics in Deep Learning
 ---
 
 ##### **23andMe**
-- Consumer genetics company providing direct-to-consumer DNA testing.
+- A consumer genetics company that provides direct-to-consumer DNA testing.
 - **Ancestry Reports**: Provide insights into a person's ethnic background and ancestral origins.
 - **Health Risk Assessments**: Highlight genetic predispositions to diseases.
 - **Trait Reports**: Explore genetics' influence on physical and personal characteristics.
