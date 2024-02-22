@@ -82,13 +82,13 @@ Topics in Deep Learning
 
 ---
 #### **Vast amounts of healthcare data**
-- Over the past couple of decades, technological advances in data collection have led to a higher abundance of digital health data
+- Over the past couple of decades, technological advances in data collection have led to an abundance of digital health data.
   - Genome sequencing
   - Wearable sensors
   - High resolution 3D imaging
   - Electronic health records
 <br/>
-- Analysing these types of data can prove very challenging, given their sheer size and complexity
+- Analyzing these types of data can prove very challenging, given their sheer size and complexity.
 
 ---
 #### **DL as an analytical tool**
@@ -118,7 +118,7 @@ Topics in Deep Learning
 
 #### **Protein structure research**
 - Protein structure and function are inherently linked
-  - Knowing a protein's structure helps ellucidate its interactions with other molecules
+  - Knowing a protein's structure helps elucidate its interactions with other molecules.
   - For this reason, protein structure research is extremely important for fields like pharmacology, biochemistry, and immunology
 <br/>
 - **The problem:** discovering new protein structures has historically proven to be a very time-consuming and expensive process
@@ -140,7 +140,7 @@ Topics in Deep Learning
 <br/>
 - There exist large databanks from which these factors can be modeled, such as the PDB with its genetic and structural databases
 <br/>
-- By leveraging these data, various research groups have recently succeeded in developing DL models capable of predicting folding patterns based on amionacid sequences
+- By leveraging these data, various research groups have recently succeeded in developing DL models capable of predicting folding patterns based on amino acid sequences.
 
 ---
 

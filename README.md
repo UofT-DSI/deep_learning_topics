@@ -18,7 +18,7 @@ In this course, Topics in Deep Learning: Healthcare, participants will familiari
 By the end of the course, students will be able to:
 
 1. Learning outcome 1: Be able to articulate and problem solve the key challenges of ML/AI adoption in healthcare
-2. Learning outcome 2: Understand and identify areas of value creation in the healthcare domain using ML/AI in a commercial and business context
+2. Learning outcome 2: Identify and understand areas of value creation in the healthcare domain using ML/AI in a commercial and business context
 3. Learning outcome 3: Use Python-based tools for healthcare focused ML/AI problems like survival analysis, uncertainty quantification, and model explainability
 
 ## Logistics
@@ -29,7 +29,7 @@ By the end of the course, students will be able to:
 * Email etiquette: Remember to put [DSI] in email subject line
 
 ### Delivery instructions
-The course runs synchronously over Zoom. The course consists of ten classes over three weeks. Classes are 6:00 PM - 8:30 PM EDT on weekdays. Being mindful of online fatigue, there will be one or two breaks during each class where students are encouraged to stretch, grab a drink and snacks, or ask any additional questions. 
+The course runs synchronously over Zoom. The course consists of ten classes over three weeks. Classes are 6:00 PM - 8:30 PM EDT on weekdays. To mitigate online fatigue, each class will include one or two breaks, during which students are encouraged to stretch, grab a drink and snacks, or ask additional questions. 
 
 Tutorial sessions with a TA will also be offered over Zoom. These will take place from 5:30 PM - 6:00 PM EDT and 8:30 PM - 9:00 PM on weekdays. 
 
@@ -53,7 +53,7 @@ Learners are expected to have completed the DSI foundational courses (i.e., Unix
 Learners should be active participants and are encouraged to ask questions throughout.
  
 ### Technology requirements
-* Learners must have a computer and an internet connection to participate in online activities.
+* Participants require a computer and internet connection to engage in online activities.
  
 ## Policies
 * **Accessibility:** We want to provide an accessible learning environment for all. If there is something we can do to make this course more accessible to you, please let us know.
