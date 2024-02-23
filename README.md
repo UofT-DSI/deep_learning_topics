@@ -75,12 +75,12 @@ Learners should be active participants and are encouraged to ask questions throu
 * [Overview: the practice of healthcare, medicine, and life sciences](lessons/01-overview_ai_healthcare.pdf)
 * [Implementing AI in healthcare #1](lessons/02-implementing_ai_healthcare_1.pdf)
 * [Implementing AI in healthcare #2](lessons/03-implementing_ai_healthcare_2.pdf)
-* [Survival modeling]()
+* ~~Survival modeling~~
 * [Protein folding, drug discovery, and medical imaging, and ‘Omics]()
 * [Commercial applications]()
-* [“White box” model explainability]()
+* ~~“White box” model explainability~~
 * ["Black box” model explainability]()
-* [Prediction intervals]()
+* ~~Prediction intervals~~
 * [Business thinking and organization structure](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/10-business_thinking_organization.pdf#/)
 
 ### Assignments
