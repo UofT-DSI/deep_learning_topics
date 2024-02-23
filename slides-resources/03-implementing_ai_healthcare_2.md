@@ -38,11 +38,11 @@ TA: Jenny Du
 ---
 
 
-- We should stop training radiologists now. It's just completely obvious that within five years, deep learning is going to do better than radiologists.
+- "We should stop training radiologists now. It's just completely obvious that within five years, deep learning is going to do better than radiologists."
     - [Geoff Hinton (2016)](https://www.youtube.com/watch?v=2HMPRXstSvQ), the “godfather of AI”
 
-<p align="center"><img src="images/shortage_canada.png" style="width: 500px"></p>
-<p align="center"><img src="images/shortage_global.png" style="width: 500px"></p>
+<p align="center"><img src="images/shortage_canada.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px"></p>
+<p align="center"><img src="images/shortage_global.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px"></p>
 
 <!-- Question: What happened? Was Geoff Hinton wrong in assuming radiologists would be superfluous? Why do we now have a shortage? -->
 
@@ -51,9 +51,12 @@ TA: Jenny Du
 
   - Bias (ethical)
   - Bias (statistical)
-  - Addressing risk
-  - Generalization challenges
-
+  - Types of bias
+  - Addressing bias
+  - Risk
+  - Generalization
+  - Best practices
+  
 ---
 
 ##### **Introduction**
@@ -72,7 +75,7 @@ TA: Jenny Du
 ---
 ##### **Bias is inherent in medical practice**
 
-<img src="images/bias_language.png" style="width: 600px">
+<img src="images/bias_language.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
 
 [Source](https://youtu.be/ZTiLwk3VO3s): Artifical Intelligence and Nursing - NPAO 2021
 
@@ -165,10 +168,25 @@ Source: [Obermeyer et. al (2019)](https://www.science.org/doi/10.1126/science.aa
 - Algorithmic bias relates to inherent biases in the design or structure of the AI algorithms themselves.
 - It can result from the way features are selected, weighted, or processed during decision-making ([example](https://arxiv.org/pdf/1602.04938.pdf): Ribeiro et. al (2016))
 
-<img src="images/husky_wolf.png" style="width: 350px">
+<br>
+
+<img src="images/husky_wolf.png" style="display: block; margin-left: auto; margin-right: auto; width: 350px">
 
 <!-- Question: What is going on here? Why is the explainer points to the background of the image? -->
 
+
+---
+##### **Reinforcement Bias**
+- Reinforcement bias emerges from the interactions between AI systems and users.
+- It results from AI systems learning from user feedback and behavior.
+- If users exhibit biased behavior, the AI may reinforce these biases in its responses.
+    - See Hidden Risks of Machine Learning Applied to Healthcare ([Adam et. al (2020)](http://proceedings.mlr.press/v126/adam20a/adam20a.pdf))
+
+<a href="images/animated_bias.gif">
+    <img src="images/animated_bias.gif" style="width: 400px">
+</a>
+
+<!-- Question: What are some examples in the RW (doesn't have to be healthcare) where this would be the case?  -->
 
 ---
 <!--_color: white -->
@@ -181,19 +199,6 @@ Source: [Obermeyer et. al (2019)](https://www.science.org/doi/10.1126/science.aa
 </a>
 
 
----
-##### **Reinforcement Bias**
-- Reinforcement bias emerges from the interactions between AI systems and users.
-- It results from AI systems learning from user feedback and behavior.
-- If users exhibit biased behavior, the AI may reinforce these biases in its responses.
-    - See Hidden Risks of Machine Learning Applied to Healthcare ([Adam et. al (2020)](http://proceedings.mlr.press/v126/adam20a/adam20a.pdf))
-
-<a href="images/animated_bias.gif">
-    <img src="images/animated_bias.gif" style="width: 350px">
-</a>
-
-<!-- Question: What are some examples in the RW (doesn't have to be healthcare) where this would be the case?  -->
-
 
 ---
 <!--_color: white -->
@@ -201,28 +206,81 @@ Source: [Obermeyer et. al (2019)](https://www.science.org/doi/10.1126/science.aa
 ## `Addressing Bias`
 
 ---
-##### **Diverse and Inclusive Data Collection**
+##### **Three places where bias can be mitigated**
+
+- Pre-processing (what data gets seen)
+- In-processing (model training procedure)
+- Post-processing (how the model inferences are used)
+
+<!-- Question: What are some examples for each of these? -->
+
+---
+##### **Diverse and Inclusive Data Collection (pre-processing)**
 - Collect diverse and representative data to train AI models.
 - Ensure that data includes various demographic, geographic, and socio-economic factors.
 - Pay special attention to underrepresented or marginalized groups to avoid skewed or biased training data.
 
 ---
-##### **Data Preprocessing and Cleaning**
- - Implement rigorous data preprocessing techniques to identify and mitigate bias in training data.
- - Remove or re-weight biased or sensitive attributes from the dataset to minimize the potential for bias to be learned by the AI system.
+##### **Weighting a loss function (in-processing)**
+
+- Assume a label $y$, features $x$, a protected group $g \in \{A,B\}$, an algorithm $f_\theta(\cdot)$ with learnable parameters $\theta$ and a loss function $\ell(\cdot)$
+
+<br>
+
+$$
+\sum_{i=1}^n w_i \cdot \ell(y_i, f_\theta(x_i)), \hspace{2mm} i \in \{A,B\}
+$$
+
+<br>
+
+- We can weight a loss function towards whichever group(s) we want to "protect"
+
+<!-- Question1: Why would weighting a loss function not necessarily impact the metric we want to address?
+
+Question 2: What are some other ways of tuning model training to align with a sense of fairness?
+ -->
+
 
 ---
-##### **Fairness and Bias Audits**
- - Conduct regular fairness audits of AI models to detect and quantify bias.
- - Use specialized tools and metrics (e.g., disparate impact, equal opportunity) to assess the fairness of model outcomes across different groups.
+##### **Definitions of "fairness" (binary classifier)**
+
+- Recall $\hat{y}=I(f_\theta(x) > t)$
+- Demographic parity: $P(\hat{y}| g) \approx P(\hat{y}), \forall g$
+- Equality of opportunity: $P(\hat{y}|y=1, g) \approx P(\hat{y}|y=1), \forall g$
+- Individualized fairness: $P(\hat{y}_i=y | x_i, g_i=A) \approx P(\hat{y}_i=y | x_j, g_j=B)$, $\forall i,j : \text{dist}(x_i, x_j) \approx \text{small}$
+- You cannot reconcile these types of fairness: Impossiblity theorem (see [Saravanakumar (2021)](https://arxiv.org/pdf/2007.06024.pdf))
+- [Examples](https://www.borealisai.com/research-blogs/tutorial1-bias-and-fairness-ai/) to follow
+
+<!-- ---
+##### **Definitions of "fairness" (binary classifier)**
+
+- Disparate impact: $\Big|1 - \frac{P(y=1 | G=A)}{P(y=1 | G=B)}\Big| \leq \epsilon$
+- Demographic parity: $| P(y=1 | G=A) - P(y=1 | G=B)| \leq \epsilon$
+- Equalized odds: $| P(\hat{y}=1 | y=k, G=A) - P(\hat{y}=1 | y=k, G=B)| \leq \epsilon$
+- Individualized faireness: $| P(\hat{y}_i=y | x_i, G_i=A) - P(\hat{y}_i=y | x_j, G_i=B)| \leq \epsilon$, $\text{dist}(x_i, x_i) \approx \text{small}$ -->
 
 ---
-##### **Transparency and Explainability**
+##### **Demographic parity**
+
+<img src="images/fair_demographic.png" style="width: 900px">
+
+
+---
+##### **Equality of opportunity**
+
+<img src="images/fair_opportunity.png" style="width: 900px">
+
+---
+##### **Individual fairness**
+
+<img src="images/fair_individual.png" style="width: 900px">
+
+
+
+---
+##### **Transparency, explainability, monitoring, & feedback**
 - Make AI models more transparent and interpretable to understand the factors influencing their decisions.
 - Implement techniques like explainable AI (XAI) to provide insights into model behavior and allow for the identification and rectification of bias.
-
----
-##### **Continuous Monitoring and Feedback Loop**
 - Establish a feedback loop for continuous monitoring and improvement of AI systems' fairness.
 - Collect feedback from users and impacted communities to identify and address bias issues as they arise, making ongoing refinements to models and data.
 
@@ -234,77 +292,33 @@ Source: [Obermeyer et. al (2019)](https://www.science.org/doi/10.1126/science.aa
 ---
 
 - Risk in AI refers to the potential negative consequences or uncertainties associated with the development, deployment, and use of artificial intelligence systems. 
+    - **Data Breaches**
+        - Breaches can expose patient information, leading to privacy violations and legal consequences.
+    - **Incorrect Diagnoses**
+        - AI systems that assist in diagnostics could potentially make incorrect diagnoses, leading to improper treatment and harm to patients.
+    - **Legal Liabilities**
+        - Healthcare providers using AI systems face legal risks if the technology leads to patient harm, including malpractice claims.
 
 ---
+##### **Addressing Risk**
+- **Robust Data Security Measures**
+    - Ensure compliance with regulations like General Data Protection Regulation (GDPR) and Health Insurance Portability and Accountability Act (HIPAA) to safeguard sensitive health data.
+- **Transparent and Explainable AI**
+    - Develop AI systems that are understandable and transparent, elucidating how AI decisions are made.
+- **Ethical AI Development and Use**
+    - Adhere to ethical principles in AI development to ensure fairness, avoid bias, and respect patient autonomy and privacy.
+- **Rigorous Testing and Validation**
+    - Subject AI systems to extensive testing and validation to confirm their safety and efficacy, and that they perform as intended across diverse patient populations.
 
-<!--_color: white -->
-<!--_backgroundColor: #f4a534 -->
-## `Examples of Healthcare AI Risks`
-
----
-
-##### **Data Breaches**
-- Healthcare data is particularly sensitive.
-- Breaches can expose patient information, leading to privacy violations and legal consequences.
-
----
-
-##### **Incorrect Diagnoses**
-- AI systems that assist in diagnostics could potentially make incorrect diagnoses, leading to improper treatment and harm to patients.
 
 ---
-
-##### **Legal Liabilities**
-- Healthcare providers using AI systems face legal risks if the technology leads to patient harm, including malpractice claims.
-
----
-
-##### **Ethical Concerns**
-- Decisions about patient care based on AI could raise ethical issues, especially regarding consent, transparency, and the prioritization of healthcare resources.
-
----
-
-<!--_color: white -->
-<!--_backgroundColor: #f4a534 -->
-## `Addressing Risk`
-
----
-
-##### **Robust Data Security Measures**
-- Implement strong data protection practices like encryption, access controls, and regular security audits.
-- Ensure compliance with regulations like General Data Protection Regulation (GDPR) and Health Insurance Portability and Accountability Act (HIPAA) to safeguard sensitive health data.
-
----
-
-##### **Transparent and Explainable AI**
-- Develop AI systems that are understandable and transparent, allowing healthcare professionals to grasp how AI decisions are made.
-- Can help in understanding AI model's decision-making process, providing justification for the decisions made, and identifying biases.
-
----
-
-##### **Ethical AI Development and Use**
-- Adhere to ethical principles in AI development to ensure fairness, avoid bias, and respect patient autonomy and privacy.
-
----
-
-##### **Rigorous Testing and Validation**
-- Subject AI systems to extensive testing and validation to confirm their safety and efficacy, and that they perform as intended across diverse patient populations.
-- May include clinical trials followed by continuous monitoring post-deployment.
-
----
-
-##### **Legal and Regulatory Compliance**
-- Ensure AI systems comply with medical, data protection, and patient rights laws.
-- Make sure to adapt to legal changes.
-
----
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Generalization`
 
 ---
 - Generalization in AI refers to the ability of an AI system or model to perform well on new, unseen data after having been trained on a specific set of data.
+- We'll review why ML models often have a hard time generalizing, especially in healthcare
 
 
 ---
@@ -313,34 +327,50 @@ Source: [Obermeyer et. al (2019)](https://www.science.org/doi/10.1126/science.aa
 - All deep learning systems can be rendered useless by adverserial attacks
 
 <br>
-<img src="images/adverserial_attack.png" style="width: 700px">
+<img src="images/adverserial_attack.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
 [Source](https://arxiv.org/pdf/1412.6572.pdf): Goodfellow et. al (2015)
 
-<!-- Question: Why are DNNs especially prone to adverserial attacks? -->
+<!-- Question: Why are DNNs especially prone to adverserial attacks? What, if anything, does this have to do with generalization? -->
 
 ---
-##### **Can be easily tricked by artefacts**
+##### **Can be easily tricked (confounded) by artefacts**
 
 - Example of CNN picking up on hospital-specific X-ray practices (source: [Zech et. al (2018)](https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1002683&type=printable))
 
 <br>
-<img src="images/bias_artefacts.png" style="width: 550px">
+<img src="images/bias_artefacts.png" style="display: block; margin-left: auto; margin-right: auto; width: 550px">
+
+<!-- Question: What is the connection between this issue (confounding) and adverserial attacks?  -->
 
 
 ---
-##### **Model drift**
+##### **Will often experience model drift**
 
 - After a model goes live the performance of the model will often suffer
     - Unconditional label distribution changes
     - Unconditional feature distribution changes
     - Conditional relationship b/w label and features changes
 
-<img src="images/bias_drift.png" style="width: 350px">
+<img src="images/bias_drift.png" style="display: block; margin-left: auto; margin-right: auto; width: 350px">
 
 [Source](http://proceedings.mlr.press/v106/nestor19a/nestor19a.pdf): Nestor et. al (2019)
 
 <!-- Question: Which of these three factors are the most important? Which is the easiest to test for?  -->
+
+---
+##### **Variation by institution**
+
+- We often observe variable performance by institution
+
+![](images/zech_example.jpg)
+
+Source: [Zech et. al (2018)](https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1002683&type=printable)
+
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Best practices around generalization challenges in healthcare`
 
 ---
 ##### **Overfitting vs. Underfitting**
@@ -351,58 +381,39 @@ Source: [Obermeyer et. al (2019)](https://www.science.org/doi/10.1126/science.aa
 <!-- Question: How do you know if your model is overfitting vs underfitting? -->
 
 ---
+##### **Data diversity and structure**
+- Healthcare datasets should come from diverse populations with varying demographics, medical histories, and health conditions. 
+- Ensure multiple institutions are represented
+- Data should be split in a way that is representative of future usage
 
+---
 <!--_color: white -->
-<!--_backgroundColor: #f4a534 -->
-## `Importance of Generalization in Healthcare`
+<!--_backgroundColor: green -->
+## `Breakout #3`
+###### The following graph shows how the construction of the feature/label space impacts model accuracy. What is driving this result and how would you construct the feature/label space?
+
+<img src="images/fraction_detected.png" style="display: block; margin-left: auto; margin-right: auto; width: 550px">
 
 ---
-
-##### **Diverse Patient Populations**
-- Healthcare datasets come from diverse populations with varying demographics, medical histories, and health conditions. 
-- Generalization ensures that AI models can effectively handle data from varied patient groups.
-
----
-
-##### ****Variability in Medical Data****
-- Medical data can be highly variable (i.e., imaging data, electronic health records (EHRs), genetic information).
-- Each type of data has differences in quality, format, and context.
-- Generalization ensures AI models can provide reliable insights across various types of medical data.
-
----
-
 ##### **Changing Healthcare Practices and Knowledge**
 - Healthcare is a rapidly evolving field (i.e., new treatments, diagnostic criteria, and research findings). 
-- Generalization ensures AI models are better equipped to remain relevant and accurate as medical knowledge and practices evolve.
+- A dedicated data team is often needed to update the data (and possibly training) pipeline for new and emerging data types (recall "conformance")
 
 ---
-<!--_color: white -->
-<!--_backgroundColor: #f4a534 -->
-## `Addressing Generalization`
+##### **Transfer learning**
+- Transfer learning: involves taking a model that has been trained on one task and adapting it to a different but related task. 
+    - Can *sometimes* help in situations where there is not enough data for training a model from scratch, leveraging the generalization capabilities learned from the original task.
+
+<img src="images/transfer_learning.png" style="display: block; margin-left: auto; margin-right: auto; width: 450px">
+
+Source: [Wiens et. al (2014)](https://pubmed.ncbi.nlm.nih.gov/24481703/)
 
 ---
+##### **Federated learning**
+- Federated learning pools information across for training a machine learning model without data ever needing to be centralized
+- Can train more powerful models that generalize without breaching data privacy concerns (speeds up process basically)
 
-##### **Training Data Diversity**
-- Model trained on a very diverse dataset is more likely to generalize well because it has been exposed to a wide variety of examples.
+<img src="images/federated_learning.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
 
----
 
-##### **Regularization Techniques**
-- Dropout, L1/L2 regularization, and early stopping help to prevent overfitting by penalizing complexity or stopping the training process before the model starts to overfit.
-
----
-
-##### **Cross-validation**
-- Involves dividing the dataset into several subsets, training the model on some subsets and validating it on others. 
-- Helps in assessing the model's ability to generalize across different data splits.
-
----
-
-##### **Model Complexity**
-- Simpler models usually underfit but more complex models usually overfit.
-- Need to find the right level of complexity.
-
----
-##### **Transfer Learning**
-- Involves taking a model that has been trained on one task and adapting it to a different but related task. 
-- Can help in situations where there is not enough data for training a model from scratch, leveraging the generalization capabilities learned from the original task.
+Source: [Nadkarni et. al (2021)](https://pubmed.ncbi.nlm.nih.gov/34341802/)
