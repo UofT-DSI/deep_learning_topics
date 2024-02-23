@@ -87,7 +87,7 @@ Topics in Deep Learning
 
 <br/>
 
-- However, outside academia, knowledge generated in the form of predictions, classifications, and artificially-generated content are worthless on their own
+- However, outside academia, knowledge generated in the form of predictions, classifications, and artificially generated content is worthless on its own.
   
 <br/>
 
@@ -131,7 +131,7 @@ Consider a drug known to incur high morbidity side-effects in 50% of patients. C
   
 - That being said, this value remains hypothetical, since it is unclear whether or not this decision can be improved
   - In other words, it is possible that clinicians would not change their current prescription decisions even when knowing that a patient will develop unwanted side-effects
-  - Maybe this is the only available treatment and its benefits always outweight its risks
+  - Maybe this is the only available treatment, and its benefits always outweigh its risks.
   
 <br/>
 
@@ -238,7 +238,7 @@ Suppose now that there does exist an alternative treatment specifically designed
   
 <br/>
 
-- Hundreds of generative DL models played a role in:
+- Hundreds of generative DL models have played a role in:
   1. identifying potential target proteins associated with IPF, and
   2. identifying molecules that could disrupt the activity of a target protein
 
@@ -330,7 +330,7 @@ Suppose now that there does exist an alternative treatment specifically designed
 
 #### **Healthcare system strain**
 
-- Aging populations and healthcare workforce shortages along with a higher incidence of chronic disease, addiction and respiratory illness over the past few years have resulted in an overly strained Canadian healthcare system $^{8}$
+- Aging populations, healthcare workforce shortages, a higher incidence of chronic diseases, addiction, and respiratory illnesses over the past few years have resulted in an overly strained Canadian healthcare system$^{8}$.
   
   - This has led to decreased quality of care, staff burnout, and public distrust, all of which further exacerbate healthcare system strain in a vicious cycle
 

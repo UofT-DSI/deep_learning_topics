@@ -56,9 +56,8 @@ TA: Jenny Du
   - Risk
   - Generalization
   - Best practices
-  
----
 
+---
 ##### **Introduction**
 - The integration of AI in healthcare has great potential for improving patient care, but it is not without challenges.
 - This presentation will delve into key pitfalls: bias, risk, and generalization, associated with AI in healthcare.
@@ -276,14 +275,6 @@ Question 2: What are some other ways of tuning model training to align with a se
 <img src="images/fair_individual.png" style="width: 900px">
 
 
-
----
-##### **Transparency, explainability, monitoring, & feedback**
-- Make AI models more transparent and interpretable to understand the factors influencing their decisions.
-- Implement techniques like explainable AI (XAI) to provide insights into model behavior and allow for the identification and rectification of bias.
-- Establish a feedback loop for continuous monitoring and improvement of AI systems' fairness.
-- Collect feedback from users and impacted communities to identify and address bias issues as they arise, making ongoing refinements to models and data.
-
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
@@ -317,6 +308,9 @@ Question 2: What are some other ways of tuning model training to align with a se
 ## `Generalization`
 
 ---
+
+##### **Understanding Generalization in AI**
+
 - Generalization in AI refers to the ability of an AI system or model to perform well on new, unseen data after having been trained on a specific set of data.
 - We'll review why ML models often have a hard time generalizing, especially in healthcare
 
@@ -405,7 +399,6 @@ Source: [Zech et. al (2018)](https://journals.plos.org/plosmedicine/article/file
     - Can *sometimes* help in situations where there is not enough data for training a model from scratch, leveraging the generalization capabilities learned from the original task.
 
 <img src="images/transfer_learning.png" style="display: block; margin-left: auto; margin-right: auto; width: 450px">
-
 Source: [Wiens et. al (2014)](https://pubmed.ncbi.nlm.nih.gov/24481703/)
 
 ---
@@ -414,6 +407,5 @@ Source: [Wiens et. al (2014)](https://pubmed.ncbi.nlm.nih.gov/24481703/)
 - Can train more powerful models that generalize without breaching data privacy concerns (speeds up process basically)
 
 <img src="images/federated_learning.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
-
 
 Source: [Nadkarni et. al (2021)](https://pubmed.ncbi.nlm.nih.gov/34341802/)

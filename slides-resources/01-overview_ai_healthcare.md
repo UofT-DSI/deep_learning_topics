@@ -121,7 +121,7 @@ Topics in Deep Learning
 - Instructor: Erik Drysdale (that's me!)
   - Started career in economics
   - Transitioned to healthcare data science
-  - Have seen first hard how hard it is to implement models in HC
+  - Have seen firsthand how hard it is to implement models in healthcare
   - Bringing 9 years of professional experience to this course
 
 <br>
