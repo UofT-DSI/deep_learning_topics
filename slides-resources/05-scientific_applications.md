@@ -63,6 +63,8 @@ math: mathjax
 ```console
 Data Sciences Institute
 Topics in Deep Learning
+Instructor: Erik Drysdale
+TA: Jenny Du
 ```
 
 ---
@@ -96,26 +98,64 @@ Topics in Deep Learning
   - Ability to model highly complex relationships
   - Ability to handle noisy data
   - Adaptability to diverse data types (e.g., text, images, time series)
-  - Automated feature extraction requiring minimal preprocessing
   - Scalability
+
+<!-- Question: Why do we say that deep learning is "scalable"? What are classes of algorithms that do not "scale" as easily? -->
 
 
 ---
 #### **DL in healthcare research over the years**
 - Given the complexity of human health, and the large amounts of health data now available, AI methods like DL have become increasingly popular in healthcare research $^{1}$
 
+<!-- ---
+![Healtchare_publications](images/ai_healthcare_publications.png "Number of healthcare-related AI research publications between 2000-2021. Jimma, 2023") -->
+
 ---
-
-![Healtchare_publications](images/ai_healthcare_publications.png "Number of healthcare-related AI research publications between 2000-2021. Jimma, 2023")
+![](images/publication_vs_adoption.png)
 
 ---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #1`
+#### Why is DL particularly powerful for data modalities like images, text, EKG voltage, etc?
 
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Proteomics`
 
 ---
+#### **Proteins 101**
 
+![](images/dogma1.jpg)
+
+---
+#### **Proteins 101**
+
+![](images/dogma2.jpg)
+
+---
+#### **Proteins 101**
+
+![](images/protein_folding.png)
+
+
+---
+#### **Proteins behaving well (CFTR)**
+
+<img src="images/cftr_wt.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+Source: [Mijnders et. al (2017)](https://www.sciencedirect.com/science/article/pii/S1471489217301285)
+
+---
+#### **Proteins behaving badly (CFTR)**
+
+<img src="images/cft2_mutation.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+Source: [Uliyakina et. al (2020)](https://www.mdpi.com/1422-0067/21/12/4524)
+
+---
 #### **Protein structure research**
 - Protein structure and function are inherently linked
   - Knowing a protein's structure helps elucidate its interactions with other molecules.
@@ -125,7 +165,14 @@ Topics in Deep Learning
 <br/>
 
 ---
+#### **Proteins corrected (CF modulator therapy)**
 
+<img src="images/cftr_life_expectancy.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: [Lopez et. al (2022)](https://www.cysticfibrosisjournal.com/action/showPdf?pii=S1569-1993%2823%2900048-6)
+
+
+---
 #### **The Protein Data Bank (PDB)**
 
 - The [Protein Data Bank (PDB)](https://www.rcsb.org/) contains a comprehensive archive of experimentally determined three-dimensional protein structures
@@ -159,7 +206,13 @@ Topics in Deep Learning
 ![AlphaFold_predictions](images/alphafold_architecture.png)
 
 ---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #2`
+#### Besides the 3D structure of the protein, what other "labels" would we want to predict with an (amino acid) input sequence?
 
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Genomics`
@@ -192,7 +245,21 @@ Topics in Deep Learning
   - Downstream analyses are required to properly assess their impact on disease risk
 
 ---
+#### **Genome-wide association studies (GWAS)**
 
+<img src="images/GWAS.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+Source: Palsson et. al (2019)
+
+<!-- Question: Does a "hit" imply a causal relationship? What are some possible confounding factors? -->
+
+---
+#### **Missing heritability (Source: [Young (2019)](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1008222))**
+
+![](images/missing_heritability.png)
+
+
+---
 ![Allele_freq_vs_effect](images/frequency_vs_effect.png)
 
 ---
@@ -216,7 +283,6 @@ Topics in Deep Learning
 - Because polygenic risk is comprised of multiple genetic variants that are more common than high-risk monogenic mutations, better polygenic risk scoring methods enabled by DL could enable early interventions and improved outcomes for a wider variety of diseases and populations
 
 ---
-
 #### **Polygenic risk for Alzheimer's disease (AD)**
 
 - Previous GWAS have revealed that multiple genetic variants contribute to the risk of developing AD
@@ -228,11 +294,30 @@ Topics in Deep Learning
   - Their polygenic risk score largely outperformed wPRS, achieving AUROC scores of 0.84 and 0.64, respectively$^{4}$
 
 ---
-
 ![AD_risk_score](images/AD_auroc.png)
 
 ---
+#### **It's all connected**
 
+<img src="images/gwas_to_drug.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+Source: Visscher et. al (2017)
+
+---
+#### **GWAS == Gattaca?**
+
+<img src="images/gwas_gattaca.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+Source: Khera et. al (2018)
+
+
+---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #3`
+#### Besides ethical concerns, why haven't GWAS been used more often in clinical care (e.g. pre-diabetes)?
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Radiomics`
@@ -266,7 +351,6 @@ Topics in Deep Learning
 <br/>
 
 ---
-
 #### **Medical image analysis**
 
 - In clinic, for many disease contexts, visual inspections performed by a radiologist remain the gold standard for medical image analysis
@@ -275,16 +359,16 @@ Topics in Deep Learning
 
 - **The problem:** these conventional reads fail fully to exploit modern medical image acquisition technologies. Subtle signals captured in high resolution images may not be appreciated by the naked eye, but may represent consistent markers of disease
 
----
+<!-- Question: What are some other "problems" radiomics could help to solve in the current context? -->
 
+---
 #### **DL and its success in radiomics**
 
 - Radiomics is a field that applies advanced computational methods to extract quantitative features from medical images to ultimately characterise tissue properties
-
 <br/>
+- DL tools, in particular convolutional neural networks (CNNs), have seen increasing popularity in radiomics research given their excellent track record in natural image processing and analysis over the last decade
 
-- DL tools, in particular convolutional neural networks (CNNs), have seen increasing popularity in radiomics research given their stellar track record in natural image processing and analysis over the last decade
-  - The success of CNNs in these two contexts that would initially seem completely different lies on their proficiency in extracting spatial features from data, which form the foundation of all visual tasks like object segmentation and semantic classification
+<!-- Question: Why would CNNs likely beat a MLP-only deep neural network? Or any other ML model for that matter -->
 
 ---
 
@@ -314,19 +398,62 @@ Topics in Deep Learning
   - This was possible due to their use of contrastive learning and augmentation methods
 
 ---
-
 #### **Inglese's self-supervised CNN architecture**
 
 ![Inglese_CNN_architecture](images/inglese_cnn.png)
 
 ---
+#### **Hydronephrosis**
 
+<img src="images/hydro_workflow.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+<br>
+<img src="images/hydro_model.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: [Erdman et. al (2021)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3967037)
+
+---
+#### **Hydronephrosis (silent trial)**
+
+![](images/hydro_silent.png)
+
+Source: [Kwong et. al (2022)](https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2022.929508/full)
+
+---
+#### **Hydronephrosis (clinical implementation)**
+
+<img src="images/hydro_success.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+Source: [Kwong et. al (2024)](https://ai.nejm.org/doi/full/10.1056/AIcs2300004)
+
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Conclusion`
 
 ---
+#### **Multimodal utopia (v1)?**
 
+<img src="images/multimodel_AI.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+[Source](https://erictopol.substack.com/p/multimodal-ai-for-medicine-simplified )
+
+
+---
+#### **Multimodal utopia (v2)?**
+
+<img src="images/multimodel_AI_v2.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+[Source](https://erictopol.substack.com/p/generative-ai-and-the-new-medical)
+
+---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #4`
+#### How would we combine different data modality types in a deep learning model? For example, an EKG with genetic information?
+
+
+---
 #### **Popularity and success of DL in healthcare research**
 
 - As depicted by the previous examples, DL has become a popular tool in healthcare-research across a variety of contexts
@@ -339,9 +466,8 @@ Topics in Deep Learning
 
 - Next, we will examine how institutions and businesses are working to turn these research tools into commerciable applications
 
+
 ---
-
-
 ##### **References**
 
 (1) Jimma, B. L. (2023). Artificial intelligence in healthcare: A bibliometric analysis. Telematics and Informatics Reports, 9, 100041-. https://doi.org/10.1016/j.teler.2023.100041

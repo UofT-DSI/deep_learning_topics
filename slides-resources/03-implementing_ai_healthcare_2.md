@@ -191,7 +191,7 @@ Source: [Obermeyer et. al (2019)](https://www.science.org/doi/10.1126/science.aa
 <!--_color: white -->
 <!--_backgroundColor: green -->
 ## `Breakout #2`
-#### What issues would arise if we trained a melanoma classier on these sorts of images?
+#### What issues would arise if we trained a melanoma classifier on these sorts of images?
 
 <a href="https://www.sciencedirect.com/science/article/pii/S0022202X18322930?via%3Dihub=">
     <img src="images/melanoma_rulers.png" style="display: block; margin-left: auto; margin-right: auto; width: 400px">
@@ -273,6 +273,18 @@ Question 2: What are some other ways of tuning model training to align with a se
 ##### **Individual fairness**
 
 <img src="images/fair_individual.png" style="width: 900px">
+
+
+---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #3`
+###### Which of the following three claims would you want to be able to make about your classifier for a melanoma detection task?
+
+1. Groups A & B have an equal chance of receiving a diagnosis and additional treatment from the AI model.
+2. The probability of disease detection is equal between groups A & B.
+3. The model does not base its prediction on which group you belong to.
+
 
 
 ---
@@ -383,7 +395,7 @@ Source: [Zech et. al (2018)](https://journals.plos.org/plosmedicine/article/file
 ---
 <!--_color: white -->
 <!--_backgroundColor: green -->
-## `Breakout #3`
+## `Breakout #4`
 ###### The following graph shows how the construction of the feature/label space impacts model accuracy. What is driving this result and how would you construct the feature/label space?
 
 <img src="images/fraction_detected.png" style="display: block; margin-left: auto; margin-right: auto; width: 550px">
