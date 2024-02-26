@@ -38,12 +38,12 @@ The schedule is tentative and may be modified as needed. Learners will be notifi
 * **Day 1 (Tuesday, February 20, 6:00 PM - 8:30 PM):** Overview: the practice of healthcare, medicine, and life sciences
 * **Day 2 (Wednesday, February 21, 6:00 PM - 8:30 PM):** Implementing AI in healthcare #1
 * **Day 3 (Thursday, February 22, 6:00 PM - 8:30 PM):** Implementing AI in healthcare #2
-* **Day 4 (Monday, February 26, 6:00 PM - 8:30 PM):** Survival modeling
+* **Day 4 (Monday, February 26, 6:00 PM - 8:30 PM):** Implementing AI in healthcare #2 (cont'd)
 * **Day 5 (Tuesday, February 27, 6:00 PM - 8:30 PM):** Protein folding, drug discovery, and medical imaging, and ‘Omics
 * **Day 6 (Wednesday, February 28, 6:00 PM - 8:30 PM):** Commercial applications
-* **Day 7 (Thursday, February 29, 6:00 PM - 8:30 PM):** “White box” model explainability 
-* **Day 8 (Tuesday, March 5, 6:00 PM - 8:30 PM):** "Black box” model explainability 
-* **Day 9 (Wednesday, March 6, 6:00 PM - 8:30 PM):** “Prediction intervals”
+* **Day 7 (Thursday, February 29, 6:00 PM - 8:30 PM):** "Black box” model explainability 
+* **Day 8 (Tuesday, March 5, 6:00 PM - 8:30 PM):** "Black box” model explainability (cont'd)
+* **Day 9 (Wednesday, March 6, 6:00 PM - 8:30 PM):** Guest lecture (AI-based drug discovery)
 * **Day 9 (Thursday, March 7, 6:00 PM - 8:30 PM):** Business thinking and organization structure
 
 ## Prerequisites
@@ -76,22 +76,24 @@ Learners should be active participants and are encouraged to ask questions throu
 * [Implementing AI in healthcare #1](lessons/02-implementing_ai_healthcare_1.pdf)
 * [Implementing AI in healthcare #2](lessons/03-implementing_ai_healthcare_2.pdf)
 * ~~Survival modeling~~
-* [Protein folding, drug discovery, and medical imaging, and ‘Omics]()
-* [Commercial applications]()
+* (Under construction) [Protein folding, drug discovery, and medical imaging, and ‘Omics]()
+* (Under construction) [Commercial applications]()
 * ~~“White box” model explainability~~
-* ["Black box” model explainability]()
+* (Under construction) ["Black box” model explainability]()
 * ~~Prediction intervals~~
-* [Business thinking and organization structure](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/10-business_thinking_organization.pdf#/)
+* (Under construction) [Business thinking and organization structure](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/10-business_thinking_organization.pdf#/)
 
 ### Assignments
 
 * **Class attendance**: To ensure everyone actively participates in class activities, attendance is mandatory and will be monitored. If you are unable to attend class, it is your responsibility to make up the work that was covered.
 * [Assignment 1](assignments/assignment_1.md)
+* [Assignment 2](assignments/assignment_2/)
 
 
 | Format | Details | Submission Instructions |
 | :----: | :----- | :---------------------- |
-| Assignment 1 | Due on **date** | Submit assignment via |
+| Assignment 1 | Due on **Feb 28th (Wed) by 5:59pm** | Submit assignment via email |
+| Assignment 2 | Due on **Mar 6th (Wed) by 5:59pm** | Submit assignment via email |
  
 ## Acknowledgements
 Course materials were developed by Julia Gallucci, Kaylie Lau, and Santiago Arciniegas under the supervision of Rohan Alexander.
