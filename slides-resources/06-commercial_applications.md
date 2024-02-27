@@ -62,6 +62,8 @@ style: |
 ```console
 Data Sciences Institute
 Topics in Deep Learning
+Instructor: Erik Drysdale
+TA: Jenny Du
 ```
 
 ---
@@ -83,7 +85,7 @@ Topics in Deep Learning
 ---
 #### **DL can do cool stuff, so what?**
 
-- We've seen how DL models can help fill many knowledge gaps in healthcare research
+- We've seen how ML models in general and DL models in specific can help provide information using various data modalities in healthcare research
 
 <br/>
 
@@ -97,9 +99,9 @@ Topics in Deep Learning
 #### **DL as a decision support tool**
 
 - In commercial settings, successful DL applications can be broadly regarded as decision support tools
-  - **Prediction:** Stock price prediction models help investors make better investment decisions
-  - **Classification:** Email spam detection models help alleviate the decision burden placed on human users by automatically identifying and filtering out potentially harmful emails
-  - **Generation:** ChatGPT can accelerate decision making by retrieving and distilling key information from vast amounts of text data
+  - **Forecast:** Future patient volumes can help medical departments make better staffing decisions
+  - **Classification:** Diagnosing patients can reduce time-to-treatment or assist physicians/nurses to come up with more accurate treatments
+  - **Generation:** LLMs (e.g. ChatGPT) can accelerate decision making by distilling key information from vast amounts of text data
 
 ---
 
@@ -238,7 +240,7 @@ Suppose now that there does exist an alternative treatment specifically designed
   
 <br/>
 
-- Hundreds of generative DL models have played a role in:
+- Hundreds of DL models have played a role in:
   1. identifying potential target proteins associated with IPF, and
   2. identifying molecules that could disrupt the activity of a target protein
 
@@ -252,14 +254,13 @@ Suppose now that there does exist an alternative treatment specifically designed
 
 - **Target decision-maker:** pharma companies
 
-- **Target downstream decision:** which drugs should be developed next?
+- **Target downstream decision:** given a particular disease context, which drug compounds are the most promising?
 
-- **Action plan:** given a particular disease context, provide pharma companies with a list of candidate drugs ordered by expected development success
+- **Action plan:** provide pharma companies with a list of candidate compounds to run real lab experiments on
 
 - **Expected value for the end-user:** lower failure rates at early R&D stages, and, ultimately, cheaper and faster drug development
 
 ---
-
 #### **Great interest in DL for biotechnology**
 
 - Many drug developers have recently established partnerships with AI giant NVIDIA over the past few years, including Amgen, AstraZeneca, GSK, Genentech, and the very own Insilico Medicine$^{4}$
@@ -270,6 +271,11 @@ Suppose now that there does exist an alternative treatment specifically designed
 
 ---
 
+<img src="images/ai_companies_drugs.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40-of-global-ai-companies-focus-on-early-drug-development-while-ai-powered-startups-reshape-the-future-of-drug-discovery)
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Commercial Applications: Medical Devices`
@@ -300,12 +306,11 @@ Suppose now that there does exist an alternative treatment specifically designed
 - The Bill & Melinda Gates Foundation awarded GE with \$44M to enable quick and accurate ultrasound scans by healthcare professionals with less experience, seeking to improve maternal and fetal health outcomes$^{6}$
 
 ---
-
 #### **Example business model**
 
 - **Target decision-maker:** healthcare practitioners with general, nonspecific expertise in LMIC or rural areas
 
-- **Target downstream decision:** which steps should be followed when examining pregnant women?
+- **Target downstream decision:** what medical steps are needed to ensure prenatal & postnatal health (e.g. ectopic pregnancy, multiple gestation, fetal viability)
 
 - **Action plan:** develop user-friendly DL interfaces for assisted imaging and automated image analysis, integrate these into affordable ultrasound technologies, and develop suggested care pathways for various imaging results
 
@@ -313,6 +318,9 @@ Suppose now that there does exist an alternative treatment specifically designed
 
 ---
 
+![](images/caption_health.jpg)
+
+---
 #### **Other medical device applications: robotics**
 
 - Cutting edge applications of DL in medical devices extend to its integration with robotics in various medical domains$^{7}$, such as:
