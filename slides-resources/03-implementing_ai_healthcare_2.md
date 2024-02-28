@@ -411,6 +411,7 @@ Source: [Zech et. al (2018)](https://journals.plos.org/plosmedicine/article/file
     - Can *sometimes* help in situations where there is not enough data for training a model from scratch, leveraging the generalization capabilities learned from the original task.
 
 <img src="images/transfer_learning.png" style="display: block; margin-left: auto; margin-right: auto; width: 450px">
+
 Source: [Wiens et. al (2014)](https://pubmed.ncbi.nlm.nih.gov/24481703/)
 
 ---

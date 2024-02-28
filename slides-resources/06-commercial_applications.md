@@ -222,11 +222,18 @@ Suppose now that there does exist an alternative treatment specifically designed
   - These high costs were associated with many factors, including high failure rates in early stages of development and massive R&D costs
 
 ---
-
 ![Drug_discovery](images/drug_discovery.png)$^{2}$
 
 ---
+#### **Eroom's law**
 
+<img src="images/erooms_law.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+Source: [Smart (2020)](https://www.researchgate.net/publication/343111668_Exponential_Progress_Thriving_in_an_Era_of_Accelerating_Change)
+
+<!-- Question: Why do people think this was the case? Did inputs gets more expensive? -->
+
+---
 #### **How DL could revolutionise drug discovery**
 
 - Leveraging large banks of biochemical data, DL has the capacity to analyse intricate disease pathways, enhance the efficiency of identifying potential drug targets and candidates, and ultimately mitigate failure rates during the initial phases of discovery

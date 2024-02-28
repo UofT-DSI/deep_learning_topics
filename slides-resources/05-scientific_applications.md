@@ -157,6 +157,13 @@ Source: [Mijnders et. al (2017)](https://www.sciencedirect.com/science/article/p
 
 Source: [Uliyakina et. al (2020)](https://www.mdpi.com/1422-0067/21/12/4524)
 
+---
+#### **CFTR protein corrected (modulator therapy)**
+
+<img src="images/cftr_life_expectancy.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: [Lopez et. al (2022)](https://www.cysticfibrosisjournal.com/action/showPdf?pii=S1569-1993%2823%2900048-6)
+
 <!-- Question: This drug was discovered without AI. How do you think AI could have helped if we were starting this process from scratch? -->
 
 ---
@@ -168,13 +175,6 @@ Source: [Uliyakina et. al (2020)](https://www.mdpi.com/1422-0067/21/12/4524)
 - **The problem:** discovering new protein structures has historically proven to be a very time-consuming and expensive process
 
 <!-- Question: Does anyone know how we actually get a 3D scan of a protein? -->
-
----
-#### **CFTR protein corrected (modulator therapy)**
-
-<img src="images/cftr_life_expectancy.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
-
-Source: [Lopez et. al (2022)](https://www.cysticfibrosisjournal.com/action/showPdf?pii=S1569-1993%2823%2900048-6)
 
 
 ---
@@ -301,11 +301,12 @@ Source: Palsson et. al (2019)
 - In 2023, Zhou et al. developed a fully connected neural network capable of ingesting thousands of genetic variants associated with AD
   - Their polygenic risk score largely outperformed wPRS, achieving AUROC scores of 0.84 and 0.64, respectively$^{4}$
 
+---
+![AD_risk_score](images/AD_auroc.png)
+
 <!-- Question 1: Why would Lasso have a much higher effect that univariate weighting?
 Question 2: Why would DL have a better effect than the Lasso? -->
 
----
-![AD_risk_score](images/AD_auroc.png)
 
 ---
 #### **It's all connected**
