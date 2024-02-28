@@ -67,20 +67,18 @@ TA: Jenny Du
 ```
 
 ---
-
 ##### **Outline**
 
 - Generating value with DL
-- Maintaining value of DL applications
+- Assessing and creating value with DL applications
 - DL in biotechnology
 - DL in medical devices
 - DL in telemedicine
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Generating Value with DL`
+## `Assessing Value with DL`
 
 ---
 #### **DL can do cool stuff, so what?**
@@ -104,7 +102,6 @@ TA: Jenny Du
   - **Generation:** LLMs (e.g. ChatGPT) can accelerate decision making by distilling key information from vast amounts of text data
 
 ---
-
 #### **Assessing value of DL applications**
 
 - Under this framework, there are three key steps in commercial model development that relate to value, all of which require close stakeholder engagement:
@@ -113,20 +110,16 @@ TA: Jenny Du
 
   **2. Improvement identification (potential value):** assuming ideal model performance, can this decision actually be improved?
 
-  **3. Downstream action plan: (actual value)** which additional workflows have to be in place before decisions can be improved?
+  **3. Downstream action plan: (actual value)** what needs to be in place before workflows can be changed to yield improvements?
 
 ---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #1`
+##### Consider a drug known to incur high morbidity side-effects in 50% of patients. Clinicians have expressed an interest in tools enabling side-effect risk prediction for this drug, given that they want to minimise patient morbidity. Given just this information, **is there enough of a value proposition to motivate building a predictive DL model for commercial purposes?**
 
-#### **Scenario: drug prescriptions**
-
-Consider a drug known to incur high morbidity side-effects in 50% of patients. Clinicians have expressed an interest in tools enabling side-effect risk prediction for this drug, given that they want to minimise patient morbidity
-
-<br/>
-
-- Given just this information, **is there enough value here to motivate building a predictive DL model for commercial purposes?**
 
 ---
-
 #### **Risk of failure due to uncertainties**
 
 - The decision of whether or not to prescribe the drug seems like a good target for decision support DL tools
@@ -140,81 +133,67 @@ Consider a drug known to incur high morbidity side-effects in 50% of patients. C
 - In this case, building a DL model with just this information could have a high risk of failure regardless of predictive performance
 
 ---
-
 #### **The importance of downstream action plans**
 
 Suppose now that there does exist an alternative treatment specifically designed for patients at high risk of adverse drug side effects
 - There is now potential value in this context, since side-effect risk predictions **can** help improve drug prescription decisions
-
 <br/>
-
-
 - The amount of potential value that is translated into actual value hinges on the characteristics of downstream action plans
-  - Transmitting raw model outputs to decision makers is the simplest action plan, though often suboptimal
-  - In this case, clinicians would probably appreciate receiving detailed reports only for patients at high risk along with suggested care pathways and any relevant patient information
+
+<!-- Question: What pieces of information would you provide the physician/pharmacist?
+- Transmitting raw model outputs to decision makers is the simplest action plan, though often suboptimal
+- In this case, clinicians would probably appreciate receiving detailed reports only for patients at high risk along with suggested care pathways and any relevant patient information -->
 
 ---
+#### **Value is ultimately determined by the end user**
 
-#### **Value is ultimately determined by the consumer**
-
-- **Take-home message:** DL models with perfect performance can be worthless in commercial settings, since value is ultimately determined by the consumer
+- **Take-home message:** DL models with perfect performance can be worthless in commercial settings, since value is ultimately determined by the end user (e.g. consumer, pharmacist, nurse, physician, etc)
 
 <br/>
 
-- For this reason, the development of commercial DL applications differs greatly from purely scientific applications, demanding the development of a sensible business model long before the start of any DL work
+- For this reason, **the development of commercial DL applications differs greatly from purely scientific applications**, demanding the development of a sensible business model long before the start of any DL work
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Maintaining Value of DL`
+## `Creating Value with DL products`
 
 ---
+#### **Understanding your product's market**
 
-#### **Several factors impact perceived value**
-
-- To ensure longlasting revenue streams, dynamic factors governing the perceived value of commercial DL applications have to be taken into account post-deployment
-  - These additional considerations further differentiate academic and commercial applications of DL methods
-
----
-
-#### **Continued market research**
-
-- Continued market research is essential for businesses to stay informed about changes in the marketplace, identify new opportunities, assess risks, and make informed strategic decisions
-  
-<br/>
-
-- It involves monitoring dynamic factors such as:
-  - Evolving consumer behaviours
+- To build a a commercial ML project, you'll need to think about:
   - Market trends
   - Competitor activities
   - Emerging technologies
-  - Brand reputation
-  - And more!
-
----
-
-#### **Continued development**
-
-- Continued development is crucial to maintain and/or enhance the performance, efficiency, and relevance of a DL application over time
-
-<br/>
-
-- It involves monitoring and adapting to dynamic factors within the deployment environment such as:
-  - Distribution and performance drift
-  - Infrastructure changes
-  - Regulatory changes
+  - Marketing
+  - Internal infrastructure
+  - Regulation
   - Security threats
   - Resource availability
+  - And more!
+
+<!-- Question: For those in the commercial space, what are other things you've had to plan for and stay on top of for a model/product -->
+
 
 ---
+#### **Factors that impact long-run perceived value**
 
+- To ensure longlasting revenue streams, dynamic factors governing the perceived value of commercial DL applications have to be taken into account post-deployment
+  - User experience
+  - Reliability and consistency
+  - Data privacy and security
+  - Brand reputation
+  - And more!
+- These additional considerations further differentiate academic and commercial applications of DL methods
+
+
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Commercial Applications: Biotechnology`
+## `Commercial Applications: Biopharma`
 
 ---
-
 #### **The high cost of drug discovery**
 
 - Drug discovery is a very time-consuming and expensive process
@@ -222,7 +201,11 @@ Suppose now that there does exist an alternative treatment specifically designed
   - These high costs were associated with many factors, including high failure rates in early stages of development and massive R&D costs
 
 ---
-![Drug_discovery](images/drug_discovery.png)$^{2}$
+<img src="images/drug_discovery_timeline.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+<!-- Question: Why does this stuff take so long!?! -->
+
+<!-- ![Drug_discovery](images/drug_discovery.png)$^{2}$ -->
 
 ---
 #### **Eroom's law**
@@ -239,7 +222,6 @@ Source: [Smart (2020)](https://www.researchgate.net/publication/343111668_Expone
 - Leveraging large banks of biochemical data, DL has the capacity to analyse intricate disease pathways, enhance the efficiency of identifying potential drug targets and candidates, and ultimately mitigate failure rates during the initial phases of discovery
 
 ---
-
 #### **2023: first DL-developed drug enters phase 2**
 
 - In June of 2023, Insilico Medicine announced the first DL-developed drug to enter phase 2 clinical trials$^{3}$
@@ -247,7 +229,7 @@ Source: [Smart (2020)](https://www.researchgate.net/publication/343111668_Expone
   
 <br/>
 
-- Hundreds of DL models have played a role in:
+- DL models have played a role in:
   1. identifying potential target proteins associated with IPF, and
   2. identifying molecules that could disrupt the activity of a target protein
 
@@ -256,10 +238,9 @@ Source: [Smart (2020)](https://www.researchgate.net/publication/343111668_Expone
 - Alex Zhavoronkov, co-founder of Insilico Medicine, thinks this approach shaved off a couple of years from the usual R&D process
   
 ---
+#### **Ex. business model (Compound screening)**
 
-#### **Example business model**
-
-- **Target decision-maker:** pharma companies
+- **Target decision-maker:** Pharma company R&D arm
 
 - **Target downstream decision:** given a particular disease context, which drug compounds are the most promising?
 
@@ -268,16 +249,24 @@ Source: [Smart (2020)](https://www.researchgate.net/publication/343111668_Expone
 - **Expected value for the end-user:** lower failure rates at early R&D stages, and, ultimately, cheaper and faster drug development
 
 ---
-#### **Great interest in DL for biotechnology**
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #2`
+####  What advantage would a DL startup have over a pharma company with >$10 billion revenue when it comes to developing technologies for drug discovery? 
 
-- Many drug developers have recently established partnerships with AI giant NVIDIA over the past few years, including Amgen, AstraZeneca, GSK, Genentech, and the very own Insilico Medicine$^{4}$
+
+---
+#### **Great interest in DL within biopharma**
+
+- Many drug developers have recently established partnerships with AI giant NVIDIA over the past few years, including Amgen, AstraZeneca, GSK, Genentech, and the aforementioned Insilico Medicine$^{4}$
 
 <br/>
 
 - These partnerships reflect a shift within the biotechnology industry towards AI-based life sciences for cheaper and faster drug discovery
 
----
+<!-- Question: Suppose we identity "promising" compounds, this usually means in terms of some assay or test based on some target (e.g. how much protein is prevented). What is the problem here? What is the label we're trying to predict with compound screening  -->
 
+---
 <img src="images/ai_companies_drugs.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
 
 Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40-of-global-ai-companies-focus-on-early-drug-development-while-ai-powered-startups-reshape-the-future-of-drug-discovery)
@@ -288,61 +277,55 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 ## `Commercial Applications: Medical Devices`
 
 ---
-
 #### **Limited global access to medical imaging**
 
 - Healthcare centres in low-and-middle income countries (LMIC) lack access to medical imaging devices as well as the expertise required to operate them$^{5}$
   - Given that these technologies enable early detection and intervention in various disease contexts, this translates into increased morbidity and mortality from preventable causes in these regions
 
 ---
-
 ![MRI_access](images/mri_availability.png)
 
 ---
-
-#### **How DL could increase access to quality care**
+<h4> <b>How DL <u>could</u> increase access to quality care</b></h4>
 
 - DL applications can expand access to medical imaging technologies by reducing the level of expertise needed for image acquisition and interpretation
   - **Assisted imaging** enables the use of imaging devices by lesser-skilled users
   - **Automated analyses** alleviates the need for highly specialised expertise when interpreting imaging results
 
----
+<!-- Question: COULD increase. We've talked about the problem w/ Google's diabetic retinopathy. Why is the "downstream action plan" going to be harder in LMICs? Why would "percieved value" be different? -->
 
+---
+<img src="images/abondoned_tractors.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+
+[Source](https://www.peterdicampo.com/failed-aid)
+
+---
 #### **2023: GE Secures \$44M grant to develop assisted ultrasound technology for LMIC**
 
 - The Bill & Melinda Gates Foundation awarded GE with \$44M to enable quick and accurate ultrasound scans by healthcare professionals with less experience, seeking to improve maternal and fetal health outcomes$^{6}$
 
 ---
-#### **Example business model**
+#### **Ex. business model (ultrasounds in LMIC)**
 
 - **Target decision-maker:** healthcare practitioners with general, nonspecific expertise in LMIC or rural areas
 
-- **Target downstream decision:** what medical steps are needed to ensure prenatal & postnatal health (e.g. ectopic pregnancy, multiple gestation, fetal viability)
+- **Target downstream decision:** maternal health recommendations (e.g. ectopic pregnancy, multiple gestation, fetal viability)
 
 - **Action plan:** develop user-friendly DL interfaces for assisted imaging and automated image analysis, integrate these into affordable ultrasound technologies, and develop suggested care pathways for various imaging results
 
 - **Expected value for the end-user:** increased screening, early detection and early intervention for common complications of pregnancy, leading to a decreases in preventable mortality
 
 ---
-
 ![](images/caption_health.jpg)
 
----
-#### **Other medical device applications: robotics**
-
-- Cutting edge applications of DL in medical devices extend to its integration with robotics in various medical domains$^{7}$, such as:
-  - robot-assisted biopsies, 
-  - fully-autonomous surgical procedures, 
-  - and smart exoskeletons rehabilitation assistance
+<!-- Question: What are some other applications of AI in medical devices? Recall the gastroenterologist -->
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Commercial Applications: Telemedicine`
 
 ---
-
 #### **Healthcare system strain**
 
 - Aging populations, healthcare workforce shortages, a higher incidence of chronic diseases, addiction, and respiratory illnesses over the past few years have resulted in an overly strained Canadian healthcare system$^{8}$.
@@ -350,25 +333,22 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
   - This has led to decreased quality of care, staff burnout, and public distrust, all of which further exacerbate healthcare system strain in a vicious cycle
 
 ---
-
 #### **Telemedicine: an incomplete solution**
 
 - Telemedicine refers to the remote delivery of healthcare services enabled by telecommunications technologies
 
 <br/>
 
-- By enabling remote consultations, telemedicine can help alleviate some healthcare system strain. However, it has some glaring drawbacks
+- By enabling remote consultations, telemedicine can help alleviate some healthcare system strain. However, it has some drawbacks
   - The requirement of a healthcare practitioner at the other end of the line means this solution remains hindered by labor shortages
   - Voice and video assessments do not provide sufficient information to properly screen for various conditions, which dramatically reduces the usefulness of many remote appointments
 
 ---
-
 #### **DL and telemedicine**
 
 - DL can leverage the increasing abundance of portable and wearable sensors to enable AI-assisted (and maybe eventually fully automated) remote symptom screening
   
 ---
-
 #### **Google's DermAssist**
 
 - In 2021, Google announced the release of DermAssist, a DL-powered tool designed to assist in screening and diagnosing skin conditions$^{9}$
@@ -378,15 +358,14 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 
 - Later, in 2023, it was announced that Google Lens would be equipped with a similar functionality, being able to search skin conditions that are visually similar to what you a user may see on their skin$^{10}$
 
-- **NB:** in both cases, Google stressed their intentions to **assist**, but not replace, the symptom screening process
+- In both cases, Google stressed their intentions to **assist**, but not replace, the symptom screening process
 
 ---
 
 ![DermAssist](images/dermassist.png)
 
 ---
-
-#### **Example business model**
+#### **Ex. business model (dermatology CDSS)**
 
 - **Target decision-maker:** patients and/or healthcare practitioners involved in remote symptom screening for skin conditions
 
@@ -397,7 +376,6 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 - **Expected value for the end-user:** better-informed decision making around skin conditions that are being screened remotely, enhancing the effectiveness and efficiency of telemedicine appointments
 
 ---
-
 #### **Mostly emerging applications**
 
 - Regulatory agencies and tech companies remain cautious when defining the potential of DL tools in remote symptom screening
@@ -408,24 +386,28 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 - Nevertheless, with further expected advances in portable and wearable sensors, the future of DL-enhanced remote symptom screening remains promising$^{11, 12}$
 
 ---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #3`
+##### Suppose you were developing a deep learning system for providing clinical decision support about whether a rash needs antibiotics. How many full time staff would you need to develop this product and what would their range of skills be?
 
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Conclusion`
 
 ---
-
 #### **DL applications have a bright future in commercial healthcare**
 
 - DL offers significant potential for enhancing patient outcomes and streamlining healthcare delivery
 
 <br/>
 
-- Value identification, continued market research and continued development efforts are essential to ensure the relevance and effectiveness of deep learning applications in commercial healthcare settings
+- Value identification, market research,  and development efforts are essential to ensure the relevance and effectiveness of deep learning applications in commercial healthcare settings
 
 <br/>
 
-- Collaboration between technology developers, healthcare providers, and regulatory bodies is crucial for driving innovation and facilitating the adoption of deep learning solutions in healthcare while prioritising consumer safety
+- Collaboration between technology developers, healthcare providers, and regulatory bodies is crucial for driving innovation and facilitating the adoption of DL solutions in healthcare while prioritising safety
 
 
 --- 
