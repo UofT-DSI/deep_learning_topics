@@ -69,7 +69,6 @@ TA: Jenny Du
 ---
 ##### **Outline**
 
-- Generating value with DL
 - Assessing and creating value with DL applications
 - DL in biotechnology
 - DL in medical devices

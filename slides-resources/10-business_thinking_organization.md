@@ -123,11 +123,17 @@ TODO
 ---
 ##### **Medicine happens in buildings (usually)**
 
-<img src="images/hospital.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
-
-<img src="images/clinic.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
-
-<img src="images/cvs.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+<div class="row" style="text-align: center;">
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/hospital.jpg" style="width: 300px">
+ </div>
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/clinic.jpg" style="width: 300px">
+ </div>
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/cvs.jpg" style="width: 300px">
+ </div>
+</div>
 
 
 ---
@@ -140,14 +146,14 @@ Source: [Sandhu et. al (2023)](https://www.cell.com/patterns/pdfExtended/S2666-3
 ---
 ##### **Create a sense of urgency**
 
-<img src="images/build_to.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+<img src="images/build_to.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
 Source: [AI in biomedical data analytics and population health](https://www.youtube.com/watch?v=hBu5ZIvYLjs)
 
 ---
 ##### **Top to bottom**
 
-<img src="images/align_csuite.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+<img src="images/align_csuite.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
 Source: [AI in biomedical data analytics and population health](https://www.youtube.com/watch?v=hBu5ZIvYLjs)
 
@@ -155,7 +161,7 @@ Source: [AI in biomedical data analytics and population health](https://www.yout
 ---
 ##### **At the top**
 
-<img src="images/management_vs_leadership.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+<img src="images/management_vs_leadership.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
 Source: [AI in biomedical data analytics and population health](https://www.youtube.com/watch?v=hBu5ZIvYLjs)
 
