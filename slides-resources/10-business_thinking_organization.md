@@ -39,7 +39,6 @@ Topics in Deep Learning
 ## `Healthcare Initiatives`
 
 ---
-
 ##### **Healthcare Initiatives**
 - When brainstorming healthcare initiatives, it is important to take into account key stakeholders:
   - Patients
@@ -47,14 +46,21 @@ Topics in Deep Learning
   - Healthcare providers
 - All have pivotal roles in both the industry's overall success and the well-being of patients.
 
----
 
+---
+##### **AI Center of Excellence**
+
+TODO
+
+<!-- Question: What are some of the downsides with a CoE? -->
+
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Triple Aim Framework`
 
 ---
-
 ##### **Triple Aim Framework**
 - Developed by Dr. Donald Berwick and colleagues at the Institute for Healthcare Improvement (IHI) in 2007.
 - A set of three interconnected goals aimed at improving healthcare systems and the overall health and well-being of populations.
@@ -78,7 +84,6 @@ Topics in Deep Learning
 ## `Triple Win Framework`
 
 ---
-
 ##### **Triple Win Framework**
 - When thinking about new ideas, try expanding "Triple Aim" to "Triple Win".
 - You need to consider how your idea creates value for all three stakeholders: patients, clinicians, and funders.
@@ -88,7 +93,9 @@ Topics in Deep Learning
 </figure>
 
 ---
+<img src="images/triple_win.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
 
+---
 ##### **Patient**
 *Improve Outcomes, Improve Experience, Increase Access*
 1. What specific need or problem has not been addressed yet?
@@ -106,7 +113,6 @@ Topics in Deep Learning
 - What potential opportunities does it bring, such as the possibility of publications, educational benefits, or enhanced connections with colleagues?
 
 ---
-
 ##### **Funder**
 *Growth, Financial Stability, Expand Reputation, Talent Retention*
 - How does this idea generate financial value, such as through direct reimbursement, contractual fees, or licensing revenue?
@@ -115,7 +121,54 @@ Topics in Deep Learning
 - Will this idea lead to the creation of new career opportunities?
 
 ---
+##### **Medicine happens in buildings (usually)**
 
+<img src="images/hospital.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+
+<img src="images/clinic.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+
+<img src="images/cvs.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+
+
+---
+##### **Example Org Chart**
+
+<img src="images/org_chart.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+Source: [Sandhu et. al (2023)](https://www.cell.com/patterns/pdfExtended/S2666-3899(23)00047-8)
+
+---
+##### **Create a sense of urgency**
+
+<img src="images/build_to.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+
+Source: [AI in biomedical data analytics and population health](https://www.youtube.com/watch?v=hBu5ZIvYLjs)
+
+---
+##### **Top to bottom**
+
+<img src="images/align_csuite.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+
+Source: [AI in biomedical data analytics and population health](https://www.youtube.com/watch?v=hBu5ZIvYLjs)
+
+
+---
+##### **At the top**
+
+<img src="images/management_vs_leadership.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+
+Source: [AI in biomedical data analytics and population health](https://www.youtube.com/watch?v=hBu5ZIvYLjs)
+
+
+---
+##### **Example of making the alignment**
+
+<img src="images/dihi_incentive_flow.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+
+Source: [Increasing AI Tool Adoption by Front-Line Workers](https://www.youtube.com/watch?v=qF18trDyQCg&t=2087s)
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Business Pitch`
@@ -144,15 +197,14 @@ Topics in Deep Learning
 ---
 
 ##### **What do you include in your outline?**
-1. Executive Summary & Company Overview
-2. The Team & Management
-3. Problem/Opportunity Identification
-4. Solution & Technology
-5. Market Opportunity & Size
-6. Business Model & Go-to-Market Strategy
-7. Competitive Landscape Analysis
-8. Intellectual Property (IP) Strategy
-9. Funding Requirements & Use of Proceeds (“The Ask”)
+1. Problem/Opportunity Identification
+2. Solution & Technology
+3. Market Opportunity & Size
+4. Business Model & Go-to-Market Strategy
+5. Competitive Landscape Analysis
+6. Intellectual Property (IP) Strategy
+7. The Team & Management
+8. Funding Requirements & Use of Proceeds (“The Ask”)
 
 ---
 
@@ -256,7 +308,7 @@ Topics in Deep Learning
 
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Case Studies`
+## `Successful AI-based HC companies`
 
 ---
 
@@ -290,32 +342,12 @@ Topics in Deep Learning
 -  **Collaboration with Healthcare Research**: Collaborate with healthcare and research entities to advance personalized medicine
 
 ---
-
-<figure>
-  <img src="images/23andMe_logo.png" width="600" alt="23andMe Logo" style="display: block; margin-left: auto; margin-right: auto;">
-  <figcaption style="text-align: center;">https://www.23andme.com/en-ca/</figcaption>
-</figure>
-
----
-
-##### **23andMe**
-- A consumer genetics company that provides direct-to-consumer DNA testing.
-- **Ancestry Reports**: Provide insights into a person's ethnic background and ancestral origins.
-- **Health Risk Assessments**: Highlight genetic predispositions to diseases.
-- **Trait Reports**: Explore genetics' influence on physical and personal characteristics.
-- **Carrier Status Reports**: Identify genes for inheritable conditions.
-- Experiencing challenges from blending consumer tech, biotech, and healthcare within one company.
-- Considering separating the company's consumer and therapeutics divisions to address declining stock prices and the risk of Nasdaq delisting 
-
----
-
 <figure>
   <img src="images/RecursionPharmaceuticals_logo.png" width="600" alt="Recursion Pharmaceuticals Logo" style="display: block; margin-left: auto; margin-right: auto;">
   <figcaption style="text-align: center;">https://www.recursion.com</figcaption>
 </figure>
 
 ---
-
 ##### **Recursion Pharmaceuticals**
 - Biotech company using AI and automation for drug discovery.
 - **Drug Discovery**: Use AI to rapidly identify potential drugs for a wide range of diseases.

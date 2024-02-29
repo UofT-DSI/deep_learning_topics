@@ -44,7 +44,7 @@ The schedule is tentative and may be modified as needed. Learners will be notifi
 * **Day 7 (Thursday, February 29, 6:00 PM - 8:30 PM):** "Black box” model explainability 
 * **Day 8 (Tuesday, March 5, 6:00 PM - 8:30 PM):** "Black box” model explainability (cont'd)
 * **Day 9 (Wednesday, March 6, 6:00 PM - 8:30 PM):** Guest lecture (AI-based drug discovery)
-* **Day 9 (Thursday, March 7, 6:00 PM - 8:30 PM):** Business thinking and organization structure
+* **Day 10 (Thursday, March 7, 6:00 PM - 8:30 PM):** Business thinking and organization structure
 
 ## Prerequisites
 Learners are expected to have completed the DSI foundational courses (i.e., Unix Shell/Git and GitHub, Python, R, Building Research Software/SQL, Estimation/Machine Learning/Testing, Production) as well as the Deep Learning Foundations course.
@@ -76,7 +76,7 @@ Learners should be active participants and are encouraged to ask questions throu
 * [Implementing AI in healthcare #1](lessons/02-implementing_ai_healthcare_1.pdf)
 * [Implementing AI in healthcare #2](lessons/03-implementing_ai_healthcare_2.pdf)
 * ~~Survival modeling~~
-* (Under construction) [Protein folding, drug discovery, and medical imaging, and ‘Omics]()
+* [Protein folding, drug discovery, and medical imaging, and ‘Omics](lessons/05-scientific_applications.pdf)
 * (Under construction) [Commercial applications]()
 * ~~“White box” model explainability~~
 * (Under construction) ["Black box” model explainability]()

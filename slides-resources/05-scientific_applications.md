@@ -92,6 +92,8 @@ TA: Jenny Du
 <br/>
 - Analyzing these types of data can prove very challenging, given their sheer size and complexity.
 
+<!-- Question: Imagine you were training a model that contained information from a "chart". How would you incorporate the various text data? -->
+
 ---
 #### **DL as an analytical tool**
 - DL offers several advantages over alternative data analysis tools when dealing with large volumes of data:
@@ -99,16 +101,12 @@ TA: Jenny Du
   - Ability to handle noisy data
   - Adaptability to diverse data types (e.g., text, images, time series)
   - Scalability
+- Given the complexity of human health, and the large amounts of health data now available, AI methods like DL have become increasingly popular in healthcare research $^{1}$
 
 <!-- Question: Why do we say that deep learning is "scalable"? What are classes of algorithms that do not "scale" as easily? -->
 
-
 ---
 #### **DL in healthcare research over the years**
-- Given the complexity of human health, and the large amounts of health data now available, AI methods like DL have become increasingly popular in healthcare research $^{1}$
-
-<!-- ---
-![Healtchare_publications](images/ai_healthcare_publications.png "Number of healthcare-related AI research publications between 2000-2021. Jimma, 2023") -->
 
 ---
 ![](images/publication_vs_adoption.png)
@@ -140,20 +138,33 @@ TA: Jenny Du
 
 ![](images/protein_folding.png)
 
+<!-- Question: Why do you think proteins (almost always) fold exactly into their native state? How does a protein "know" which way to fold? -->
+
 
 ---
 #### **Proteins behaving well (CFTR)**
 
-<img src="images/cftr_wt.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+<img src="images/cftr_wt.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
 Source: [Mijnders et. al (2017)](https://www.sciencedirect.com/science/article/pii/S1471489217301285)
+
+<!-- Question: Does anyone know what CF is? -->
 
 ---
 #### **Proteins behaving badly (CFTR)**
 
-<img src="images/cft2_mutation.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+<img src="images/cft2_mutation.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
 Source: [Uliyakina et. al (2020)](https://www.mdpi.com/1422-0067/21/12/4524)
+
+---
+#### **CFTR protein corrected (modulator therapy)**
+
+<img src="images/cftr_life_expectancy.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: [Lopez et. al (2022)](https://www.cysticfibrosisjournal.com/action/showPdf?pii=S1569-1993%2823%2900048-6)
+
+<!-- Question: This drug was discovered without AI. How do you think AI could have helped if we were starting this process from scratch? -->
 
 ---
 #### **Protein structure research**
@@ -162,14 +173,8 @@ Source: [Uliyakina et. al (2020)](https://www.mdpi.com/1422-0067/21/12/4524)
   - For this reason, protein structure research is extremely important for fields like pharmacology, biochemistry, and immunology
 <br/>
 - **The problem:** discovering new protein structures has historically proven to be a very time-consuming and expensive process
-<br/>
 
----
-#### **Proteins corrected (CF modulator therapy)**
-
-<img src="images/cftr_life_expectancy.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
-
-Source: [Lopez et. al (2022)](https://www.cysticfibrosisjournal.com/action/showPdf?pii=S1569-1993%2823%2900048-6)
+<!-- Question: Does anyone know how we actually get a 3D scan of a protein? -->
 
 
 ---
@@ -211,6 +216,7 @@ Source: [Lopez et. al (2022)](https://www.cysticfibrosisjournal.com/action/showP
 ## `Breakout #2`
 #### Besides the 3D structure of the protein, what other "labels" would we want to predict with an (amino acid) input sequence?
 
+<!-- Question: Why did AlphaFold folks decide to do Sequence -> Shape? Why not Shape -> Sequence? -->
 
 ---
 <!--_color: white -->
@@ -260,7 +266,9 @@ Source: Palsson et. al (2019)
 
 
 ---
-![Allele_freq_vs_effect](images/frequency_vs_effect.png)
+<img src="images/frequency_vs_effect.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+<!-- Quesiton: Why don't we see GWAS results for the bottom left and top right? -->
 
 ---
 #### **Modeling polygenic risk**
@@ -296,6 +304,10 @@ Source: Palsson et. al (2019)
 ---
 ![AD_risk_score](images/AD_auroc.png)
 
+<!-- Question 1: Why would Lasso have a much higher effect that univariate weighting?
+Question 2: Why would DL have a better effect than the Lasso? -->
+
+
 ---
 #### **It's all connected**
 
@@ -306,7 +318,7 @@ Source: Visscher et. al (2017)
 ---
 #### **GWAS == Gattaca?**
 
-<img src="images/gwas_gattaca.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+<img src="images/gwas_gattaca.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
 
 Source: Khera et. al (2018)
 
@@ -320,7 +332,7 @@ Source: Khera et. al (2018)
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Radiomics`
+## `Medical imaging/Radiomics`
 
 ---
 
@@ -368,7 +380,8 @@ Source: Khera et. al (2018)
 <br/>
 - DL tools, in particular convolutional neural networks (CNNs), have seen increasing popularity in radiomics research given their excellent track record in natural image processing and analysis over the last decade
 
-<!-- Question: Why would CNNs likely beat a MLP-only deep neural network? Or any other ML model for that matter -->
+<!-- Question 1: How did people create "features" from images before deep learning?
+Question 2: Why would CNNs likely beat a MLP-only deep neural network? Or any other ML model for that matter -->
 
 ---
 
@@ -383,7 +396,6 @@ Source: Khera et. al (2018)
   - Part of this workup involves a conventional read of a structural T1-weighted MRI scan, which fails to identify brain abnormalities in over 50% of lupus patients with neuropsychiatric symptoms
 
 ---
-
 #### **Self-supervised CNN for NPSLE classification**
 
 - In 2022, Inglese et al. developed a self-supervised CNN for NPSLE classification$^{5}$
@@ -398,9 +410,25 @@ Source: Khera et. al (2018)
   - This was possible due to their use of contrastive learning and augmentation methods
 
 ---
+#### **Self-supervised contrastive learning**
+
+<img src="images/contrastive_learning.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+Source: Khosla et. al (2020)
+
+---
 #### **Inglese's self-supervised CNN architecture**
 
 ![Inglese_CNN_architecture](images/inglese_cnn.png)
+
+---
+#### **Hydronephrosis**
+
+- Prenatal hydronephrosis (PHN) is when the kidney dilates during pregnancy (20% of pregancies)
+- Children born with PHN comprise approximately 20-30% of patients seen in pediatric urology clinics
+- All children will be monitored up to 36 months unless there is a spontaneous resolution, meaning many invasize ultrasounds
+- Up to 30% of PHN infants will require surgery
+- **Could AI help predict earlier when patients need surgery using ultrasound images?**
 
 ---
 #### **Hydronephrosis**
