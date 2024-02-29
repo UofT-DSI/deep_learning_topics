@@ -65,7 +65,6 @@ Topics in Deep Learning
 ```
 
 ---
-
 ##### **Outline**
 
 - Black box models
@@ -75,23 +74,62 @@ Topics in Deep Learning
 - Global methods
     - Global surrogate models
     - HRT
+- Model specific methods
+    - Grad cam
+    - Attention
+- Mechanistic interpretability
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Black Box Models`
 
 ---
+#### **What is a black box?**
+
+- In general parlance, a "black box" refers to some function whose internal workings are unknown or opaque
+- Like a machine model, it simply maps an input to an output: $f(x)=y$, where $f: \mathbb{R}^p \to \mathbb{R}^k$
+
+<img src="images/black_box.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+
+---
+#### **What is a black box in ML?**
+
+- In machine learning, we use black to refer to:
+    - Algorithm classes "whose internal workings are unknown or opaque"
+    - Methods that work for any arbitrary function (i.e. as long as you can perform inference or possibly take a gradient from $f_\theta(x)$)
+- Questions:
+    - What are some ML algorithms you would consider "black boxes"?
+    - What are some methods that work for arbitrary functions?
+
+---
+#### **Why use a black box model?**
+
+- Flexibly model arbirtary functions
+
+<br>
+<img src="images/kernel_trick.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+
+---
+#### **Why use a black box model?**
+
+- Learned features >> hand-crafted features (usually)
+
+![](images/word2vec.jpg)
+
+
+---
 #### **Complexity vs interpretability**
 
-- Trained DL models are capable of modeling highly complex, non-linear relationships
-    - This is partly due to their sheer size (sometimes billions of parameters) and their use of both linear and nonlinear functions
+- Many ML models, and all DL modelsm are capable of modeling highly complex, non-linear relationships 
+- There is usually (but not always) a trade-off between model compexlity and performane
 
-<br/>
+<img src="images/complexity_accuracy.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
 
-- By the same token, well performing models are a sort of "black box": we know they work, but we don't know how
-    - Unlike simpler models like linear regression, understanding how black box models arrive at their predictions can be challenging
+Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8844682)
+
+<!-- Quesiton: In what instances would we NOT expect there to be a trade-off? -->
+
 
 ---
 #### **Challenges of black box models**
@@ -104,8 +142,8 @@ Topics in Deep Learning
 <br/>
 - **Accountability issues**: if a black box model's behaviour results in serious issues such as death, who should be held accountable?
 
----
 
+---
 #### **Importance of explainability**
 
 - Explainability is crucial for models deployed in high-stakes environments such as healtchare
@@ -117,32 +155,34 @@ Topics in Deep Learning
     - Facilitate and contextualise model debugging and improvement
 
 ---
-
 #### **Lesson objective**
 
-- Explore different methods for understanding how complex, non-linear models work
-
-<br/>
+- Explore different methods for elucidating understanding how complex, non-linear models work
 
 ---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #1`
+##### Suppose there is a melanoma classifier that uses a CNN. As a potential future patient, how would you want this classifier to explain its "prediction" about whether you had melanoma or not from your picture?
 
+<img src="images/melanoma_rulers.png" style="display: block; margin-left: auto; margin-right: auto; width: 400px">
+
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Local Methods`
 
 ---
-
 ![Local_Explainability](images/local_explainability.png)
 
 ---
-
 #### **Understanding individual predictions**
 
 - **Local explainability methods** offer insights into individual predictions made by black box models
     - They focus on explaining why a particular prediction was made for a specific instance or region of the input space
 
 ---
-
 #### **Why does it matter?**
 
 - DL models are trained on datasets that may not be representative of the entire population
@@ -151,7 +191,6 @@ Topics in Deep Learning
 - Understanding why a model behaves differently for each individual or subgroup can help stakeholders identify and address algorithmic bias and unintended behaviours
 
 ---
-
 #### **Methodological approaches**
 In this lesson, we will go over two different approaches for local explainability:
 <br/>
@@ -163,13 +202,11 @@ In this lesson, we will go over two different approaches for local explainabilit
 <br/>
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Variable Attribution: SHAP`
 
 ---
-
 #### **SHapley Additive exPlanations (SHAP)**
 
 - SHAP is a method for explaining the output of machine learning models by quantifying the contribution of each feature to the prediction
@@ -177,8 +214,8 @@ In this lesson, we will go over two different approaches for local explainabilit
 <br/>
 
 - This is based on the concept of Shapley values from cooperative game theory: given a set of players (features), how do we distribute the payout (prediction) resulting from a collaborative game (prediction task) 
----
 
+---
 #### **Calculating variable contribution**
 
 - SHAP considers all possible subsets of features, known as coalitions, for a given instance
@@ -192,7 +229,6 @@ In this lesson, we will go over two different approaches for local explainabilit
 - The Shapley value for each feature value is computed as the **average of its marginal contributions** across all possible coalitions
 
 ---
-
 #### **Calculating variable contribution**
 
 - Consider a model predicting risk of heart disease based on **age, cholesterol levels, and smoking status**
@@ -216,13 +252,11 @@ In this lesson, we will go over two different approaches for local explainabilit
 - **Visual interpretation**: SHAP values can be visualized using various plots, such as the waterfall plot, which displays how individual feature values push the prediction of an instance away from the average value
 
 ---
-
 #### **SHAP waterfall plot: predicting the number of rings in an abalone shell**
 
 ![SHAP_waterfall_plot](images/SHAP_waterfall.png)
 
 ---
-
 #### **Limitations of SHAP**
 
 - **Computationally expensive**: considering all coallitions can be computationally intensive, especially in complex contexts
@@ -230,13 +264,11 @@ In this lesson, we will go over two different approaches for local explainabilit
 - **Potential misinterpretation**: Users may sometimes misinterpret SHAP values, assuming causality or feature importance and producing false conclusions 
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Surrogate models: LIME`
 
 ---
-
 #### **Local Interpretable Model-agnostic Explanations (LIME)**
 
 - LIME is a technique for explaining individual predictions of black box machine learning models at a local level
@@ -252,7 +284,6 @@ In this lesson, we will go over two different approaches for local explainabilit
 <br/>
 
 ---
-
 #### **Mechanistic overview**
 
  Given an original instance of interest, LIME does the following:
@@ -263,11 +294,9 @@ In this lesson, we will go over two different approaches for local explainabilit
  4. Explain the original instance's prediction by interpreting the surrogate model
 
 ---
-
 ![LIME](images/LIME.png)
 
 ---
-
 #### **Limitations of LIME**
 
 - **No single correct way of defining a neighbourhood**: the reweighing function used for new sampled instances based on their distance from the original is variable and can have important impacts in downstream results
@@ -277,23 +306,19 @@ In this lesson, we will go over two different approaches for local explainabilit
 - **Model dependence**: interpretability results heavily depend on the choice of both the black box model and the surrogate model
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Global Methods`
 
 ---
-
 ![Global_Explainability](images/global_explainability.png)
 
 ---
-
 ##### **Understanding overall model behaviour**
 
 - **Global explainability methods** offer insights into average model behaviour and general data characteristics
 
 ---
-
 ##### **Why does it matter?**
 
 - Global explainability enhances our general understanding of a model's decision-making process across an entire dataset, enhancing methodological transparency and increasing trust amongst stakeholders
@@ -302,7 +327,6 @@ In this lesson, we will go over two different approaches for local explainabilit
 - It also facilitates model debugging and improvement by identifying unexpected behaviours and potential areas of improvement, such as feature selection
 
 ---
-
 ##### **Methodological approaches**
 In this lesson we will go over two different global explainability approaches:
 
@@ -311,20 +335,17 @@ In this lesson we will go over two different global explainability approaches:
 - **Holdout Randomization Test (HRT)**
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Global Surrogates`
 
 ---
-
 ##### **Global surrogate models**
 
 - A global surrogate is a simple, interpretable model (e.g., linear regression or decision tree) trained to approximate the predictions of a black box model
     - We are using simple machine learning to model the behaviour of more complex DL algorithms
 
 ---
-
 ##### **Basic principle**
 A global surrogate model can be obtained and interpreted as follows:
 1. Define a dataset $X$
@@ -335,7 +356,6 @@ A global surrogate model can be obtained and interpreted as follows:
 <br/>
 
 ---
-
 ![global_surrogate_models](images/global_surrogate.png)
 
 ---
@@ -346,7 +366,6 @@ A global surrogate model can be obtained and interpreted as follows:
 - **How good is good enough?**: there are no clear rules to determine how similar the surrogate model predictions have to be to its black box counterpart to be considered an acceptable approximation of behaviour
 
 ---
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Holdout Randomization Test`
@@ -361,7 +380,6 @@ A global surrogate model can be obtained and interpreted as follows:
 - These measures provide insights into feature interactions and overall model behaviour
 
 ---
-
 ##### **HRT algorithm**
 
 Given a trained model and a test set HRT can be implemented as follows:
@@ -374,7 +392,6 @@ Given a trained model and a test set HRT can be implemented as follows:
     - Compute a test statistic to determine whether or not the disturbance of this feature led to worse test set performance
 
 ---
-
 ##### **Interpreting HRT results**
 
 - At a high level, HRT conducts a conditional independece test for each feature $X_j$, with the null hypothesis stating that an outcome $y$ is independent of feature $X_j$ given all other features
@@ -383,11 +400,9 @@ Given a trained model and a test set HRT can be implemented as follows:
 - Intuitively, if $X_j$ is predictive of $y$, perturbing this feature in isolation will break down its relationship to $y$ and lead to drops in performance
 
 ---
-
 ![HRT](images/HRT.png)
 
 ---
-
 ##### **Limitations of HRT**
 
 - **Sensitivity to test set size**: effectiveness of HRT may vary depending on the size of the holdout set, with smaller holdout sets potentially leading to less reliable assessments of feature importance
@@ -396,8 +411,8 @@ Given a trained model and a test set HRT can be implemented as follows:
 
 - **Assumption of echangeability**: HRT assumes that feature values are exchangeable, which may not hold true in all datasets, potentially leading to biased assessments of feature importance
     - The act of shuffling features in isolation may introduce unrealistic data upon which feature importance is calculated
----
 
+---
 ##### **References**
 
 (1) Molnar, C. (2022). Interpretable Machine Learning:
