@@ -73,8 +73,8 @@ Topics in Deep Learning
     - SHAP
     - LIME
 - Global methods
+    - Global surrogate models
     - HRT
-    - Knockoffs
 
 ---
 
@@ -129,6 +129,10 @@ Topics in Deep Learning
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Local Methods`
+
+---
+
+![Local_Explainability](images/local_explainability.png)
 
 ---
 
@@ -280,6 +284,10 @@ In this lesson, we will go over two different approaches for local explainabilit
 
 ---
 
+![Global_Explainability](images/global_explainability.png)
+
+---
+
 ##### **Understanding overall model behaviour**
 
 - **Global explainability methods** offer insights into average model behaviour and general data characteristics
@@ -327,6 +335,10 @@ A global surrogate model can be obtained and interpreted as follows:
 <br/>
 
 ---
+
+![global_surrogate_models](images/global_surrogate.png)
+
+---
 ##### **Limitations**
 
 - **Misinterpretation**: the insights gained from global surrogate models are related to model behaviour, **NOT** to the characteristics of the data itself
@@ -365,10 +377,14 @@ Given a trained model and a test set HRT can be implemented as follows:
 
 ##### **Interpreting HRT results**
 
-- At a high level, HRT conducts a conditional independece test for each feature $X_j$, with the null hypothesis stating that an outcome $Y$ is independent of feature $X_j$ given all other features
+- At a high level, HRT conducts a conditional independece test for each feature $X_j$, with the null hypothesis stating that an outcome $y$ is independent of feature $X_j$ given all other features
 <br/>
 
-- Intuitively, if $X_j$ is predictive of $Y$, perturbing this feature in isolation will break down its relationship to $Y$ and lead to drops in performance
+- Intuitively, if $X_j$ is predictive of $y$, perturbing this feature in isolation will break down its relationship to $y$ and lead to drops in performance
+
+---
+
+![HRT](images/HRT.png)
 
 ---
 
