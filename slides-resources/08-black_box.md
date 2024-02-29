@@ -68,16 +68,15 @@ Topics in Deep Learning
 ##### **Outline**
 
 - Black box models
+- White box models
 - Local methods
-    - SHAP
-    - LIME
+    - ICE, SHAP, & LIME
 - Global methods
     - Global surrogate models
     - HRT
-- Model specific methods
+- Archiecture specific methods (DL)
     - Grad cam
     - Attention
-- Mechanistic interpretability
 
 ---
 <!--_color: white -->
@@ -88,14 +87,15 @@ Topics in Deep Learning
 #### **What is a black box?**
 
 - In general parlance, a "black box" refers to some function whose internal workings are unknown or opaque
-- Like a machine model, it simply maps an input to an output: $f(x)=y$, where $f: \mathbb{R}^p \to \mathbb{R}^k$
+- Like a machine learning model, we assume a black box maps an input to an output: $f(x)=y$, where $f: \mathbb{R}^p \to \mathbb{R}^k$
 
-<img src="images/black_box.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+<br>
+<img src="images/black_box.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
 
 ---
 #### **What is a black box in ML?**
 
-- In machine learning, we use black to refer to:
+- In machine learning, we use "black box" to refer to:
     - Algorithm classes "whose internal workings are unknown or opaque"
     - Methods that work for any arbitrary function (i.e. as long as you can perform inference or possibly take a gradient from $f_\theta(x)$)
 - Questions:
@@ -108,7 +108,7 @@ Topics in Deep Learning
 - Flexibly model arbirtary functions
 
 <br>
-<img src="images/kernel_trick.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+<img src="images/kernel_trick.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
 
 ---
 #### **Why use a black box model?**
@@ -117,14 +117,16 @@ Topics in Deep Learning
 
 ![](images/word2vec.jpg)
 
+See: [Word2vec](https://en.wikipedia.org/wiki/Word2vec)
+
 
 ---
 #### **Complexity vs interpretability**
 
-- Many ML models, and all DL modelsm are capable of modeling highly complex, non-linear relationships 
+- Many ML models (e.g. DL models) are capable of modeling highly complex, non-linear relationships 
 - There is usually (but not always) a trade-off between model compexlity and performane
 
-<img src="images/complexity_accuracy.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+<img src="images/complexity_accuracy.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 450px">
 
 Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8844682)
 
@@ -161,12 +163,57 @@ Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8
 
 ---
 <!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `White box models`
+
+---
+##### **White box models**
+
+- Several important classes of machine learning models are "naturally interpretable" to humans and do not require black box explainers
+    - Note: A natural sanity check for a black box explainer is to compare its interpratations to a linear model
+- We'll discuss two classes of explainable models
+    - Linear models
+    - Decision trees
+
+<!-- Question: What are some other "explainable models"? -->
+
+---
+##### **Linear models**
+
+- We'll consider any model class that can be written as (1) to be a linear model
+
+<br>
+
+$$ g(E[y | x]) = f_1(x_1) + f_2(x_2) + \dots + f_p(x_p) + \text{interactions} \hspace{1cm} (1)$$
+
+<br>
+
+- Where $g(E[y|x])$ is the inverse link function (e.g. log-odds) 
+- $f_k$ is some function of a single covariate (e.g. identity, square, etc)
+- Where "interactions" are a combination of two features (e.g. $x_1 \cdot x_4$)
+
+<!-- Question: What are some other link functions? -->
+
+---
+##### **Linear models**
+
+<img src="images/white_box_examples.jpeg" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.html) 
+
+---
+<!--_color: white -->
 <!--_backgroundColor: green -->
 ## `Breakout #1`
-##### Suppose there is a melanoma classifier that uses a CNN. As a potential future patient, how would you want this classifier to explain its "prediction" about whether you had melanoma or not from your picture?
+##### What is the difference between $f(x_1, \dots, x_p)$ and $f_1(x_1)+\dots+f_p(x_p)$? Which one does a 1-year NNet describe?
 
-<img src="images/melanoma_rulers.png" style="display: block; margin-left: auto; margin-right: auto; width: 400px">
+---
+##### **Decision trees**
 
+- Are a class of supervised ML which recursively partions the feature space so that the terminal leaves minimizes entropy (classification) or variance (regression)
+    - The CART algorithm which "learns the tree" with data is inherantly greedy which is why there are various rules for early stopping
+
+<img src="images/cart_space.png" style="display: block; margin-left: auto; margin-right: auto; width: 1000px">
 
 ---
 <!--_color: white -->
@@ -179,27 +226,47 @@ Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8
 ---
 #### **Understanding individual predictions**
 
-- **Local explainability methods** offer insights into individual predictions made by black box models
+- **Local explainability methods** (aka "instance level explainations") offer insights into individual predictions made by black box models
     - They focus on explaining why a particular prediction was made for a specific instance or region of the input space
-
----
-#### **Why does it matter?**
-
-- DL models are trained on datasets that may not be representative of the entire population
-    - If the training data contains biases, such as overrepresentation or underrepresentation of certain demographic groups, these biases can be learned by the model
-<br/>
-- Understanding why a model behaves differently for each individual or subgroup can help stakeholders identify and address algorithmic bias and unintended behaviours
 
 ---
 #### **Methodological approaches**
 In this lesson, we will go over two different approaches for local explainability:
 <br/>
 
-**1. Variable attribution (SHAP)**: how does an individual prediction differ from the average, and how can this difference be attributed among the input variables?
+**1. Individual Conditional Expectation (ICE)**: How does an individual instance's prediction change when a single variable changes at a time?
+
+**2. Variable attribution (SHAP)**: how can differences in the prediction level be attributed among the input variables?
+
+**3. Surrogate models of behaviour (LIME)**: can we model black box behaviour locally using an easy to interpret white box model?
 <br/>
 
-**2. Surrogate models of behaviour (LIME)**: can we model black box behaviour locally using an easy to interpret white box model?
-<br/>
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Variable Attribution: ICE`
+
+---
+#### **Individual Conditional Expectation (ICE)**
+
+- ICE shows how an instance's prediction changes when a feature changes:
+- If $x \in \mathbb{R}^p$, $x'_i = (x_{i1}, x_{2}', x_{i3}, \dots, x_{ip})$ and we compare $f_\theta(x'_i)$ for $x_2' \in \mathbb{R}$ to see how the prediction changes for instance $i$ when $x_2$ changes
+
+<img src="images/ice-cervical-1.jpeg" style="display: block; margin-left: auto; margin-right: auto; width: 400px">
+
+
+Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.html) 
+
+
+---
+#### **Individual Conditional Expectation (ICE)**
+
+- ICE can be turned into a "global" explainer by averaging over the individual curves (this is known as a "partial dependency plot")
+- ICE works for all black box models that we can run inference on (no gradients needed)
+- It is a form of "mechanistic" interpretability
+    - It does not model realistic correlations between the variables
+
+<!-- Quesiton: Is it fair to "mechanistically" interogate a ML model across the feature space? Are there any combinations where this would be absured? -->
 
 ---
 <!--_color: white -->
@@ -209,7 +276,7 @@ In this lesson, we will go over two different approaches for local explainabilit
 ---
 #### **SHapley Additive exPlanations (SHAP)**
 
-- SHAP is a method for explaining the output of machine learning models by quantifying the contribution of each feature to the prediction
+- SHAP is a method for explaining the variation in the output of machine learning model's predictions
 
 <br/>
 
@@ -218,27 +285,45 @@ In this lesson, we will go over two different approaches for local explainabilit
 ---
 #### **Calculating variable contribution**
 
-- SHAP considers all possible subsets of features, known as coalitions, for a given instance
-    - Each coalition represents a different combination of features
-<br/>
+- For a given feature $j$ and instance $i$, that SHAP value ($\phi_{ij}$) is:
 
-- For each feature value within a coalition, SHAP calculates its marginal contribution by comparing model predictions with and without the feature value included in the coalition
-    - This captures how much the inclusion of that feature value changes the prediction
-<br/>
+<br>
 
-- The Shapley value for each feature value is computed as the **average of its marginal contributions** across all possible coalitions
+$$\phi_{ij} = \phi_j(f, x_i) = \sum_{z' \subseteq x'_i} \frac{|z'|(M-|z'|-1)}{M!} [f_x(z') - f_x(z' \backslash j )]$$
+
+<br>
+
+- This represents a subset of the $2^p$ calculations needed to do an *exact* calculation
+- Contributions are anchored to:
+
+$$f(x_i) = E[f(x)] + \sum_{j=1}^p \phi_j(f, x_i)$$
+
+Source: [Lundberg & Lee (2017)](https://arxiv.org/pdf/1705.07874.pdf)
+
 
 ---
 #### **Calculating variable contribution**
 
-- Consider a model predicting risk of heart disease based on **age, cholesterol levels, and smoking status**
+- In practice, we never calculate the $2^p$ combinations
+- Instead we use sampling methods
+- While there are algorithm-specific SHAP approaches, the default is KernelSHAP
+    - Fit a linear model to the samples inference where $\hat{y}$ is the predicted value, the variables ($Z$) are binary indicators (feature present or not) and the estimated coefficients will be the SHAP values.
+    - i.e. regression of $\hat{y} = Z\Phi$
+- But how do we run: $f_x(z')$ if $z \in \mathbb{R}^q$ where $q<p$?
 
-- SHAP generates all possible combinations of these features, ranging from no features to all three features included in the coalition
+---
+#### **SHAP waterfall plot: mammography prediction**
 
-- For each feature value within a coalition, SHAP calculates its marginal contribution by comparing model predictions with and without that feature value included
-    - For instance, it measures how much adding the cholesterol level feature to a coalition changes the model's prediction compared to when it's absent
+<img src="images/SHAP_waterfall.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
-<br/>
+Source: [Sun et. al (2023)](https://www.mdpi.com/2227-9032/11/14/2000)
+
+---
+#### **SHAP bee swam plot: Cancer survival**
+
+<img src="images/SHAP_beeswarm.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+
+Source: [Alabi et. al (2023)](https://www.nature.com/articles/s41598-023-35795-0)
 
 --- 
 #### **Interpreting SHAP values**
@@ -252,16 +337,18 @@ In this lesson, we will go over two different approaches for local explainabilit
 - **Visual interpretation**: SHAP values can be visualized using various plots, such as the waterfall plot, which displays how individual feature values push the prediction of an instance away from the average value
 
 ---
-#### **SHAP waterfall plot: predicting the number of rings in an abalone shell**
-
-![SHAP_waterfall_plot](images/SHAP_waterfall.png)
-
----
 #### **Limitations of SHAP**
 
 - **Computationally expensive**: considering all coallitions can be computationally intensive, especially in complex contexts
 - **Assumption of independence**: considering all possible coallitions equally may does not reflect feature interdependence, which indicate that certain coallitions are more likely than others in real life
 - **Potential misinterpretation**: Users may sometimes misinterpret SHAP values, assuming causality or feature importance and producing false conclusions 
+
+---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #2`
+##### How would you create a "variable importance" based on the SHAP values? How would you explain this metric to a data science expert and non-expert?
+
 
 ---
 <!--_color: white -->
@@ -411,6 +498,25 @@ Given a trained model and a test set HRT can be implemented as follows:
 
 - **Assumption of echangeability**: HRT assumes that feature values are exchangeable, which may not hold true in all datasets, potentially leading to biased assessments of feature importance
     - The act of shuffling features in isolation may introduce unrealistic data upon which feature importance is calculated
+
+
+---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #1`
+##### Suppose there is a melanoma classifier that uses a CNN. As a potential future patient, how would you want this classifier to explain its "prediction" about whether you had melanoma or not from your picture?
+
+<img src="images/melanoma_rulers.png" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+
+
+---
+<!--_color: white -->
+<!--_backgroundColor: green -->
+## `Breakout #X`
+##### Come up with examples when you would use a local explainability method but not a global one, a global one but not a local one, and when you would use both?
+
+
+
 
 ---
 ##### **References**

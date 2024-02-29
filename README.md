@@ -77,7 +77,7 @@ Learners should be active participants and are encouraged to ask questions throu
 * [Implementing AI in healthcare #2](lessons/03-implementing_ai_healthcare_2.pdf)
 * ~~Survival modeling~~
 * [Protein folding, drug discovery, and medical imaging, and ‘Omics](lessons/05-scientific_applications.pdf)
-* (Under construction) [Commercial applications]()
+* [Commercial applications](lessons/06-commercial_applications.pdf)
 * ~~“White box” model explainability~~
 * (Under construction) ["Black box” model explainability]()
 * ~~Prediction intervals~~
@@ -93,7 +93,7 @@ Learners should be active participants and are encouraged to ask questions throu
 | Format | Details | Submission Instructions |
 | :----: | :----- | :---------------------- |
 | Assignment 1 | Due on **Feb 28th (Wed) by 5:59pm** | Submit assignment via email |
-| Assignment 2 | Due on **Mar 6th (Wed) by 5:59pm** | Submit assignment via email |
+| Assignment 2 | Due on **Mar 7th (Thur) by 5:59pm** | Submit assignment via email |
  
 ## Acknowledgements
 Course materials were developed by Julia Gallucci, Kaylie Lau, and Santiago Arciniegas under the supervision of Rohan Alexander.
