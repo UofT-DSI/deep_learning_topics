@@ -332,7 +332,7 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
   - This has led to decreased quality of care, staff burnout, and public distrust, all of which further exacerbate healthcare system strain in a vicious cycle
 
 ---
-#### **Telemedicine: an incomplete solution**
+#### **Telemedicine: a partial solution**
 
 - Telemedicine refers to the remote delivery of healthcare services enabled by telecommunications technologies
 
@@ -345,8 +345,14 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 ---
 #### **DL and telemedicine**
 
-- DL can leverage the increasing abundance of portable and wearable sensors to enable AI-assisted (and maybe eventually fully automated) remote symptom screening
-  
+- DL can leverage the increasing abundance of portable and wearable sensors to enable AI-assisted remote symptom screening
+
+<br>
+
+<img src="images/james_bond.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: Casino Royal's view of telemedicine for James Bond
+
 ---
 #### **Google's DermAssist**
 
@@ -388,7 +394,7 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 <!--_color: white -->
 <!--_backgroundColor: green -->
 ## `Breakout #3`
-##### Suppose you were developing a deep learning system for providing clinical decision support about whether a rash needs antibiotics. How many full time staff would you need to develop this product and what would their range of skills be?
+##### Suppose you were developing a deep learning system for providing clinical decision support about whether a rash needs antibiotics. What would range of employee skillsets would you need to develop this product?
 
 ---
 <!--_color: white -->
@@ -396,7 +402,7 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 ## `Conclusion`
 
 ---
-#### **DL applications have a bright future in commercial healthcare**
+#### **DL applications have a promising future in commercial healthcare**
 
 - DL offers significant potential for enhancing patient outcomes and streamlining healthcare delivery
 

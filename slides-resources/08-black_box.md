@@ -172,8 +172,12 @@ Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8
 - Several important classes of machine learning models are "naturally interpretable" to humans and do not require black box explainers
     - Note: A natural sanity check for a black box explainer is to compare its interpratations to a linear model
 - We'll discuss two classes of explainable models
-    - Linear models
-    - Decision trees
+    - Linear models*
+    - Decision trees*
+
+<br>
+
+**Even these methods can become uninterpretable from a human's perspective if there are too many covariates or too much depth*
 
 <!-- Question: What are some other "explainable models"? -->
 
@@ -205,7 +209,7 @@ Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.h
 <!--_color: white -->
 <!--_backgroundColor: green -->
 ## `Breakout #1`
-##### What is the difference between $f(x_1, \dots, x_p)$ and $f_1(x_1)+\dots+f_p(x_p)$? Which one does a 1-year NNet describe?
+##### What is the difference between $f(x_1, \dots, x_p)$ and $f_1(x_1)+\dots+f_p(x_p)$? Which one does a 1-layer NNet describe?
 
 ---
 ##### **Decision trees**
@@ -231,7 +235,7 @@ Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.h
 
 ---
 #### **Methodological approaches**
-In this lesson, we will go over two different approaches for local explainability:
+In this lesson, we will go over three different approaches for local explainability:
 <br/>
 
 **1. Individual Conditional Expectation (ICE)**: How does an individual instance's prediction change when a single variable changes at a time?
@@ -252,8 +256,7 @@ In this lesson, we will go over two different approaches for local explainabilit
 - ICE shows how an instance's prediction changes when a feature changes:
 - If $x \in \mathbb{R}^p$, $x'_i = (x_{i1}, x_{2}', x_{i3}, \dots, x_{ip})$ and we compare $f_\theta(x'_i)$ for $x_2' \in \mathbb{R}$ to see how the prediction changes for instance $i$ when $x_2$ changes
 
-<img src="images/ice-cervical-1.jpeg" style="display: block; margin-left: auto; margin-right: auto; width: 400px">
-
+<img src="images/ice-cervical-1.jpeg" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
 
 Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.html) 
 
@@ -261,10 +264,12 @@ Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.h
 ---
 #### **Individual Conditional Expectation (ICE)**
 
-- ICE can be turned into a "global" explainer by averaging over the individual curves (this is known as a "partial dependency plot")
+- ICE can be turned into a "global" explainer by averaging over the individual curves (this is known as a partial dependency plot (PDP))
 - ICE works for all black box models that we can run inference on (no gradients needed)
-- It is a form of "mechanistic" interpretability
-    - It does not model realistic correlations between the variables
+- It is a form of "mechanistic interpretability" (example below: [sklearn](https://scikit-learn.org/stable/modules/partial_dependence.html))
+
+<img src="images/pdp.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+
 
 <!-- Quesiton: Is it fair to "mechanistically" interogate a ML model across the feature space? Are there any combinations where this would be absured? -->
 
@@ -339,9 +344,21 @@ Source: [Alabi et. al (2023)](https://www.nature.com/articles/s41598-023-35795-0
 ---
 #### **Limitations of SHAP**
 
-- **Computationally expensive**: considering all coallitions can be computationally intensive, especially in complex contexts
-- **Assumption of independence**: considering all possible coallitions equally may does not reflect feature interdependence, which indicate that certain coallitions are more likely than others in real life
-- **Potential misinterpretation**: Users may sometimes misinterpret SHAP values, assuming causality or feature importance and producing false conclusions 
+- **Computationally expensive**: considering all coalitions can be computationally intensive, especially in complex contexts
+- **Assumption of independence**: considering all possible coalitions equally may does not reflect feature interdependence, which indicate that certain coalitions are more likely than others in real life
+- **Potential misinterpretation**: Users may sometimes misinterpret SHAP values, assuming causality, leading to false conclusions 
+
+---
+#### **Question**
+
+- Why would the SHAP value $\phi_{ij}$ be different that the difference between the ICE and the PDP?
+
+<img src="images/pdp_vs_ice.jpeg" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Plot: ICE curves (black lines), PDP curve (yellow line)
+
+Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.html) 
+
 
 ---
 <!--_color: white -->
@@ -371,6 +388,22 @@ Source: [Alabi et. al (2023)](https://www.nature.com/articles/s41598-023-35795-0
 <br/>
 
 ---
+#### **LIME's philosophy**
+
+- The LIME model is based on three "Desired Characteristics for Explainers":
+    - Interpretable
+    - Locally faithful
+    - Model-agnostic
+- An "interpretable" model class $g(x')$ is used to approximate $f(x)$ (where $x'$ is an interpretable feature space of $x$), where $\ell(\cdot)$ is the error between them and $\pi_x$ defines what is "local"
+
+<br>
+
+$$
+\xi(x) = \ell(f, g, \pi_x) + \Omega(g)
+$$
+
+
+---
 #### **Mechanistic overview**
 
  Given an original instance of interest, LIME does the following:
@@ -381,7 +414,41 @@ Source: [Alabi et. al (2023)](https://www.nature.com/articles/s41598-023-35795-0
  4. Explain the original instance's prediction by interpreting the surrogate model
 
 ---
+#### **Mechanistic overview**
+
+- Loss functions could include:
+
+<br>
+
+$$
+\ell(f, g, \pi_x) = \sum_{z \in \Pi_X} \phi_x(z) [f(z) - g(z)]^2
+$$
+
+<br>
+
+- Or if we were willing to "classify" our points ($\hat{y}=I[f(z)>t]$):
+
+<br>
+
+$$
+\ell(f, g, \pi_x) = - \sum_{z \in \Pi_X} \phi_x(z) [ \hat{y}\log(g(z)) + (1-\hat{y})\log(1-g(z))   ]
+$$
+
+
+---
 ![LIME](images/LIME.png)
+
+---
+#### **Some similarity to a local linear regression (LOESS)**
+
+- Local linear regression fits a linear model for every new instance
+    - $\arg\min_{\alpha,\beta} \sum_{i=1}^n K_\lambda(x, x_i)[y_i-\alpha-x_i^T\beta]^2$
+
+<br>
+
+
+<img src="images/local_regression.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+
 
 ---
 #### **Limitations of LIME**
