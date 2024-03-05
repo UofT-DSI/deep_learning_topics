@@ -75,6 +75,7 @@ Topics in Deep Learning
     - Global surrogates, Selective Inference, Permutation, Knockoffs, HRT, DML
 - Architecture specific methods
     - Tree-based, GradCAM, Attention
+- Uncertainty quantification (conformal prediction)
 
 ---
 <!--_color: white -->
@@ -520,15 +521,14 @@ A global surrogate model can be obtained and interpreted as follows:
 ##### **Limitations**
 
 - **Misinterpretation**: the insights gained from global surrogate models are related to model behaviour, **NOT** to the characteristics of the data itself
-- **Susceptibility to choice of training data for surrogate model**: the surrogate model can be trained in any data of similar distribution to that used by the black box model in training. It can happen that surrogate models can model black box behaviour better for some data subsets than others
-- **How good is good enough?**: there are no clear rules to determine how similar the surrogate model predictions have to be to its black box counterpart to be considered an acceptable approximation of behaviour
+- **What is a good approximation?**: there are no clear rules to determine how similar the surrogate model predictions have to be to its black box counterpart to be considered an acceptable approximation of behaviour
 
 <!-- Question: What are some other limitation here? Why not just train a surrogate model on the original dataset? -->
 
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Selective inference (for high dimensional linear models)`
+## `Selective inference (white box models)`
 
 ---
 ##### **Selective inference (overview)**
@@ -536,14 +536,14 @@ A global surrogate model can be obtained and interpreted as follows:
 - For high dimensional datasets, there is a reasonable chance that only a small number of variables matter ("sparsity hypothesis")
 - We use algorithms like the Lasso, ElasticNet, and stepwise regression to select a subset of covariates
 
-<img src="images/l1_l2_norm.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+<img src="images/l1_l2_norm.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
 
 Source: [Wikipedia](https://en.wikipedia.org/wiki/Lasso_(statistics)#/media/File:L1_and_L2_balls.svg)
 
 ---
 ##### **Selective inference (overview)**
 
-- But can do hypothesis testing on the results of these algorithms?
+- But can we do hypothesis testing on the results of these algorithms?
     - This does not align with the "classical" framework of statistical hypothesis testing
 
 ![](images/hypothesis_order.png)
@@ -555,9 +555,9 @@ Source: [Candes (2017)](https://candes.su.domains/talks/slides/Wald1.pdf)
 ---
 ##### **Selective inference (overview)**
 
-- The short answer is NO!
-    - P-values will not be uniform (or even conservative) when the null is true
-    - There will be massively inflated type-I error rate
+- If we do hypothesis testing **after selection**, then the answer is NO!
+    - P-values will not be uniform (or conservative) when the null is true
+    - There will be a massively inflated type-I error rate
 
 
 <img src="images/pval_harking.png" style="display: block; margin-left: auto; margin-right: auto; width: 400px">
@@ -568,7 +568,7 @@ Source: Taylor and Tibshirani (2015)
 ---
 ##### **Selective inference (overview)**
 
-- This problem of HARK'ing (hypothesizing after results are known), is part of the reason why we have the reproducability crisis
+- This problem of HARK'ing (hypothesizing after results are known), is part of the reason why we have the reproducability crisis in academic research
 
 <img src="images/medline.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
 
@@ -581,7 +581,7 @@ Source: [Ranking Fields by p-Value Suspiciousness](https://www.cremieux.xyz/p/ra
 - Instead, in selective inference we wish to test: 
     - $P( \text{parameters} | \text{data, selection event})$
 - We can do this for many classes of algorithms and get "corrected" p-values and confidence intervals
-    - Lasso, ElasticNet, Stepwise Regression
+    - e.g. Lasso, ElasticNet, Stepwise Regression
 
 <img src="images/adjusted_CIs.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
 
@@ -597,8 +597,25 @@ Source: Prostate cancer dataset, from [Recent Advances in Selective Inference](h
 - We use some sort of "sparsity inducing algorithm" (e.g. Lasso)
 - We get back a new model: $g(E[y_i|x_i]) = \beta_0 + \beta_2 x_{i1} + \beta_{12} x_{i12} + \beta_{39} x_{i39}$
 - We now want to test: $H_0: \beta_{12} = 0$
-- We get back an "explainable" linear model with associated p-values and CIs
+- We condition on having selected these three specific covariates, and get back associated p-values and CIs
+- Now we both have an interpretable model (linear) as well as statistical confidence
+- Question: Why not just split the data?
 
+---
+##### **Selective inference (Lasso example)**
+
+- By conditioning on the selection event, we condition on the region of the response space that could have generated the selection event (this is known as the polyhedral lemma)
+
+<img src="images/lasso_response_space.png" style="display: block; margin-left: auto; margin-right: auto; width: 350px">
+
+Source: Terada & Shimodaira (2019)
+
+---
+##### **Selective inference (Lasso example)**
+
+![](images/lasso_formula.png)
+
+[Source](https://speakerdeck.com/saltcooky12/detadoribunnajia-shuo-jian-zheng-falsetamefalseselective-inference?slide=3)
 
 ---
 <!--_color: white -->
@@ -662,7 +679,7 @@ Given a trained model and a test set permutation testing can be implemented as f
 - Calculate a feature importance score for the original and knockoffs
 - Select a subset of features based on empirical distribution of scores which guarantees a certain false discovery rate (FDR) proportion
 
-<img src="images/knockoffs1.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+<img src="images/knockoffs1.png" style="display: block; margin-left: auto; margin-right: auto; width: 400px">
 
 Source: [Robust inference with the knockoff filter](https://www.math.wustl.edu/~kuffner/WHOA-PSI-3/RinaFoygelBarber-slides.pdf)
 
@@ -678,7 +695,7 @@ Statistical Guarantees](https://klab.tch.harvard.edu/academia/classes/BAI/2021/s
 ---
 ##### **Knockoffs (example)**
 
-<img src="images/knockoff_gwas.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+<img src="images/knockoff_gwas.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 450px">
 
 Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S0002929722004025)
 
@@ -690,10 +707,17 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
     - Works with any model able to generate a feature importance score 
     - Provides robust statistical guarantees (false discovery)
 - Disadvantages
-    - Requires special optimization procedure to construct the knockoff
+    - Requires knownledge of $P(X)$
         - Errors in knockoff construction will destroy statistical guarantees
+    - Requires special optimization procedure to construct the knockoff
     - Higher computational cost (i.e. need to fit model with $2\cdot p$ features!)
     - Different feature importance metrics will lead to different subsets of features
+
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Holdout randomization test`
+
 
 ---
 ##### **Holdout randomization test (HRT)**
@@ -701,7 +725,7 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
 - A feature is "uninformative" if, conditional on all other features, it does not impact model performance
     - $y \perp X_j | X_{-j}$
 - Suppose we train our model to learn $\theta$: $\arg \min_\theta \hspace{2mm} \ell(y, f_\theta(x))$
-- We can get an unbiased estimate of the loss function $\ell(\cdot)$ is we evaluate it on a new set of data (e.g. a "test set")
+- We can get an unbiased estimate of the loss function $\ell(\cdot)$ if we evaluate it on a new set of data (e.g. a "test set")
 - The HRT shows how we can determine whether a given feature ($x_j$) has any impact on this representative "test set"
     - And therefore we can get back a p-value for $H_0: y \perp X_j | X_{-j}$
 
@@ -709,11 +733,11 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
 ##### **HRT algorithm**
 
 - Four step process for **any ML model** and **any loss function**
-    - Step 1: Obtrain a fitted model, $\hat{f}_\theta$, using training/validation data ($y_R, X_R$)
+    - Step 1: Obtain a fitted model, $\hat{f}_\theta$, using training/validation data ($y_R, X_R$)
     - Step 2: Compute the empirical risk on a test set ($y_T, x_T$): $\hat{R}(\hat{f}_\theta)=\ell(y_T, \hat{f}_\theta(x_T))$, where $E[\hat{R}(\hat{f}_\theta)] = R(\hat{f}_\theta)$
-    - Step 3: Draw $S$ samples of feature $j$, $\tilde{x}_j^s \sim F(x_j|x_{-j})$, and calculate the test set risk: $\hat{R}^{s}=\ell(y_T, \hat{f}_\theta(\tilde{x}_T))$, swapping only column $j$
+    - Step 3: Draw $S$ samples of feature $j$, $\tilde{x}_j^s \sim F(x_j|x_{-j})$, and calculate the test set risk: $\hat{R}^{s}_j=\ell(y_T, \hat{f}_\theta(\tilde{x}_T^j))$, swapping only column $j$
     - Step 4: Calculate a one-sided p-value as the proportion of times the "sampled" covariate led to a lower loss (i.e. risk): 
-    $p_j = \frac{1}{1+S}\Big(1 + \sum_{s=1}^S I\big[\hat{R}^{s} \leq \hat{R}  \big] \Big)$
+    $p_j = \frac{1}{1+S}\Big(1 + \sum_{s=1}^S I\big[\hat{R}^{s}_j \leq \hat{R}  \big] \Big)$
 
 
 ---
@@ -732,13 +756,18 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
 ![](images/hrt_example.jpg)
 
 ---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Double machine learning`
+
+---
 ##### **Double machine learning (DML)**
 
 - If we assume that our data is "partially linear":
     - $y = d^T \eta + f_\theta(x)$
-    - $d$ is a either a vector or matrix with a small number of columns
+    - $d$ is a either a vector or a low-dimesional matrix
     - $\eta$ is the parameters we are interested in doing statistical testing on
-    - $f_\theta(x)$ is some functional form we will approximate with ML
+    - $f_\theta(x)$ is some functional form we will approximate with an ML algo
 - Example: 
     - $\text{disease} = \text{smoking}\cdot\eta + f_\theta(\text{genetics})$
 - Question: 
@@ -759,7 +788,7 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
     - Step 1: learn $y = \hat{f}_\theta(x)$
     - Step 2: learn $d = \hat{g}_\phi(x)$
     - Step 3: Determine if there's any variation in $y$ attributable to $d$ that isn't explained by $x$!
-        - $y - \hat{f}_\theta(x) = d - \hat{g}_\phi(x)$
+        - $y - \hat{f}_\theta(x) = (d - \hat{g}_\phi(x)) \cdot \eta$ 
 
 ---
 ##### **DML intuition**
@@ -768,8 +797,11 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
     - The errors in the first stage (estimating $f_\theta$ and $g_\phi$) do not systematically bias the second stage
     - Cross-fitting ensures the procedure is asymptotically unbiased
 
+<br>
+
 <img src="images/math_dml.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
 
+<!-- Question: The biggest challenge with DML is with the partially linear assumption. What are some use cases where this is plausible and where it's not? -->
 
 ---
 <!--_color: white -->
@@ -780,13 +812,145 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
 
 ---
 <!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Architecture specific methods`
+
+
+---
+##### **Architecture specific methods**
+
+- Global methods
+    - Tree-based
+- Local (instance-level) methods
+    - GradCAM, Attention
+
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Tree-based methods`
+
+---
+##### **Tree-based feature importances**
+
+- When using gradient-boosted trees (e.g. xgboost) or bagged trees (e.g. random forest), we can generate feature importance scores from statistics of the tree fitting process:
+    - Which covariate led to a split?
+    - How many samples were there in a split?
+    - What was the change in the splitting criteria (e.g. Gini impurity, variance reduction)
+
+---
+##### **Tree-based feature importances**
+
+<img src="images/tree_splitting.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+[Source](https://towardsdatascience.com/understanding-decision-trees-for-classification-python-9663d683c952)
+
+---
+##### **Tree-based feature importances**
+
+- Advantages
+    - Does not require extra computation
+    - Easy to explain (aligns with tree structure)
+- Disadvantages
+    - Based on splitting criteria
+    - Score is only ordinal, unclear what difference in scores means
+    - No statistical "significance"
+
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `GradCAM`
+
+---
+##### **GradCAM**
+
+- For convolutional neural networks (CNNs)...
+
+
+---
+<!--_color: white -->
 <!--_backgroundColor: green -->
 ## `Breakout #4`
 ##### Suppose there is a melanoma classifier that uses a CNN. As a potential future patient, how would you want this classifier to explain its "prediction" about whether you had melanoma or not from your picture?
 
 <img src="images/melanoma_rulers.png" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
 
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Attention heads`
 
+---
+##### **Attention**
+
+- For attention-based neural networks (e.g. language models)
+
+
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Uncertainty quantification (conformal prediction)`
+
+---
+##### **Conformal prediction**
+
+- In addition to explaining how a model works (either a global or local level), we may also want to quantify how certain the model is
+- This is also a form of explainability (i.e. how "uncertain" the model is), and it helps to build trust in our model
+- Questions: 
+    - Would you expect the softmax probabilities of a DL model for a multiclass problem to be "well calibrated"?
+        - $\sum_{i \in Y_k} p_i = \sum_{i \in Y_k} Y_{i,k}$?
+    - For a regression model, how do we know if two different predicted values are statistically different?
+
+---
+##### **Conformal prediction**
+
+- In classical statistics we generate **confidence intervals** around a parameter of interest:
+    - $P(\mu \in C_\alpha(X)) \geq 1-\alpha$
+    - If $X \in \mathbb{R}^n$, then $C_\alpha: \mathbb{R}^n \to \mathbb{R}^2$
+    - Example: $\mu = E[X]$, $X\sim N(\mu, \sigma^2)$, then $C_\alpha(X) = \{ \frac{1}{n}\sum_{i=1}^n X_i \pm t^{-1}_{n-1}(\alpha/2) \sqrt{\frac{1}{n-1}\sum_{i=1}^n (X_i - \frac{1}{n}\sum_{i=1}^n X_i)^2} \}$
+- But in ML, we are mainly interested in prediction, and thus we care more about **prediction intervals**:
+    - If $y=\mu(X) + \epsilon$ is the true data generating process
+    - Then we want some interval which will contain the actual label with probability $100(1-\alpha)\%$
+    - $P(y \in C_\alpha(X)) \geq 1-\alpha$
+
+---
+##### **Conformal prediction**
+
+- **Conformal prediction works for any black box model for classification and regression**
+
+<img src="images/conformal_classification.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: [Angelopoulos & Bates (2022)](https://arxiv.org/abs/2107.07511)
+
+---
+##### **Conformal prediction**
+
+![](images/conformal_regression.png)
+
+Source: [Conformal Prediction in 2022](https://www.youtube.com/watch?v=k8GpG9D5c20)
+
+
+---
+##### **(Split) conformal prediction algorithm**
+
+- Step 1: Fit a model, $f_\theta$ on training/validation data, and hold out a test set (points $\{1, \dots, n\}$)
+- Step 2: Define a measure of non-conformity $s(y, f_\theta(x))$, where larger values of $s(\cdot)$ indicate less agreement (e.g. mean-absolute-error)
+- Step 3: Pick the type-I error rate ($\alpha$) and compute the $\hat{q}=\lceil (n+1)(1-\alpha) \rceil/n$ quantile of $s_1, \dots, s_n$
+- Step 4: For any new instance, define the prediction set as: $C(x_\text{new}) = \{y: s(y, f_\theta(x_\text{new})) \leq \hat{q} \}$
+
+---
+##### **Conformal prediction (summary)**
+
+- Advantages
+    - Works for all ML algorithms, only requires a calibration (test) set
+    - Uses only a heuristic measure of uncertainty (e.g. residuals)
+- Disadvantages
+    - Provides marginal rather than conditional coverage
+    - Size of test set determines variation in type-I error rate
+
+<img src="images/conditional_marginal_coverage.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+
+
+Source: [Angelopoulos & Bates (2022)](https://arxiv.org/abs/2107.07511)
 
 
 ---
