@@ -445,10 +445,21 @@ $$
 
 <br>
 
-
 <img src="images/local_regression.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
 
 <!-- Question: Why is LOESS considered a form of "lazy" learning (hint: KNNs are also considered Lazy learners)  -->
+
+---
+#### **LIME and superpixels**
+
+- The interpretable version of $x$: $x'$ can be something like "superpixels"
+
+<br>
+
+![](images/lime_superpixel.png)
+
+
+Source: [Ribeiro et. al (2016)](https://arxiv.org/pdf/1602.04938.pdf)
 
 ---
 #### **Limitations of LIME**
@@ -856,6 +867,12 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
     - No statistical "significance"
 
 ---
+##### **Tree-based feature importances**
+
+![](images/dmar_fi.png)
+
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `GradCAM`
@@ -863,8 +880,20 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
 ---
 ##### **GradCAM**
 
-- For convolutional neural networks (CNNs)...
+- For convolutional neural networks (CNNs) we can look at the gradients of the feature maps (activations after the convolutional kernel), average them out, and rescale back to the original image size
 
+![](images/gradcam_diagram.png)
+
+Source: [Selvaraju et. al (2017)](https://openaccess.thecvf.com/content_ICCV_2017/papers/Selvaraju_Grad-CAM_Visual_Explanations_ICCV_2017_paper.pdf)
+
+
+---
+##### **GradCAM**
+
+<img src="images/gradcam_example.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+
+
+Source: ARDS detection from [Sjoding et. al (2021)](https://www.thelancet.com/journals/landig/article/PIIS2589-7500(21)00056-X/fulltext)
 
 ---
 <!--_color: white -->
@@ -882,8 +911,19 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
 ---
 ##### **Attention**
 
-- For attention-based neural networks (e.g. language models)
+- Most language models today use (multi-headed attention). 
+- For $K$ heads, and $L$ layers, and an input of length $T$, there will be $K\cdot L$ times pairwise "attention" weights
 
+<img src="images/attention.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: [Wikipedia](https://en.wikipedia.org/wiki/File:Attention-qkv.png)
+
+---
+##### **Visualizing attention w/ BertViz**
+
+<img src="images/bertviz.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+
+Source: [BertViz Interactive Tutorial](https://colab.research.google.com/drive/1hXIQ77A4TYS4y3UthWF-Ci7V7vVUoxmQ?usp=sharing#scrollTo=-QnRteSLP0Hm)
 
 ---
 <!--_color: white -->
