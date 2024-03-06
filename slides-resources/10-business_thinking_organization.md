@@ -63,7 +63,7 @@ TODO
 ---
 ##### **Triple Aim Framework**
 - Developed by Dr. Donald Berwick and colleagues at the Institute for Healthcare Improvement (IHI) in 2007.
-- A set of three interconnected goals aimed at improving healthcare systems and the overall health and well-being of populations.
+- Three interconnected goals focus on enhancing healthcare systems and the overall health and well-being of populations.
 
 ---
 
@@ -123,11 +123,17 @@ TODO
 ---
 ##### **Medicine happens in buildings (usually)**
 
-<img src="images/hospital.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
-
-<img src="images/clinic.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
-
-<img src="images/cvs.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+<div class="row" style="text-align: center;">
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/hospital.jpg" style="width: 300px">
+ </div>
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/clinic.jpg" style="width: 300px">
+ </div>
+ <div style="display: inline-block; margin-right: 20px;">
+  <img src="images/cvs.jpg" style="width: 300px">
+ </div>
+</div>
 
 
 ---
@@ -140,16 +146,34 @@ Source: [Sandhu et. al (2023)](https://www.cell.com/patterns/pdfExtended/S2666-3
 ---
 ##### **Create a sense of urgency**
 
-<img src="images/build_to.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+<img src="images/build_to.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
 Source: [AI in biomedical data analytics and population health](https://www.youtube.com/watch?v=hBu5ZIvYLjs)
 
 ---
 ##### **Top to bottom**
 
-<img src="images/align_csuite.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+<img src="images/align_csuite.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
 Source: [AI in biomedical data analytics and population health](https://www.youtube.com/watch?v=hBu5ZIvYLjs)
+
+
+---
+##### **At the top**
+
+<img src="images/management_vs_leadership.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: [AI in biomedical data analytics and population health](https://www.youtube.com/watch?v=hBu5ZIvYLjs)
+
+
+---
+##### **Example of making the alignment**
+
+<img src="images/dihi_incentive_flow.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+
+Source: [Increasing AI Tool Adoption by Front-Line Workers](https://www.youtube.com/watch?v=qF18trDyQCg&t=2087s)
+
 
 
 ---

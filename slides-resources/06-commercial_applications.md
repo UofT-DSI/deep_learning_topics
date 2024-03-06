@@ -161,7 +161,7 @@ Suppose now that there does exist an alternative treatment specifically designed
 ---
 #### **Understanding your product's market**
 
-- To build a a commercial ML project, you'll need to think about:
+- To build a commercial ML project, you'll need to think about:
   - Market trends
   - Competitor activities
   - Emerging technologies
@@ -219,7 +219,7 @@ Source: [Smart (2020)](https://www.researchgate.net/publication/343111668_Expone
 ---
 #### **How DL could revolutionise drug discovery**
 
-- Leveraging large banks of biochemical data, DL has the capacity to analyse intricate disease pathways, enhance the efficiency of identifying potential drug targets and candidates, and ultimately mitigate failure rates during the initial phases of discovery
+- By leveraging large datasets of biochemical data, DL can analyze intricate disease pathways, enhance the efficiency of identifying potential drug targets and candidates, and ultimately reduce failure rates in the early phases of discovery.
 
 ---
 #### **2023: first DL-developed drug enters phase 2**
@@ -280,7 +280,7 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 #### **Limited global access to medical imaging**
 
 - Healthcare centres in low-and-middle income countries (LMIC) lack access to medical imaging devices as well as the expertise required to operate them$^{5}$
-  - Given that these technologies enable early detection and intervention in various disease contexts, this translates into increased morbidity and mortality from preventable causes in these regions
+  - Given that these technologies enable early detection and intervention for various diseases, their absence translates into increased morbidity and mortality from preventable causes in these regions.
 
 ---
 ![MRI_access](images/mri_availability.png)
@@ -302,7 +302,7 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 ---
 #### **2023: GE Secures \$44M grant to develop assisted ultrasound technology for LMIC**
 
-- The Bill & Melinda Gates Foundation awarded GE with \$44M to enable quick and accurate ultrasound scans by healthcare professionals with less experience, seeking to improve maternal and fetal health outcomes$^{6}$
+The Bill & Melinda Gates Foundation awarded GE \$44M to enable quick and accurate ultrasound scans by healthcare professionals, even those with less experience, aiming to improve maternal and fetal health outcomes$^{6}$
 
 ---
 #### **Ex. business model (ultrasounds in LMIC)**
@@ -333,26 +333,32 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
   - This has led to decreased quality of care, staff burnout, and public distrust, all of which further exacerbate healthcare system strain in a vicious cycle
 
 ---
-#### **Telemedicine: an incomplete solution**
+#### **Telemedicine: a partial solution**
 
 - Telemedicine refers to the remote delivery of healthcare services enabled by telecommunications technologies
 
 <br/>
 
-- By enabling remote consultations, telemedicine can help alleviate some healthcare system strain. However, it has some drawbacks
+- By enabling remote consultations, telemedicine can help alleviate healthcare system strain; however, it also presents some drawbacks.
   - The requirement of a healthcare practitioner at the other end of the line means this solution remains hindered by labor shortages
   - Voice and video assessments do not provide sufficient information to properly screen for various conditions, which dramatically reduces the usefulness of many remote appointments
 
 ---
 #### **DL and telemedicine**
 
-- DL can leverage the increasing abundance of portable and wearable sensors to enable AI-assisted (and maybe eventually fully automated) remote symptom screening
-  
+- DL can leverage the increasing abundance of portable and wearable sensors to enable AI-assisted remote symptom screening
+
+<br>
+
+<img src="images/james_bond.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: Casino Royal's view of telemedicine for James Bond
+
 ---
 #### **Google's DermAssist**
 
 - In 2021, Google announced the release of DermAssist, a DL-powered tool designed to assist in screening and diagnosing skin conditions$^{9}$
-  - The app asks the user for 3 pictures of a skin concern, along with some additional questions, then provides the closest matches it can find within its database
+  - The app asks the user for three pictures of a skin concern, along with some additional questions, then provides the closest matches it can find within its database
 
 <br/>
 
@@ -389,7 +395,9 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 <!--_color: white -->
 <!--_backgroundColor: green -->
 ## `Breakout #3`
-##### Suppose you were developing a deep learning system for providing clinical decision support about whether a rash needs antibiotics. How many full time staff would you need to develop this product and what would their range of skills be?
+
+##### Suppose you were developing a deep learning system for providing clinical decision support about whether a rash needs antibiotics. What would range of employee skillsets would you need to develop this product?
+
 
 ---
 <!--_color: white -->
@@ -397,7 +405,7 @@ Source: [PharmaWeb (2023)](https://www.pharmiweb.com/press-release/2023-08-17/40
 ## `Conclusion`
 
 ---
-#### **DL applications have a bright future in commercial healthcare**
+#### **DL applications have a promising future in commercial healthcare**
 
 - DL offers significant potential for enhancing patient outcomes and streamlining healthcare delivery
 
