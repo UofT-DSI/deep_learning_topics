@@ -42,8 +42,7 @@ TA: Jenny Du
 - Triple Win & Aim framework
 - Institutions, Org charts, and Processes
 - Disruptive technologies in healthcare
-- Successful AI companies
-- Business pitch
+- Examples of successful healthcare AI companies
 
 ---
 <!--_color: white -->
@@ -66,8 +65,9 @@ TA: Jenny Du
 - A healthcare orgnaization wishing to adopt a data science at scale will often face a key strategic question:
   - *To what extent should a central AI team coordinate and drive data science transformation?*
 - A common approach is to develop an AI Center of Excellence
+  - *A dedicated team or department that focuses on the strategic implementation of artificial intelligence technologies across the organization*
 
-<img src="images/AI_coe.png" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+<img src="images/AI_coe.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
 
 Source: [AtScale](https://www.atscale.com/blog/what-is-an-ai-center-of-excellence/)
 
@@ -78,8 +78,17 @@ Source: [AtScale](https://www.atscale.com/blog/what-is-an-ai-center-of-excellenc
   - Recruiting an maintaining AI talent is very difficult!
 - Economies of scale
   - By having larger pool of skilled data scientists, you can more smoothly distribute work
+- 
+
+---
+##### **AI Center of Excellence (benefits)**
+
+<img src="images/coe_benefits.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+
+Source: [Zinnov](https://zinnov.com/centers-of-excellence/mastering-ai-centers-of-excellence-key-considerations-for-success-blog/)
 
 <!-- Question: What are some of the downsides with a CoE? -->
+
 
 
 ---
@@ -233,159 +242,127 @@ Source: [Increasing AI Tool Adoption by Front-Line Workers](https://www.youtube.
 
 <!-- Question: What do I mean by regulatory arbitrage?? -->
 
+---
+##### **Disruptive technologies (healthcare)**
 
+- Healthcare as an industry is a study of contrasts:
+  - Foundational aspects of medical education and clinical practice have shown remarkable resilience to change
+  - Whereas, the tools of medicine are constantly changing
+- Besides pharma and medical devices, the main disruptive innovations have been: **EHRs, telemedicine, and new service models**
+
+<img src="images/ehr_adoption.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+
+[Source](https://www.healthit.gov/data/quickstats/national-trends-hospital-and-physician-adoption-electronic-health-records)
+
+---
+##### **Disruptive technologies (rare-disease orgs & pharma)**
+
+- Breakthrough therapies will often disrupt how entire patient cohorts are treated, and rare-disease focused non-profits have driven this
+- The case of Cystic Fibrosis (CF) is illustrative
+  - Advances in nutrition, antiobiotics, lung clearance, and finally modulator therapies have revolutionized care and life expectancies
+  - These technological breakthroughs have made it a "new" disease
+
+<img src="images/age_of_death.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+
+Source: [Epic](https://www.epicresearch.org/articles/cystic-fibrosis-patients-living-much-longer-in-2022-than-in-2008)
+
+---
+##### **Disruptive technologies (Medical devices)**
+
+- Countless imaging modalities, surgical instruments, and monitoring devices
+- Laparoscopy (key-hole) surgery has enabled countless surgeries to be carried out at lower risk, lower cost, and faster recovery
+
+<img src="images/lindberg_surgery.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+
+<br>
+
+First telesurgical laparascopic surgery performed in 2001 ([source](https://www.ircad.fr/le-geste-chirurgical-a-traverse-latlantique/))
+
+
+---
+##### **Detour: Canada's healthcare system**
+
+- Canada has a universal healthcare model (like most rich countries)
+- But the Canada Health Act (1985) has created a unique legal landscape for healthcare in the country
+  - In exchange for $$$ provinces agree to the five principals of the CHA: Universality, Portability, Comprehensiveness, Public Administration, Accessible
+  - But healthcare is provincially managed
+  - The federal government can fine provinces for being out of step with the CHA, but it is rare/difficult
+- In theory, a physician cannot charge for any medical service that is covered by the provincial plan... (70% of HC is paid by government)
+  - Question: Has anyone seen exceptions to this?
+
+<!-- 
+Each of these concepts though is often challenged or in contraction:
+Universality: Generally true, but some areas might just not have any healthcare to access!
+Portability: b/c provinces determine what is medically necessary, won't always be true
+Comprehensiveness: Needs to cover medically necessary care (but this does not include Rx, Ambulances, Dental, Vision, Prosthetics, etc)
+Public Administration: Lot's of private players (private practice, private clinics, big pharma, etc), but only the gov't should pay
+Accessible: No user fees (but BC used to charge for a healthcard)
+Plus lot's of other fun exceptions (RCMP, Armed Forces, First Nations)
+ -->
+
+---
+##### **Detour: Canada's healthcare system**
+
+<img src="images/commonwealth.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+
+Source: [Commonwealth Fund (2021)](https://www.commonwealthfund.org/publications/fund-reports/2021/aug/mirror-mirror-2021-reflecting-poorly)
+
+---
+##### **Disruptive technologies (new service models)**
+
+- There has been an explosion in new service models in Canadian healthcare that are taking advantage (regulatory arbitrary) of our "unique" system
+  - Federal vs provincial
+  - Medically necessary vs not
+  - Publically funded in theory but not in practice
+
+<br>
+
+<img src="images/news_headlines.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 750px">
+
+<!-- Note: Quebec's privitization is probably the most advanced, having more than 600 non-participating doctors, against a dozen in all other provinces – nine in British Columbia and three in Alberta. -->
+
+
+---
+##### **Disruptive technologies (new service models: telehealth)**
+
+<img src="images/maple_logo.png" style="display: block; margin-left: auto; margin-right: auto; width: 225px">
+
+<br>
+
+> Instead of connecting an Ontario patient with a doctor in Ontario — which would be covered under OHIP — Maple will set up an appointment with a nurse practitioner or a physician outside of the province. Those appointments aren't covered by OHIP. And before a patient speaks with a health worker, they go through a text-based chat, which is also uninsured by OHIP. Maple works the same way in other provinces.
+
+[Source](https://www.ipolitics.ca/queens-park/health-canada-concerned-about-ontario-company-that-charges-for-virtual-doctor-visits)
+
+---
+##### **Disruptive technologies (new service models: telehealth)**
+
+<img src="images/dialogue_logo.png" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+
+<br>
+
+> Dialogue only works with organizations or insurance companies. It doesn’t work with individuals... From a health care regulations point of view, that is the safest way to stay within the confines of the Canada Health Care Act... A patient never uses their credit card to pay for health care service.
+
+[Source](https://www.thestar.com/business/dialogue-co-founder-cherif-habib-on-virtual-care-and-why-he-doesn-t-want-to/article_9b1e37d0-d747-5a72-9eac-a740a798aa14.html)
 
 ---
 <!--_color: white -->
-<!--_backgroundColor: #f4a534 -->
-## `Business Pitch`
+<!--_backgroundColor: green -->
+## `Breakout #X`
+##### How do you see the role of data science in Canada's healthcare system emerging with these disruptive trends?
+
 
 ---
-
-##### **Introduction to Business Pitches**
-- **Definition**: A business pitch is a brief presentation by an entrepreneur to potential investors, partners, or customers, showcasing their business idea and strategy.
-- **Purpose**: Designed to secure funding, partnerships, or sales.
-- **Importance**: A compelling pitch can make the difference between securing support or missing out on valuable opportunities.
-
----
-<!--_color: white -->
-<!--_backgroundColor: #f4a534 -->
-## `Create an Outline of Your Pitch Deck`
-
---- 
-
-##### **Why do you need an outline?**
-- **Clarity & Narrative**: An outline helps you create a clear and compelling narrative about:
-  - The market
-  - Unmet needs
-  - Your strategy to meet them
-- **Anticipate Questions**: Planning ahead allows you to foresee and address potential queries from investors and stakeholders.
-
----
-
-##### **What do you include in your outline?**
-1. Problem/Opportunity Identification
-2. Solution & Technology
-3. Market Opportunity & Size
-4. Business Model & Go-to-Market Strategy
-5. Competitive Landscape Analysis
-6. Intellectual Property (IP) Strategy
-7. The Team & Management
-8. Funding Requirements & Use of Proceeds (“The Ask”)
-
----
-
-<!--_color: white -->
-<!--_backgroundColor: #f4a534 -->
-# `Create Your Pitch Deck`
-
----
-
-##### **Executive Summary & Company Overview**
-  - Provide a succinct overview that encapsulates the mission, technology origin, development stage, and funding objectives.
-  - Hook investors with the company’s purpose, trajectory, and the unique problem it solves.
-  - Highlight the current development phase (e.g., preclinical, Phase 1 trials) and the investment ask.
-
----
-
-##### **The Team & Management**
-  - Showcase the team’s expertise, previous successes, and the strategic formation of advisory boards.
-  - Discuss the completeness of the team, recruitment plans for missing expertise, and key partnerships.
-  - Position the team’s capability as a cornerstone for the project’s success.
-
----
-
-##### **Problem/Opportunity Identification**
-  - Clearly articulate the problem being addressed, emphasizing the pain points and the stakeholders affected.
-  - Detail the problem’s scale, current solutions’ limitations, and the opportunity for improvement.
-
----
-
-##### **Solution & Technology**
-  - Describe the product’s value proposition and its significance in addressing the identified need.
-  - Present data or evidence supporting the technology’s efficacy, mechanism of action, without disclosing proprietary information.
-  - Ensure the explanation is investor-friendly, focusing on crucial details rather than overwhelming with technical data.
-
----
-
-##### **Market Opportunity & Size**
-  - Illustrate the commercial potential, focusing on a well-defined market segment.
-  - Provide market size estimates, target and secondary market descriptions, and the rationale behind market choice.
-  - Emphasize why the timing is right for the product and how the company plans to capture market share.
-
----
-
-##### **Business Model & Go-to-Market Strategy**
-  - Outline the income strategy and how the startup intends to deliver returns to investors.
-  - Discuss the development plan, regulatory milestones, and necessary partnerships for market entry.
-  - Utilize frameworks like the business model canvas to articulate a coherent strategy.
-
----
-
-##### **Competitive Landscape Analysis**
-  - Identify competitors and substitutes, highlighting your product’s differentiators and advantages.
-  - Discuss market readiness for a new solution and why current gaps have not been addressed effectively.
-
----
-
-##### **Intellectual Property (IP) Strategy**
-  - Share details on patent filings, trade secrets, and the company’s overall IP strategy.
-  - Include patentability and freedom to operate analyses, ensuring enough detail for evaluation without revealing confidential information.
-
----
-
-##### **Funding Requirements & Use of Proceeds (“The Ask”)**
-  - Clearly state the funding needed, outlining past funding usage and future financial planning to achieve milestones.
-  - Discuss potential exit strategies, giving investors a clear understanding of the return on investment.
-
----
-
-<!--_color: white -->
-<!--_backgroundColor: #f4a534 -->
-## `Tips For Your Pitch Deck`
-
----
-##### **Understanding Your Audience**
-- **Research**: Know your audience's background, interests, and investment focus.
-- **Tailoring Your Message**: Customize your pitch to resonate with your audience's specific interests and concerns.
-
----
-
-##### **Crafting Your Message**
-- **Clarity and Conciseness**: Be clear and direct.
-- **Storytelling**: Incorporate storytelling to connect emotionally and make your pitch memorable.
-- **Visuals**: Use visuals (graphs, images, and infographics) to support your message .
-- **Tips**: Keep slides clean and focused, and use bullet points.
-
----
-
-##### **Delivering Your Pitch**
-- **Confidence**: Practice your pitch to deliver it confidently.
-- **Preparation**: Anticipate questions and rehearse answers.
-- **Handling Questions**: Listen carefully, and answer questions directly and positively.
-
----
-
-##### **Common Pitfalls to Avoid**
-- **Overcomplication**: Keep it simple.
-- **Lack of Focus**: Stay on topic and ensure each slide contributes to your overall message.
-- **Ignoring Feedback**: Be open to feedback and use it to refine and improve your pitch.
-
----
-
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Successful AI-based HC companies`
 
 ---
-
 <figure>
   <img src="images/FlatironHealth_logo.png" width="600" alt="Flatiron Health Logo" style="display: block; margin-left: auto; margin-right: auto;">
   <figcaption style="text-align: center;">https://flatiron.com</figcaption>
 </figure>
 
 ---
-
 ##### **Flatiron health**
 - Healthcare technology company specializing in cancer research and patient care. 
 - **Data Curation and Analysis**: Analyzes data, including EHRs, for real-world cancer care insights.
@@ -394,7 +371,6 @@ Source: [Increasing AI Tool Adoption by Front-Line Workers](https://www.youtube.
 - **Insights for Oncology Care**: Provides healthcare insights to enhance care quality, inform policy, and guide strategic planning.
 
 ---
-
 <figure>
   <img src="images/Tempus_logo.png" width="600" alt="Tempus Logo" style="display: block; margin-left: auto; margin-right: auto;">
   <figcaption style="text-align: center;">https://www.tempus.com</figcaption>

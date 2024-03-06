@@ -62,6 +62,8 @@ style: |
 ```console
 Data Sciences Institute
 Topics in Deep Learning
+Instructor: Erik Drysdale
+TA: Jenny Du
 ```
 
 ---
@@ -942,19 +944,19 @@ Source: [BertViz Interactive Tutorial](https://colab.research.google.com/drive/1
 ---
 ##### **Conformal prediction**
 
-- In classical statistics we generate **confidence intervals** around a parameter of interest:
-    - $P(\mu \in C_\alpha(X)) \geq 1-\alpha$
+- In classical statistics we generate **confidence intervals** around a parameter of interest: $P(\mu \in C_\alpha(X)) \geq 1-\alpha$
     - If $X \in \mathbb{R}^n$, then $C_\alpha: \mathbb{R}^n \to \mathbb{R}^2$
-    - Example: $\mu = E[X]$, $X\sim N(\mu, \sigma^2)$, then $C_\alpha(X) = \{ \frac{1}{n}\sum_{i=1}^n X_i \pm t^{-1}_{n-1}(\alpha/2) \sqrt{\frac{1}{n-1}\sum_{i=1}^n (X_i - \frac{1}{n}\sum_{i=1}^n X_i)^2} \}$
-- But in ML, we are mainly interested in prediction, and thus we care more about **prediction intervals**:
+    - Example: $\mu = E[X]$, $X\sim N(\mu, \sigma^2)$, then $C_\alpha(X) = \Big\{ \frac{1}{n}\sum_{i=1}^n X_i \pm t^{-1}_{n-1}(\alpha/2) \sqrt{\frac{1}{n(n-1)}\sum_{i=1}^n (X_i - \frac{1}{n}\sum_{i=1}^n X_i)^2} \Big\}$
+- But in ML, we are mainly interested in prediction, and thus we care more about **prediction intervals**: $P(y \in C_\alpha(X)) \geq 1-\alpha$
     - If $y=\mu(X) + \epsilon$ is the true data generating process
     - Then we want some interval which will contain the actual label with probability $100(1-\alpha)\%$
-    - $P(y \in C_\alpha(X)) \geq 1-\alpha$
+    - Need to account for both uncertainty of $\mu(X)$ and $\epsilon$
 
 ---
 ##### **Conformal prediction**
 
 - **Conformal prediction works for any black box model for classification and regression**
+- In the case of classification, we return conformal sets (one or more labels), which will contain the true label $100(1-\alpha)\%$ of the time
 
 <img src="images/conformal_classification.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
@@ -963,7 +965,9 @@ Source: [Angelopoulos & Bates (2022)](https://arxiv.org/abs/2107.07511)
 ---
 ##### **Conformal prediction**
 
-![](images/conformal_regression.png)
+- For regression we either have a fixed band (based on residuals) or can adjusted the margins of a quantile regression (better conditional coverage)
+
+<img src="images/conformal_regression.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
 
 Source: [Conformal Prediction in 2022](https://www.youtube.com/watch?v=k8GpG9D5c20)
 
