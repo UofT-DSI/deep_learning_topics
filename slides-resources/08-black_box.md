@@ -104,7 +104,7 @@ Topics in Deep Learning
 ---
 #### **Why use a black box model?**
 
-- Flexibly model arbirtary functions
+- Flexibly model arbitrary functions
 
 <br>
 <img src="images/kernel_trick.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
@@ -123,7 +123,7 @@ See: [Word2vec](https://en.wikipedia.org/wiki/Word2vec)
 #### **Complexity vs interpretability**
 
 - Many ML models (e.g. DL models) are capable of modeling highly complex, non-linear relationships 
-- There is usually (but not always) a trade-off between model compexlity and performane
+- There is usually (but not always) a trade-off between model complexity and performance
 
 <img src="images/complexity_accuracy.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 450px">
 
@@ -147,7 +147,7 @@ Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8
 ---
 #### **Importance of explainability**
 
-- Explainability is crucial for models deployed in high-stakes environments such as healtchare
+- Explainability is crucial for models deployed in high-stakes environments such as healthcare
 <br/>
 - The more we understand a model, the more we can:
     - Build trust among stake-holders
@@ -169,14 +169,14 @@ Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8
 ##### **White box models**
 
 - Several important classes of machine learning models are "naturally interpretable" to humans and do not require black box explainers
-    - Note: A natural sanity check for a black box explainer is to compare its interpratations to a linear model
+    - Note: A natural sanity check for a black box explainer is to compare its interpretations to a linear model
 - We'll discuss two classes of explainable models
     - Linear models*
     - Decision trees*
 
 <br>
 
-**Even these methods can become uninterpretable from a human's perspective if there are too many covariates or too much depth*
+**Even these methods can become uninterpretable from a human perspective if there are too many covariates or excessive depth*
 
 <!-- Question: What are some other "explainable models"? -->
 
@@ -389,7 +389,7 @@ Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.h
 ---
 #### **LIME's philosophy**
 
-- The LIME model is based on three "Desired Characteristics for Explainers":
+- The LIME method is based on three "Desired Characteristics for Explainers":
     - Interpretable
     - Locally faithful
     - Model-agnostic

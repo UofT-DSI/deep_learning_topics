@@ -63,7 +63,7 @@ TODO
 ---
 ##### **Triple Aim Framework**
 - Developed by Dr. Donald Berwick and colleagues at the Institute for Healthcare Improvement (IHI) in 2007.
-- A set of three interconnected goals aimed at improving healthcare systems and the overall health and well-being of populations.
+- Three interconnected goals focus on enhancing healthcare systems and the overall health and well-being of populations.
 
 ---
 
@@ -192,7 +192,6 @@ Source: [AI in biomedical data analytics and population health](https://www.yout
 
 Source: [Increasing AI Tool Adoption by Front-Line Workers](https://www.youtube.com/watch?v=qF18trDyQCg&t=2087s)
 
->>>>>>> main
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
