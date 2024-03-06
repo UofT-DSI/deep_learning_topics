@@ -518,9 +518,9 @@ In this lesson we will go over two different global explainability approaches:
 ---
 ##### **Basic principle**
 A global surrogate model can be obtained and interpreted as follows:
-1. Define a dataset $X$
-2. Obtain prediction outputs of $X$ using the black box model
-3. Select and train an interpretable model using $X$ as input and the black box predictions as output
+1. Train a black box model on $y=f_\theta(X)$
+2. Obtain prediction outputs of $y'=f_\theta(X)$ using the black box model
+3. Select and train an interpretable model $g$ on $y'=g_\phi(X)$
 4. Measure how closely the predictions of both models align
 5. Interpret the surrogate model (e.g., which features have the most important coefficients in linear regression)
 <br/>
@@ -624,7 +624,7 @@ Source: Terada & Shimodaira (2019)
 ---
 ##### **Selective inference (Lasso example)**
 
-![](images/lasso_formula.png)
+<img src="images/lasso_formula.png" style="display: block; margin-left: auto; margin-right: auto; width: 550px">
 
 [Source](https://speakerdeck.com/saltcooky12/detadoribunnajia-shuo-jian-zheng-falsetamefalseselective-inference?slide=3)
 
@@ -657,7 +657,7 @@ Given a trained model and a test set permutation testing can be implemented as f
 ---
 ##### **Interpreting Permutation results**
 
-- At a high level, permutation testing  conducts a conditional independece test for each feature $X_j$, with the null hypothesis stating that an outcome $y$ is independent of feature $X_j$ given all other features
+- At a high level, permutation testing  conducts a conditional independece test for each feature $X_j$, with the null hypothesis stating that an outcome $y$ is independent of feature $X_j$ 
 <br/>
 
 - Intuitively, if $X_j$ is predictive of $y$, perturbing this feature in isolation will break down its relationship to $y$ and lead to drops in performance
@@ -670,7 +670,7 @@ Given a trained model and a test set permutation testing can be implemented as f
 
 - **Sensitivity to test set size**: effectiveness of Permutation testing may vary depending on the size of the holdout set
 
-- **Limited interpretability**: Does not account for dependencies between columns of the data
+- **Limited interpretability**: Does not account for **realistic** dependencies between columns of the data (i.e. we're testing $y \perp X_j$ not $y \perp X_j | X_{-j}$ in effect)
 
 - **Assumption of exchangeability**: The act of shuffling features in isolation may introduce unrealistic data upon which feature importance is calculated
 
@@ -890,7 +890,7 @@ Source: [Selvaraju et. al (2017)](https://openaccess.thecvf.com/content_ICCV_201
 ---
 ##### **GradCAM**
 
-<img src="images/gradcam_example.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+<img src="images/gradcam_example.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
 
 
 Source: ARDS detection from [Sjoding et. al (2021)](https://www.thelancet.com/journals/landig/article/PIIS2589-7500(21)00056-X/fulltext)
@@ -911,17 +911,16 @@ Source: ARDS detection from [Sjoding et. al (2021)](https://www.thelancet.com/jo
 ---
 ##### **Attention**
 
-- Most language models today use (multi-headed attention). 
+- Most language models now use multi-headed attention (see [diagram](https://en.wikipedia.org/wiki/File:Attention-qkv.png))
 - For $K$ heads, and $L$ layers, and an input of length $T$, there will be $K\cdot L$ times pairwise "attention" weights
 
-<img src="images/attention.png" style="display: block; margin-left: auto; margin-right: auto; width: 700px">
+<img src="images/attention.png" style="display: block; margin-left: auto; margin-right: auto; width: 1000px">
 
-Source: [Wikipedia](https://en.wikipedia.org/wiki/File:Attention-qkv.png)
 
 ---
 ##### **Visualizing attention w/ BertViz**
 
-<img src="images/bertviz.png" style="display: block; margin-left: auto; margin-right: auto; width: 500px">
+<img src="images/bertviz.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
 
 Source: [BertViz Interactive Tutorial](https://colab.research.google.com/drive/1hXIQ77A4TYS4y3UthWF-Ci7V7vVUoxmQ?usp=sharing#scrollTo=-QnRteSLP0Hm)
 
