@@ -79,7 +79,7 @@ Learners should be active participants and are encouraged to ask questions throu
 * [Protein folding, drug discovery, and medical imaging, and ‘Omics](lessons/05-scientific_applications.pdf)
 * [Commercial applications](lessons/06-commercial_applications.pdf)
 * ~~“White box” model explainability~~
-* (Under construction) ["Black box” model explainability]()
+* ["Black box” model explainability](lessons/08-black_box.pdf)
 * ~~Prediction intervals~~
 * (Under construction) [Business thinking and organization structure](https://github.com/UofT-DSI/deep_learning_topics/blob/main/lessons/10-business_thinking_organization.pdf#/)
 
@@ -93,7 +93,7 @@ Learners should be active participants and are encouraged to ask questions throu
 | Format | Details | Submission Instructions |
 | :----: | :----- | :---------------------- |
 | Assignment 1 | Due on **Feb 28th (Wed) by 5:59pm** | Submit assignment via email |
-| Assignment 2 | Due on **Mar 7th (Thur) by 5:59pm** | Submit assignment via email |
+| Assignment 2 | Due on **Mar 8th (Friday) by 11:59pm** | Submit assignment via email (zip folder) |
  
 ## Acknowledgements
-Course materials were developed by Julia Gallucci, Kaylie Lau, and Santiago Arciniegas under the supervision of Rohan Alexander.
+Course materials were developed by Julia Gallucci, Kaylie Lau, and Santiago Arciniegas under the supervision of Rohan Alexander and finalized by Erik Drysdale.

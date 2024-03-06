@@ -174,6 +174,25 @@ Source: [AI in biomedical data analytics and population health](https://www.yout
 
 Source: [Increasing AI Tool Adoption by Front-Line Workers](https://www.youtube.com/watch?v=qF18trDyQCg&t=2087s)
 
+
+
+---
+##### **At the top**
+
+<img src="images/management_vs_leadership.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
+
+Source: [AI in biomedical data analytics and population health](https://www.youtube.com/watch?v=hBu5ZIvYLjs)
+
+
+---
+##### **Example of making the alignment**
+
+<img src="images/dihi_incentive_flow.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+
+
+Source: [Increasing AI Tool Adoption by Front-Line Workers](https://www.youtube.com/watch?v=qF18trDyQCg&t=2087s)
+
+>>>>>>> main
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->

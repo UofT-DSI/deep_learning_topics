@@ -69,6 +69,8 @@ TA: Jenny Du
 ---
 ##### **Outline**
 
+- Generating value with DL
+>>>>>>> main
 - Assessing and creating value with DL applications
 - DL in biotechnology
 - DL in medical devices
@@ -394,7 +396,9 @@ Source: Casino Royal's view of telemedicine for James Bond
 <!--_color: white -->
 <!--_backgroundColor: green -->
 ## `Breakout #3`
+
 ##### Suppose you were developing a deep learning system for providing clinical decision support about whether a rash needs antibiotics. What would range of employee skillsets would you need to develop this product?
+
 
 ---
 <!--_color: white -->
