@@ -31,26 +31,53 @@ paginate: true
 ```console
 Data Sciences Institute
 Topics in Deep Learning
+Instructor: Erik Drysdale
+TA: Jenny Du
 ```
----
 
+---
+##### **Outline**
+
+- Healthcare initiatives
+- Triple Win & Aim framework
+- Institutions, Org charts, and Processes
+- Disruptive technologies in healthcare
+- Successful AI companies
+- Business pitch
+
+---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
 ## `Healthcare Initiatives`
 
 ---
 ##### **Healthcare Initiatives**
-- When brainstorming healthcare initiatives, it is important to take into account key stakeholders:
-  - Patients
-  - Clinicians
-  - Healthcare providers
-- All have pivotal roles in both the industry's overall success and the well-being of patients.
+- Successful healthcare initiatives will take into account:
+  - Key stakeholders (Patients & families, Healthcare providers, and other hospital staff)
+  - Organization structure
+  - Current incentives
+- **Transformation** is much harder than **change**, and most healthcare transformations will be underwhelming
+  - Adoption of data science initiatives requires a solid understanding of both the *institutional* and *technical* challenges with DS
 
 
 ---
 ##### **AI Center of Excellence**
 
-TODO
+- A healthcare orgnaization wishing to adopt a data science at scale will often face a key strategic question:
+  - *To what extent should a central AI team coordinate and drive data science transformation?*
+- A common approach is to develop an AI Center of Excellence
+
+<img src="images/AI_coe.png" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+
+Source: [AtScale](https://www.atscale.com/blog/what-is-an-ai-center-of-excellence/)
+
+---
+##### **AI Center of Excellence (benefits)**
+
+- Concentration of expertise
+  - Recruiting an maintaining AI talent is very difficult!
+- Economies of scale
+  - By having larger pool of skilled data scientists, you can more smoothly distribute work
 
 <!-- Question: What are some of the downsides with a CoE? -->
 
@@ -66,16 +93,13 @@ TODO
 - Three interconnected goals focus on enhancing healthcare systems and the overall health and well-being of populations.
 
 ---
-
 ##### **Triple Aim Framework**
 
 1. **Improving Population Health**: Enhance the health of a defined population.
 2. **Enhancing Patient Experience of Care**: Improve the experience of care for individual patients.
 3. **Reducing the Per Capita Cost of Healthcare**: Reduce the overall cost of healthcare while maintaining or improving quality.
 
-<figure>
-  <img src="images/TripleAim.png" width="300" alt="Triple Aim" style="display: block; margin-left: auto; margin-right: auto;">
-</figure>
+<img src="images/TripleAim.png" style="display: block; margin-left: auto; margin-right: auto; width: 300px">
 
 ---
 
@@ -93,7 +117,7 @@ TODO
 </figure>
 
 ---
-<img src="images/triple_win.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
+<img src="images/triple_win.png" style="display: block; margin-left: auto; margin-right: auto; width: 800px">
 
 ---
 ##### **Patient**
@@ -191,6 +215,25 @@ Source: [AI in biomedical data analytics and population health](https://www.yout
 
 
 Source: [Increasing AI Tool Adoption by Front-Line Workers](https://www.youtube.com/watch?v=qF18trDyQCg&t=2087s)
+
+
+
+---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Disruptive technologies in healthcare`
+
+---
+##### **Disruptive technologies (overview)**
+- A disruptive technology refers to an innovation that significantly alters the way consumers, industries, or businesses operate
+  - Classic examples include smartphones, streaming services, ride sharing, short-term rentals, and much more
+- Disruptive technologies come about when a sufficient number of complementary technologies allow for an innovation to "break through" (think cell phones and ride sharing)
+  - But many also capitalize on **regulatory arbitrage**
+  - This will be important to understand many of the (currently early-stage) "disruptions" we are seeing in Canadian healthcare
+
+<!-- Question: What do I mean by regulatory arbitrage?? -->
+
+
 
 ---
 <!--_color: white -->
