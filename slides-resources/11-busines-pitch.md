@@ -166,3 +166,48 @@ TA: Jenny Du
 - **Overcomplication**: Keep it simple.
 - **Lack of Focus**: Stay on topic and ensure each slide contributes to your overall message.
 - **Ignoring Feedback**: Be open to feedback and use it to refine and improve your pitch.
+]]---
+<!--_color: white -->
+<!--_backgroundColor: #f4a534 -->
+## `Successful AI-based HC companies`
+
+---
+<figure>
+  <img src="images/FlatironHealth_logo.png" width="600" alt="Flatiron Health Logo" style="display: block; margin-left: auto; margin-right: auto;">
+  <figcaption style="text-align: center;">https://flatiron.com</figcaption>
+</figure>
+
+---
+##### **Flatiron health**
+- Healthcare technology company specializing in cancer research and patient care. 
+- **Data Curation and Analysis**: Analyzes data, including EHRs, for real-world cancer care insights.
+- **Software Solutions for Clinics**: Offers cloud-based oncology software to improve clinic operations and patient care.
+- **Research Collaboration**: Collaborate with the life sciences sector for cancer research to accelerate therapy development.
+- **Insights for Oncology Care**: Provides healthcare insights to enhance care quality, inform policy, and guide strategic planning.
+
+---
+<figure>
+  <img src="images/Tempus_logo.png" width="600" alt="Tempus Logo" style="display: block; margin-left: auto; margin-right: auto;">
+  <figcaption style="text-align: center;">https://www.tempus.com</figcaption>
+</figure>
+
+---
+##### **Tempus Labs**
+-  Tech company focused on precision medicine, using artificial intelligence to analyze clinical and molecular data. 
+-  **Genomic Sequencing**: Perform  genomic sequencing for targeted disease treatments.
+-  **Data Analytics**: Analyze clinical and molecular data for treatment insights.
+-  **Clinical Data Structuring**: Structure unstructured medical data.
+-  **Collaboration with Healthcare Research**: Collaborate with healthcare and research entities to advance personalized medicine
+
+---
+<figure>
+  <img src="images/RecursionPharmaceuticals_logo.png" width="600" alt="Recursion Pharmaceuticals Logo" style="display: block; margin-left: auto; margin-right: auto;">
+  <figcaption style="text-align: center;">https://www.recursion.com</figcaption>
+</figure>
+
+---
+##### **Recursion Pharmaceuticals**
+- Biotech company using AI and automation for drug discovery.
+- **Drug Discovery**: Use AI to rapidly identify potential drugs for a wide range of diseases.
+- **High-throughput Screening**: Employ automation and robotics to perform experiments at a large scale.
+- **Data-driven Insights**: Data-driven insights from biological data and machine learning to speed up pharmaceutical research.
