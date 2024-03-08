@@ -157,22 +157,6 @@ Source: [Zinnov](https://zinnov.com/centers-of-excellence/mastering-ai-centers-o
 ## `Example institution: Duke Institute for Health Innovation (DIHI)`
 
 ---
-##### **Medicine happens in buildings (usually)**
-
-<div class="row" style="text-align: center;">
- <div style="display: inline-block; margin-right: 20px;">
-  <img src="images/hospital.jpg" style="width: 400px">
- </div>
- <div style="display: inline-block; margin-right: 20px;">
-  <img src="images/clinic.jpg" style="width: 400px">
- </div>
- <div style="display: inline-block; margin-right: 20px;">
-  <img src="images/cvs.jpg" style="width: 400px">
- </div>
-</div>
-
-
----
 ##### **Example Org Chart**
 
 <img src="images/org_chart.png" style="display: block; margin-left: auto; margin-right: auto; width: 900px">
@@ -182,7 +166,7 @@ Source: [Sandhu et. al (2023)](https://www.cell.com/patterns/pdfExtended/S2666-3
 <!-- Question: The structure of your organization really matters. When do you want a Matrix system of responsibilities, when do you want a flat system? Who's responsible for delivering ML projects on time, etc -->
 
 ---
-##### **How to create a sense sense of urgency**
+##### **How to create a sense of urgency**
 
 <img src="images/build_to.png" style="display: block; margin-left: auto; margin-right: auto; width: 900px">
 
@@ -370,8 +354,8 @@ Source: [Commonwealth Fund (2021)](https://www.commonwealthfund.org/publications
 ---
 ##### **Disruptive technologies (new service models: nursing)**
 
-- Nurse staffing agencies have now surge pricing, and nurses usually have more control over their schedules
-- In the US, we've seen companies begin to develop platforms based on a classic two-sided market 
+- Nurse staffing agencies sometimes use surge pricing, and their nurses usually have more control over their schedules
+- In the US, we've seen companies begin to develop platforms based on a classic two-sided market (re: Uber)
 
 <br>
 
