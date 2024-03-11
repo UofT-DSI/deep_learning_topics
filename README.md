@@ -19,7 +19,7 @@ By the end of the course, students will be able to:
 
 1. Learning outcome 1: Be able to articulate and problem solve the key challenges of ML/AI adoption in healthcare
 2. Learning outcome 2: Identify and understand areas of value creation in the healthcare domain using ML/AI in a commercial and business context
-3. Learning outcome 3: Use Python-based tools for healthcare focused ML/AI problems like survival analysis, uncertainty quantification, and model explainability
+3. Learning outcome 3: Use Python-based tools for healthcare focused ML/AI problems
 
 ## Logistics
 
