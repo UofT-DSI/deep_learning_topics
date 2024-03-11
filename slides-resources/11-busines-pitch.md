@@ -39,8 +39,8 @@ TA: Jenny Du
 ---
 
 ##### **Introduction to Business Pitches**
-- **Definition**: A business pitch is a brief presentation by an entrepreneur to potential investors, partners, or customers, showcasing their business idea and strategy.
-- **Purpose**: Designed to secure funding, partnerships, or sales.
+- **Definition**: A business pitch is a brief presentation where entrepreneurs showcase their business idea and strategy to potential investors, partners, or customers.
+- **Purpose**: Its purpose is to secure funding, partnerships, or sales.
 - **Importance**: A compelling pitch can make the difference between securing support or missing out on valuable opportunities.
 
 ---
@@ -99,7 +99,7 @@ TA: Jenny Du
 
 ##### **Solution & Technology**
   - Describe the product’s value proposition and its significance in addressing the identified need.
-  - Present data or evidence supporting the technology’s efficacy, mechanism of action, without disclosing proprietary information.
+  - Present data or evidence supporting the technology’s efficacy and mechanism of action, without disclosing proprietary information.
   - Ensure the explanation is investor-friendly, focusing on crucial details rather than overwhelming with technical data.
 
 ---
@@ -150,7 +150,7 @@ TA: Jenny Du
 ##### **Crafting Your Message**
 - **Clarity and Conciseness**: Be clear and direct.
 - **Storytelling**: Incorporate storytelling to connect emotionally and make your pitch memorable.
-- **Visuals**: Use visuals (graphs, images, and infographics) to support your message .
+- **Visuals**: Use visuals, including graphs, images, and infographics to support your message .
 - **Tips**: Keep slides clean and focused, and use bullet points.
 
 ---
@@ -179,7 +179,7 @@ TA: Jenny Du
 
 ---
 ##### **Flatiron health**
-- Healthcare technology company specializing in cancer research and patient care. 
+- A healthcare technology company specializing in cancer research and patient care. 
 - **Data Curation and Analysis**: Analyzes data, including EHRs, for real-world cancer care insights.
 - **Software Solutions for Clinics**: Offers cloud-based oncology software to improve clinic operations and patient care.
 - **Research Collaboration**: Collaborate with the life sciences sector for cancer research to accelerate therapy development.
@@ -197,7 +197,7 @@ TA: Jenny Du
 -  **Genomic Sequencing**: Perform  genomic sequencing for targeted disease treatments.
 -  **Data Analytics**: Analyze clinical and molecular data for treatment insights.
 -  **Clinical Data Structuring**: Structure unstructured medical data.
--  **Collaboration with Healthcare Research**: Collaborate with healthcare and research entities to advance personalized medicine
+-  **Collaboration with Healthcare Research**: Collaborates with healthcare and research entities to advance personalized medicine
 
 ---
 <figure>
