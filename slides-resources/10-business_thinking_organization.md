@@ -69,7 +69,7 @@ TA: Jenny Du
 ---
 ##### **AI Center of Excellence**
 
-- A healthcare orgnaization wishing to adopt data science at scale will often face a key strategic question:
+- A healthcare organization wishing to adopt data science at scale will often face a key strategic question:
   - *To what extent should a central AI team coordinate and drive data science transformation?*
 - A common approach is to develop an AI Center of Excellence
   - *A dedicated team or department that focuses on the strategic implementation of artificial intelligence technologies across the organization*
@@ -82,11 +82,11 @@ Source: [AtScale](https://www.atscale.com/blog/what-is-an-ai-center-of-excellenc
 ##### **AI Center of Excellence (benefits)**
 
 - Concentration of expertise
-  - Recruiting an maintaining AI talent is very difficult!
+  - Recruiting and maintaining AI talent is very difficult!
 - Economies of scale
-  - By having larger pool of skilled data scientists, you can more smoothly distribute work
+  - By having a larger pool of skilled data scientists, you can more smoothly distribute work
 - Fostering a community of practice
-  - Lessons learned, educational materials, seminars, hackathons, etc
+  - Lessons learned, educational materials, seminars, hackathons, etc.
 - Strategic vision and priority setting
   - By understanding the core technical challenges of AI and its trends, the AICoE is well placed to provide strategic direction as well as vet external vendor systems
 
@@ -105,12 +105,12 @@ Source: [Zinnov](https://zinnov.com/centers-of-excellence/mastering-ai-centers-o
 ---
 ##### **AI Center of Excellence (challenges)**
 
-- Competing resources and priorities
-  - Other groups will do some amount of DS; should the AICoE be treated as a new group in addition to IT, HR, finance, etc
-- Misaligned interests
-  - While an AICoE will have the same interests on many fronts with other departments, it will have to spend time pursuading and coordinating other groups to ensure DS projects align with its vision
+- Competing Resources and Priorities
+  - Other groups will do some amount of DS; should the AICoE be treated as a new group in addition to IT, HR, finance, etc.?
+- Misaligned Interests
+  - While an AICoE will share many interests with other departments, it will need to spend time persuading and coordinating with other groups to ensure DS projects align with its vision
 - Isolation of expertise
-  - Concentrating the "cool" sounding work in one department may cause resentment or a sense of detachment from others (e.g. "we're not smart enough to do AI" or "they think they're the only ones that can do AI")
+  - Concentrating the "cool"-sounding work in one department may cause resentment or a sense of detachment from others (e.g. "we're not smart enough to do AI" or "they think they're the only ones that can do AI")
 
 <!-- Question: Should the AICoE have veto power? Can another department buy an AI product without its blessing? What if data decisions made by IT impact its model development? -->
 
@@ -137,10 +137,10 @@ Source: [Zinnov](https://zinnov.com/centers-of-excellence/mastering-ai-centers-o
 
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Triple Win Framework`
+## `Triple-Win Framework`
 
 ---
-##### **Triple Win Framework**
+##### **Triple-Win Framework**
 - When thinking about new ideas, try expanding "Triple Aim" to "Triple Win".
 - You need to consider how your idea creates value for all three stakeholders: patients, providers, and funders.
 

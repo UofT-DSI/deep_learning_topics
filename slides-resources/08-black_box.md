@@ -69,7 +69,7 @@ TA: Jenny Du
 ---
 ##### **Outline**
 
-- Black box models
+- Black-box models
 - White box models
 - Local methods
     - ICE, SHAP, & LIME
@@ -82,12 +82,12 @@ TA: Jenny Du
 ---
 <!--_color: white -->
 <!--_backgroundColor: #f4a534 -->
-## `Black Box Models`
+## `Black-box models`
 
 ---
 #### **What is a black box?**
 
-- In general parlance, a "black box" refers to some function whose internal workings are unknown or opaque
+- A "black box" refers to some function whose internal workings are unknown or opaque
 - Like a machine learning model, we assume a black box maps an input to an output: $f(x)=y$, where $f: \mathbb{R}^p \to \mathbb{R}^k$
 
 <br>
@@ -96,7 +96,7 @@ TA: Jenny Du
 ---
 #### **What is a black box in ML?**
 
-- In machine learning, we use "black box" to refer to:
+- In machine learning, "black box" refers to:
     - Algorithm classes "whose internal workings are unknown or opaque"
     - Methods that work for any arbitrary function (i.e. as long as you can perform inference or possibly take a gradient from $f_\theta(x)$)
 - Questions:
@@ -106,7 +106,7 @@ TA: Jenny Du
 ---
 #### **Why use a black box model?**
 
-- Flexibly model arbitrary functions
+- Flexible modeling of arbitrary functions
 
 <br>
 <img src="images/kernel_trick.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
@@ -114,7 +114,7 @@ TA: Jenny Du
 ---
 #### **Why use a black box model?**
 
-- Learned features >> hand-crafted features (usually)
+- Learned features outperform hand-crafted features (usually)
 
 ![](images/word2vec.jpg)
 
@@ -124,7 +124,7 @@ See: [Word2vec](https://en.wikipedia.org/wiki/Word2vec)
 ---
 #### **Complexity vs interpretability**
 
-- Many ML models (e.g. DL models) are capable of modeling highly complex, non-linear relationships 
+- Many ML models, such as DL models, can model highly complex, non-linear relationships
 - There is usually (but not always) a trade-off between model complexity and performance
 
 <img src="images/complexity_accuracy.jpg" style="display: block; margin-left: auto; margin-right: auto; width: 450px">
@@ -135,11 +135,11 @@ Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8
 
 
 ---
-#### **Challenges of black box models**
+#### **Challenges of Black-box models**
 
 - **Lack of transparency**: how do models generate their predictions?
 <br/>
-- **Poor interpretability**: given a certain input, why was a particular prediction made?
+- **Poor interpretability**: Given a specific input, why was a particular prediction made?
 <br/>
 - **Trust issues**: stakeholders may find it challenging to trust a well-performing model that they cannot understand
 <br/>
@@ -152,7 +152,7 @@ Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8
 - Explainability is crucial for models deployed in high-stakes environments such as healthcare
 <br/>
 - The more we understand a model, the more we can:
-    - Build trust among stake-holders
+    - Build trust among stakeholders
     - Foster ethical AI practices
     - Ensure regulatory compliance
     - Facilitate and contextualise model debugging and improvement
@@ -160,7 +160,7 @@ Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8
 ---
 #### **Lesson objective**
 
-- Explore different methods for elucidating understanding how complex, non-linear models work
+- Explore various methods to understand how complex, non-linear models work
 
 ---
 <!--_color: white -->
@@ -170,7 +170,7 @@ Source: [Morocho-Cayamcela et. al (2019)](https://ieeexplore.ieee.org/document/8
 ---
 ##### **White box models**
 
-- Several important classes of machine learning models are "naturally interpretable" to humans and do not require black box explainers
+- Several important machine learning model classes are "naturally interpretable" to humans and do not require black-box explainers
     - Note: A natural sanity check for a black box explainer is to compare its interpretations to a linear model
 - We'll discuss two classes of explainable models
     - Linear models*
@@ -215,8 +215,8 @@ Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.h
 ---
 ##### **Decision trees**
 
-- Are a class of supervised ML which recursively partions the feature space so that the terminal leaves minimizes entropy (classification) or variance (regression)
-    - The CART algorithm which "learns the tree" with data is inherantly greedy which is why there are various rules for early stopping
+- Are a class of supervised ML that recursively partitions the feature space so that the terminal leaves minimizes entropy (classification) or variance (regression)
+    - The CART algorithm, which "learns the tree" with data, is inherently greedy which is why there are various rules for early stopping
 
 <img src="images/cart_space.png" style="display: block; margin-left: auto; margin-right: auto; width: 1000px">
 
@@ -231,7 +231,7 @@ Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.h
 ---
 #### **Understanding individual predictions**
 
-- **Local explainability methods** (aka "instance level explainations") offer insights into individual predictions made by black box models
+- **Local explainability methods** (aka "instance level explainations") offer insights into individual predictions made by Black-box models
     - They focus on explaining why a particular prediction was made for a specific instance or region of the input space
 
 ---
@@ -266,7 +266,7 @@ Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.h
 #### **Individual Conditional Expectation (ICE)**
 
 - ICE can be turned into a "global" explainer by averaging over the individual curves (this is known as a partial dependency plot (PDP))
-- ICE works for all black box models that we can run inference on (no gradients needed)
+- ICE works for all Black-box models that we can run inference on (no gradients needed)
 - It is a form of "mechanistic interpretability" (example below: [sklearn](https://scikit-learn.org/stable/modules/partial_dependence.html))
 
 <img src="images/pdp.png" style="display: block; margin-left: auto; margin-right: auto; width: 600px">
@@ -380,7 +380,7 @@ Source: [Molnar (2023)](https://christophm.github.io/interpretable-ml-book/ice.h
 
 <br/>
 
-- It approximates the behavior of the black box model by training interpretable surrogate models on perturbed instances around the prediction of interest
+- It approximates the behaviour of the black box model by training simpler, understandable models on slightly changed situations close to the prediction we're interested in.
 
 <br/>
 
@@ -638,8 +638,8 @@ Source: Terada & Shimodaira (2019)
 ---
 ##### **Permutation Tests**
 
-- Given a trained model and a held out test set, permutation testing repeatedly evaluates model performance on the test set following individual feature perturbations
-    - Measuring the impact of these perturbations on model predictions serves as a proxy of overall feature importance
+- Given a trained model and a separate test set, permutation testing checks how well the model works on the test set after changing each feature one by one.
+    - Checking how these changes affect the model's predictions helps us understand how important each feature is overall.
 <br/>
 
 - These measures provide insights into feature interactions and overall model behaviour
@@ -662,7 +662,7 @@ Given a trained model and a test set permutation testing can be implemented as f
 - At a high level, permutation testing  conducts a conditional independece test for each feature $X_j$, with the null hypothesis stating that an outcome $y$ is independent of feature $X_j$ 
 <br/>
 
-- Intuitively, if $X_j$ is predictive of $y$, perturbing this feature in isolation will break down its relationship to $y$ and lead to drops in performance
+- In simple terms, if a feature $X_j$ helps predict $y$, changing $X_j$ by itself will mess up its connection to $y$ and make the predictions less accurate.
 
 ---
 ![](images/permutation.png)
@@ -717,10 +717,10 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
 ##### **Knockoffs (summary)**
 
 - Advantages
-    - Works with any model able to generate a feature importance score 
+    - Works with any model that can generate a feature importance score 
     - Provides robust statistical guarantees (false discovery)
 - Disadvantages
-    - Requires knownledge of $P(X)$
+    - Requires knowledge of $P(X)$
         - Errors in knockoff construction will destroy statistical guarantees
     - Requires special optimization procedure to construct the knockoff
     - Higher computational cost (i.e. need to fit model with $2\cdot p$ features!)
@@ -735,10 +735,10 @@ Source: [Yang et. al (2022)](https://www.sciencedirect.com/science/article/pii/S
 ---
 ##### **Holdout randomization test (HRT)**
 
-- A feature is "uninformative" if, conditional on all other features, it does not impact model performance
+- A feature is considered "uninformative" if, conditional on all other features, it does not impact model performance
     - $y \perp X_j | X_{-j}$
 - Suppose we train our model to learn $\theta$: $\arg \min_\theta \hspace{2mm} \ell(y, f_\theta(x))$
-- We can get an unbiased estimate of the loss function $\ell(\cdot)$ if we evaluate it on a new set of data (e.g. a "test set")
+- An unbiased estimate of the loss function $\ell(\cdot)$ can be obtained by evaluating it on a new set of data (e.g., a "test set")
 - The HRT shows how we can determine whether a given feature ($x_j$) has any impact on this representative "test set"
     - And therefore we can get back a p-value for $H_0: y \perp X_j | X_{-j}$
 
@@ -939,7 +939,7 @@ Source: [BertViz Interactive Tutorial](https://colab.research.google.com/drive/1
 - Questions: 
     - Would you expect the softmax probabilities of a DL model for a multiclass problem to be "well calibrated"?
         - $\sum_{i \in Y_k} p_i = \sum_{i \in Y_k} Y_{i,k}$?
-    - For a regression model, how do we know if two different predicted values are statistically different?
+    - For a regression model, how can we determine if two different predicted values are statistically different?
 
 ---
 ##### **Conformal prediction**
